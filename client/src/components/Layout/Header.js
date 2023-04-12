@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import { GiShoppingBag } from 'react-icons/gi'
 
 const Header = () => {
     return (
@@ -10,29 +11,30 @@ const Header = () => {
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <NavLink to="/" className="navbar-brand">Hidden brand</NavLink>
+                        <Link to="/" className="navbar-brand"> {/*<GiShoppingBag />*/}
+                            📷 Light And Shadow</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink to="/" className="nav-link" >Home</NavLink>
+                                <Link to="/" className="nav-link" >Home</Link>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/category" className="nav-link "
-                                >Category</NavLink>
+                                <Link to="/category" className="nav-link "
+                                >Category</Link>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/register" className="nav-link">Create an Account </NavLink>
+                                <Link to="/register" className="nav-link">Create an Account </Link>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/login" className="nav-link">Login </NavLink>
+                                <Link to="/login" className="nav-link">Login </Link>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/cart" className="nav-link">Cart(0) </NavLink>
+                                <Link to="/cart" className="nav-link">Cart(0) </Link>
                             </li>
 
 
                             {/* A link that I'm not sure what to do with yet. */}
                             {/* <li className="nav-item">
-                                <NavLink to="/" className="nav-link ">Dunno Yet. New link.</NavLink>
+                                <Link to="/" className="nav-link ">Dunno Yet. New link.</Link>
                             </li> */}
                         </ul>
                         {/* I may want this form for something. I dunnow yet. */}

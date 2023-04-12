@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
         <div>
             <Header />
             {/* Set the main content of the page to 80 of the vh, pushing the footer to the last 20. */}
-            <main style={{ minHeight: "80vh" }}>
+            <main style={{ minHeight: "70vh" }}>
                 {children}
             </main>
             <Footer />

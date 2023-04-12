@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif, 'Inter', sans-serif, 'Roboto', sans-serif, Arial, Helvetica, sans-serif, 'Playfair Display', sans-serif;
+  font-family: 'Poppins', 'Inter', 'Roboto', Arial, Helvetica, 'Playfair Display', sans-serif;
 }
 
 /* Navbar Styles */
@@ -22,6 +22,77 @@ border-bottom: .1px solid gray ;
   font-weight: 300;
 }
 
+/* Active page and link will get underline and italic. Still deciding on the italic. */
 .active{
   border-bottom: 2px solid blue;
+font-style: italic;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  font-family: 'Roboto',sans-serif;
+  letter-spacing: 3px;
+}
+
+/* Footer Styles */
+.footer{
+  color: white;
+  padding: 25px;
+  background: #000000; /* a fallback in case of older browsers */
+  background: -webkit-linear-gradient(
+    to-right,
+    #434343,
+    #000000
+  ); 
+  /* And for chrome 10-25, Safari 5.1 - 6..... */
+background: linear-gradient(to right, #434343, #000000);
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.footer a:hover{
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba ;
+
+}
+
+/* Page not found/ 404 styles */
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title{
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading{
+  font-weight: normal;
+}
+
+.pnf-btn{
+  color: black;
+  border: 3px solid green;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.pnf-btn:active{
+  /* transform: Emulate a camera shutter, maybe? I dunno. */
+}
+
+.pnf-image{
+  /* A broken camera! */
+
+  height: 70px;
 }
