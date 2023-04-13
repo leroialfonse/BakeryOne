@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import { GiShoppingBag } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
+import { FcOldTimeCamera } from 'react-icons/fc'
 
 const Header = () => {
     return (
@@ -11,15 +11,30 @@ const Header = () => {
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <Link to="/" className="navbar-brand"> {/*<GiShoppingBag />*/}
-                            📷 Light And Shadow</Link>
+                        <Link to="/" className="navbar-brand">🛒Light And Shadow</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link to="/" className="nav-link" >Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/category" className="nav-link "
+                            <li className="nav-item dropdown">
+                                {/* <Link to={"/category"}
+                                    data-bs-toggle="dropdown"
                                 >Category</Link>
+                                <ul className='dropdown-menu'>
+                                    <li>
+                                        <Link className='dropdown-item' to={'/category'}>All Categories</Link>
+
+                                    </li>
+                                    {categories?.map((c) => (<li>
+                                    <Link
+                                        className="dropdown-item"
+                                        to={`/category/${c.slug}`}
+                                    >
+                                        {c.name}
+                                    </Link>
+                            </li>
+                                    ))}
+                        </ul> */}
                             </li>
                             <li className="nav-item">
                                 <Link to="/register" className="nav-link">Create an Account </Link>
@@ -43,8 +58,8 @@ const Header = () => {
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form> */}
                     </div>
-                </div>
-            </nav>
+                </div >
+            </nav >
 
         </>
     )
