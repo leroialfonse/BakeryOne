@@ -87,10 +87,27 @@ background: linear-gradient(to right, #434343, #000000);
 }
 
 
+
+
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
+
 .pnf-image{
   /* A broken camera! */
 margin: 20px auto;
 border-radius: 80px;
   height: 400px;
   width: 400px;
+}
+
+/* Contact Page */
+.contactUs {
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
