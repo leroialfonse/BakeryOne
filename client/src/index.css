@@ -24,7 +24,7 @@ border-bottom: solid gray !important;
 }
 
 /* or .nav-link.active  Still unsure. lol.*/
-.nav-link.active{
+.active{
   border-bottom: 2px solid black;
 }
 

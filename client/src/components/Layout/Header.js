@@ -37,13 +37,13 @@ const Header = () => {
                         </ul> */}
                             </li>
                             <li className="nav-item">
-                                <Link to="/register" className="nav-link">Create an Account </Link>
+                                <NavLink to="/register" className="nav-link">Register </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to="/login" className="nav-link">Login </Link>
+                                <NavLink to="/login" className="nav-link">Login </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to="/cart" className="nav-link">Cart(0) </Link>
+                                <NavLink to="/cart" className="nav-link">Cart(0) </NavLink>
                             </li>
 
 
