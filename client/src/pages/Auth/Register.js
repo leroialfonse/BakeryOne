@@ -21,7 +21,7 @@ const Register = () => {
             const res = await axios.post('/api/v1/auth/register', { name, email, password, phone, address });
             if (res && res.data.success) {
                 toast.success(res.data.message);
-                navigate("/login");
+                navigate("/home");
 
             } else {
                 toast.error(res.data.message)

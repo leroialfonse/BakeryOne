@@ -4,7 +4,7 @@ import JWT from "jsonwebtoken"
 
 export const registerController = async (req, res) => {
     try {
-        const { name, email, phone, address, password } = req.body
+        const { name, email, phone, address, password } = req.body;
         // Validation
         if (!name) {
             return res.send({ message: 'A valid Name is required.' })
@@ -28,27 +28,27 @@ export const registerController = async (req, res) => {
             return res.status(200).send({
                 succes: false,
                 message: 'That user is already registered. Please login.'
-            })
+            });
         }
-        // register user 
+        // has password for a user 
         const hashedPassword = await hashPassword(password)
 
         // create and save a user 
         const user = await new userModel({ name, email, phone, address, password: hashedPassword }).save();
-        console.log(user)
+        // console.log(user)
 
         res.status(201).send({
-            succes: true,
+            success: true,
             message: 'Registration succesful!',
-            user
-        })
+            user,
+        });
     } catch (error) {
         console.log(error)
         res.status(500).send({
             success: false,
-            message: `Error in Registration`,
-            error
-        })
+            message: 'Something went wrong...',
+            error,
+        });
     }
 };
 
@@ -56,29 +56,30 @@ export const registerController = async (req, res) => {
 
 export const loginController = async (req, res) => {
     try {
-        const { email, password } = req.body
+        const { email, password } = req.body;
+
         //  Validation for logins
 
         if (!email || !password) {
             return res.status(404).send({
                 success: false,
                 message: 'Invalid email or password. Please try again.'
-            })
+            });
         }
         // Check if the user email matches db.
-        const user = await userModel.findOne({ email })
+        const user = await userModel.findOne({ email });
         if (!user) {
             return res.status(404).send({
                 success: false,
-                message: 'That email  address was not found. Do you need to register? '
-            })
+                message: 'That email address was not found. Do you need to register?'
+            });
         }
         const match = await comparePassword(password, user.password)
         if (!match) {
             return res.status(200).send({
                 success: false,
-                message: 'That password does not match.'
-            })
+                message: 'That password does not our records.'
+            });
         }
         // JWT token
         const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d", });
@@ -86,10 +87,12 @@ export const loginController = async (req, res) => {
             success: true,
             message: 'Login successful!',
             user: {
+                _id: user._id,
                 name: user.name,
                 email: user.email,
                 phone: user.phone,
                 address: user.address,
+                role: user.role,
             },
             token,
         });
@@ -97,9 +100,9 @@ export const loginController = async (req, res) => {
         console.log(error)
         res.status(500).send({
             success: false,
-            message: 'Error in login.',
+            message: 'Error with your login.',
             error
-        })
+        });
     }
 };
 
