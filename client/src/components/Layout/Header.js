@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { FcOldTimeCamera } from 'react-icons/fc'
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
                         <Link to="/" className="navbar-brand"> <FcOldTimeCamera size={30} />  Light And Shadow</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link to="/" className="nav-link" >Home</Link>
+                                <NavLink to="/" className="nav-link" >Home</NavLink>
                             </li>
                             <li className="nav-item dropdown">
                                 {/* <Link to={"/category"}
@@ -58,8 +58,8 @@ const Header = () => {
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form> */}
                     </div>
-                </div >
-            </nav >
+                </div>
+            </nav>
 
         </>
     )

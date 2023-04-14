@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const PageNotFound = () => {
     return (
 
-        <Layout>
+        <Layout title={'Go back - Page Not Found'}>
             <div className='pnf'>
                 <h1 className='pnf-title'>Oops...</h1>
                 <img className='pnf-image' src='brokenCamera.jpg' alt="a broken Camera!" />

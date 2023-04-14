@@ -22,7 +22,7 @@ const Contact = () => {
                         Don't hesitate to Contact Us!
                     </p>
                     <p className="mt-3">
-                        <BiMailSend /> : www.help@elightShadow.com
+                        <BiMailSend /> : help@lightShadow.com
                     </p>
                     <p className="mt-3">
                         <BiPhoneCall /> : 810-1SHADOW
