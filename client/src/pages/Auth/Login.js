@@ -9,7 +9,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
     // form submit 
     const handleSubmit = async (e) => {
@@ -20,7 +20,7 @@ const Login = () => {
             const res = await axios.post('/api/v1/auth/login', { email, password });
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
-                navigate("/login");
+                navigate("/");
 
             } else {
                 toast.error(res.data.message);
