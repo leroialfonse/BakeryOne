@@ -115,7 +115,7 @@ export const forgotPasswordController = async (req, res) => {
     try {
         const { email, answer, newPassword } = req.body;
         if (!email) {
-            res.status(400).send({ message: "An email address is required." })
+            res.status(400).send({ message: "Your email address is required." })
         }
         if (!answer) {
             res.status(400).send({ message: "Please answer your security question." })
@@ -138,7 +138,8 @@ export const forgotPasswordController = async (req, res) => {
         }
         // create a new password and update the user upon completion of recovery
         const hashed = await hashPassword(newPassword)
-        await userModel.findByIdAndUpdate(user._id, { password: hashed });
+        await userModel.findByIdAndUpdate(user._id, { password: hashed })
+        console.log(user._id)
         res.status(200).send({
             success: true,
             message: 'Password reset!',
@@ -147,7 +148,7 @@ export const forgotPasswordController = async (req, res) => {
         console.log(error)
         res.status(500).send({
             success: false,
-            message: 'Bad exposure',
+            message: 'Bad exposure, please try again.',
             error
         })
     }
