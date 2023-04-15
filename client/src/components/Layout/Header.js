@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../context/auth'
 // import { FcOldTimeCamera } from 'react-icons/fc'
+import toast from "react-hot-toast"
 
 
 const Header = () => {
@@ -14,6 +15,7 @@ const Header = () => {
             token: ""
         })
         localStorage.removeItem('auth')
+        toast.success('See you later!')
     }
 
     return (
