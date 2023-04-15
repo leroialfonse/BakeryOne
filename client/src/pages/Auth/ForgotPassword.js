@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
 import Layout from '../../components/Layout/Layout'
+import React, { useState } from 'react';
 import axios from 'axios'
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { useAuth } from '../../context/auth';
 
 
-const Login = () => {
+
+const ForgotPassword = () => {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const [auth, setAuth] = useAuth();
-
+    const [newPassword, setNewPassword] = useState('');
+    const [answer, setAnswer] = useState('');
 
     const navigate = useNavigate();
 
-    // Will return a user to the place they were trying to visit as an unauthorized user, if they login as an authorized one.
-    const location = useLocation()
 
     // form submit 
     const handleSubmit = async (e) => {
@@ -24,18 +20,10 @@ const Login = () => {
         // console.log(name, email, password, address, phone)
         // toast.success('Registration Successful!')
         try {
-            const res = await axios.post('/api/v1/auth/login', { email, password });
+            const res = await axios.post('/api/v1/auth/forgot-password', { email, newPassword, answer });
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
-                // saves the auth object in local storage so you can stay logged in.
-                localStorage.setItem('auth', JSON.stringify(res.data));
-                navigate(location.state || "/");
-                setAuth({
-                    ...auth,
-                    user: res.data.user,
-                    token: res.data.token
-                });
-
+                navigate('/login')
             } else {
                 toast.error(res.data.message);
             }
@@ -46,10 +34,9 @@ const Login = () => {
     };
 
     return (
-
-        <Layout title={'Login - Back in Focus...'}>
+        <Layout title={'Forgot Password - Light And Shadow'}>
             <div className='register'>
-                <h1>Welcome Back</h1>
+                <h4>Reset your Password</h4>
                 <form onSubmit={handleSubmit}>
 
 
@@ -66,9 +53,19 @@ const Login = () => {
 
                     <div className="mb-3">
 
+                        <input type="text"
+                            value={answer}
+                            onChange={(e) => setAnswer(e.target.value)} className="form-control" id="exampleInputEmail"
+                            placeholder='What is your favorite food?'
+                            required
+                        />
+                    </div>
+
+                    <div className="mb-3">
+
                         <input type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword"
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)} className="form-control" id="exampleInputPassword"
                             placeholder='Password'
                             required />
                     </div>
@@ -80,7 +77,6 @@ const Login = () => {
                     <div className="mb-3">
                         <button type="submit" className="btn btn-primary">Submit</button>
 
-                        <button type="button" className="btn btn-primary" onClick={() => { navigate('/forgot-password') }}>Forgot Password</button>
                     </div>
 
                 </form>
@@ -89,4 +85,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default ForgotPassword
