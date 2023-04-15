@@ -1,4 +1,6 @@
 import { useState, useEffect, useContext, createContext } from "react";
+import axios from "axios";
+
 
 const AuthContext = createContext();
 
@@ -8,6 +10,8 @@ const AuthProvider = ({ children }) => {
         token: ""
     });
 
+    // default for axios 
+    axios.defaults.headers.common['Authorization'] = auth?.token;
     // Will save the current user in local storage after login, so that they stay logged in. 
     useEffect(() => {
         const data = localStorage.getItem('auth')
@@ -19,7 +23,9 @@ const AuthProvider = ({ children }) => {
                 token: parseData.token
             });
         }
-    }, [auth]);
+    }, []);
+
+    // eslint-disable-next-line 
     return (
         <AuthContext.Provider value={[auth, setAuth]}>
             {children}

@@ -78,7 +78,7 @@ export const loginController = async (req, res) => {
         if (!match) {
             return res.status(200).send({
                 success: false,
-                message: 'That password does not our records.'
+                message: 'That password does not match our records.'
             });
         }
         // JWT token

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout/Layout'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/auth';
 
@@ -15,6 +15,9 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    // Will return a user to the place they were trying to visit as an unauthorized user, if they login as an authorized one.
+    const location = useLocation()
+
     // form submit 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,7 +29,7 @@ const Login = () => {
                 toast.success(res.data && res.data.message);
                 // saves the auth object in local storage so you can stay logged in.
                 localStorage.setItem('auth', JSON.stringify(res.data));
-                navigate("/");
+                navigate(location.state || "/");
                 setAuth({
                     ...auth,
                     user: res.data.user,
