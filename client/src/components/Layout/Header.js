@@ -1,8 +1,21 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { FcOldTimeCamera } from 'react-icons/fc'
+import { useAuth } from '../../context/auth'
+// import { FcOldTimeCamera } from 'react-icons/fc'
+
 
 const Header = () => {
+    const [auth, setAuth] = useAuth();
+
+    // When a user clicks on logout in the nav, local storage clears "auth", effectively logging the user out.
+    const handleLogOut = () => {
+        setAuth({
+            ...auth, user: null,
+            token: ""
+        })
+        localStorage.removeItem('auth')
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -11,7 +24,9 @@ const Header = () => {
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <Link to="/" className="navbar-brand"> <FcOldTimeCamera size={30} />  Light And Shadow</Link>
+                        <Link to="/" className="navbar-brand">
+                            {/* <FcOldTimeCamera size={30} /> */}
+                            Light And Shadow</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <NavLink to="/" className="nav-link" >Home</NavLink>
@@ -36,12 +51,21 @@ const Header = () => {
                                     ))}
                         </ul> */}
                             </li>
-                            <li className="nav-item">
-                                <NavLink to="/register" className="nav-link">Register </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to="/login" className="nav-link">Login </NavLink>
-                            </li>
+                            {/* If there is no logged in user, show an option to login or register on nav, or a logout if they're in. */}
+                            {
+                                !auth.user ? (<>
+                                    <li className="nav-item">
+                                        <NavLink to="/register" className="nav-link">Register </NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink to="/login" className="nav-link">Login </NavLink>
+                                    </li>
+                                </>) : (<>
+                                    <li className="nav-item">
+                                        <NavLink onClick={handleLogOut} to="/login" className="nav-link">Logout </NavLink>
+                                    </li>
+                                </>)
+                            }
                             <li className="nav-item">
                                 <NavLink to="/cart" className="nav-link">Cart(0) </NavLink>
                             </li>
