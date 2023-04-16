@@ -13,7 +13,7 @@ const Spinner = ({ path = "/login" }) => {
             setCount((prevValue) => --prevValue);
         }, 1000);
         // Counter reaches 0, redirect.
-        count === 0 && navigate(`${path}`, {
+        count === 0 && navigate(`/${path}`, {
             state: location.pathname,
         })
         // reset counter after page left.

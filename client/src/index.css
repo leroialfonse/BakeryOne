@@ -137,8 +137,3 @@ border-radius: 80px;
   border-radius: 6px;
   padding: 3rem;
 }
-
-/* Considering more flash to the buttons... */
-.form-container button:hover{
-  /* color:yellow; */
-}

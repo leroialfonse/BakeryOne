@@ -42,7 +42,7 @@ const Login = () => {
         } catch (error) {
             console.log(error)
             // toast.error('Something didn\'t develop...')
-            toast.error('That password or email doesn\'t match.')
+            toast.error('That password or email doesn\'t match our records.')
         }
     };
 
