@@ -137,3 +137,9 @@ border-radius: 80px;
   border-radius: 6px;
   padding: 3rem;
 }
+
+.buttons{
+  display: grid;
+  grid-template: 1fr 1fr 10px;
+  gap: 5px;
+}

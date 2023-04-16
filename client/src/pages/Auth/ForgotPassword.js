@@ -68,7 +68,7 @@ const ForgotPassword = () => {
                             <input type="password"
                                 value={newPassword}
                                 onChange={(e) => setNewPassword(e.target.value)} className="form-control" id="exampleInputPassword"
-                                placeholder='Password'
+                                placeholder='New Password'
                                 required />
                         </div>
 
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
 
 
 
-                        <div className="mb-3">
+                        <div className="mb-3 buttons">
                             <button type="submit" className="btn btn-primary">Submit</button>
 
                         </div>
