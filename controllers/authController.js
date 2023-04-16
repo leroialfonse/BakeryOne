@@ -133,7 +133,7 @@ export const forgotPasswordController = async (req, res) => {
         if (!user) {
             return res.status(404).send({
                 success: false,
-                message: 'Wrong email or password. Please try again.'
+                message: 'Wrong email or security answer. Please try again.'
             })
         }
         // create a new password and update the user upon completion of recovery

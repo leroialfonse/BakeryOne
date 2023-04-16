@@ -13,11 +13,11 @@ const Register = () => {
     const [answer, setAnswer] = useState('');
     const navigate = useNavigate();
 
-    // form submit 
+    // The function to submit the form.
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/v1/auth/register', { name, email, password, phone, address, answer });
+            const res = await axios.post('/api/v1/auth/register', { name, email, password, phone, address, answer, });
             if (res && res.data.success) {
                 toast.success(res.data.message);
                 navigate("/login");
@@ -96,13 +96,6 @@ const Register = () => {
                             required
                         />
                     </div>
-
-
-                    {/*
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputRole" className="form-label">Role</label>
-                        <input type="password" className="form-control" id="exampleInputPassword1" />
-                    </div> */}
 
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>

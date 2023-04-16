@@ -128,3 +128,17 @@ border-radius: 80px;
   height: 70vh;
   flex-direction: column;
 }
+
+/* Login/ forgot password form Style */
+.form-container{
+  display: flex;
+  flex-direction: column  ;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 3rem;
+}
+
+/* Considering more flash to the buttons... */
+.form-container button:hover{
+  /* color:yellow; */
+}

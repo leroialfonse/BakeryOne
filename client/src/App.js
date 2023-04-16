@@ -9,19 +9,26 @@ import Login from './pages/Auth/Login';
 import Dashboard from './pages/user/Dashboard';
 import PrivateRoute from './components/Layout/Routes/Private';
 import ForgotPassword from './pages/Auth/ForgotPassword';
+import AdminRoute from './components/Layout/Routes/AdminRoute';
+import AdminDashboard from './pages/Admin/AdminDashboard';
 
 
 function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Homepage />} />
 
-        {/* Making the "dashboard" a protected route. */}
+        {/* Making the "dashboard"  protected routes for admin or user. */}
         <Route path="/dashboard" element={<PrivateRoute />} >
-          <Route path="" element={<Dashboard />} />
+          <Route path="user" element={<Dashboard />} />
+        </Route>
+        {/* Admin protected route. */}
+        <Route path="/dashboard" element={<AdminRoute />}>
+          <Route path='admin' element={<AdminDashboard />} />
         </Route>
 
-        <Route path="/" element={<Homepage />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

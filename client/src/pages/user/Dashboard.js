@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout'
 
 const Dashboard = () => {
     return (
-        <Layout>
+        <Layout title={'SnapShot! - Light and Shadow'}>
 
             <h1>Dashboard</h1>
         </Layout>

@@ -50,42 +50,46 @@ const Login = () => {
 
         <Layout title={'Login - Back in Focus...'}>
             <div className='register'>
-                <h1>Welcome Back</h1>
-                <form onSubmit={handleSubmit}>
+                <div className='form-container'>
+
+                    <h1>Welcome Back</h1>
+                    <form onSubmit={handleSubmit}>
 
 
 
-                    <div className="mb-3">
+                        <div className="mb-3">
 
-                        <input type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)} className="form-control" id="exampleInputEmail"
-                            placeholder='Email'
-                            required
-                        />
-                    </div>
+                            <input type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} className="form-control" id="exampleInputEmail"
+                                placeholder='Email'
+                                required
+                            />
+                        </div>
 
-                    <div className="mb-3">
+                        <div className="mb-3">
 
-                        <input type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword"
-                            placeholder='Password'
-                            required />
-                    </div>
-
-
+                            <input type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword"
+                                placeholder='Password'
+                                required />
+                        </div>
 
 
 
-                    <div className="mb-3">
-                        <button type="submit" className="btn btn-primary">Submit</button>
 
-                        <button type="button" className="btn btn-primary" onClick={() => { navigate('/forgot-password') }}>Forgot Password</button>
-                    </div>
 
-                </form>
+                        <div className="mb-3">
+                            <button type="submit" className="btn btn-primary">Submit</button>
+
+                            <button type="button" className="btn btn-primary" onClick={() => { navigate('/forgot-password') }}>Forgot Password</button>
+                        </div>
+
+                    </form>
+                </div>
             </div>
+
         </Layout>
     )
 }
