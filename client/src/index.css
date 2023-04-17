@@ -141,5 +141,6 @@ border-radius: 80px;
 .buttons{
   display: grid;
   grid-template: 1fr 1fr 10px;
-  gap: 5px;
+  gap: 10px;
+  border-radius: 8px;
 }

@@ -14,6 +14,8 @@ import AdminDashboard from './pages/Admin/AdminDashboard';
 import CreateCategory from './pages/Admin/CreateCategory';
 import CreateProduct from './pages/Admin/CreateProduct';
 import Users from './pages/Admin/Users';
+import Orders from './pages/user/Orders';
+import Profile from './pages/user/Profile';
 
 
 function App() {
@@ -22,11 +24,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
 
-        {/* Making the "dashboard"  protected routes for admin or user. */}
+        {/* Making the "dashboard"  protected routes for the regular user. */}
         <Route path="/dashboard" element={<PrivateRoute />} >
           <Route path="user" element={<Dashboard />} />
+          <Route path="user/orders" element={<Orders />} />
+          <Route path="user/profile" element={<Profile />} />
         </Route>
-        {/* Admin protected route. */}
+        {/* Admin protected routes. */}
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route path='admin' element={<AdminDashboard />} />
           <Route path='admin/create-category' element={<CreateCategory />} />
@@ -36,6 +40,7 @@ function App() {
         </Route>
 
 
+        {/* General Routes */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
