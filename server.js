@@ -29,7 +29,7 @@ app.use(cors());
 //routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category', categoryRoutes);
-app.get
+app.use('/api/v1/product', productRoutes)
 
 // Getting into the API at the main route.
 app.get('/', (req, res) => {
