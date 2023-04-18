@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js'
 import cors from 'cors'
+import categoryRoutes from './routes/categoryRoutes.js'
 
 
 // ENV config
@@ -25,6 +26,7 @@ app.use(cors());
 
 //routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/category', categoryRoutes);
 
 
 // Getting into the API at the main route.
