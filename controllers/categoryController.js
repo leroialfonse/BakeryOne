@@ -35,7 +35,7 @@ export const categoryController = async (req, res) => {
     }
 };
 
-
+// update a category
 export const updateCategoryController = async (req, res) => {
     try {
         const { name } = req.body
@@ -101,6 +101,8 @@ export const oneCategoryController = async (req, res) => {
     }
 };
 
+
+// delete a category.
 export const deleteCategoryController = async (req, res) => {
     try {
 
