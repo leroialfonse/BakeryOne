@@ -10,11 +10,18 @@ import toast from 'react-hot-toast'
 import axios from 'axios'
 // bring in select dropdown...
 import { Select } from 'antd'
+//import nav from React router dom
+import { useNavigate } from 'react-router-dom'
 // and options from antd.
 const { Option } = Select
 
 
+
+
+
+
 const CreateProduct = () => {
+    const navigate = useNavigate();
     // set state to affect product listing. 
     const [categories, setCategories] = useState([]);
     const [name, setName] = useState('');
@@ -42,6 +49,35 @@ const CreateProduct = () => {
         getAllCategories();
     }, []);
 
+    // Create a new product
+
+    const handleCreate = async (e) => {
+        e.preventDefault()
+
+        try {
+            const productData = new FormData()
+            productData.append('name', name)
+            productData.append('description', description)
+            productData.append('price', price)
+            productData.append('quantity', quantity)
+            productData.append('photo', photo)
+            productData.append('category', category)
+
+            const { data } = axios.post('/api/v1/product/create-product', productData)
+
+            if (data?.success) {
+                toast.success('New Product Created!')
+                navigate('./dashboard/admin/proudcts')
+            } else {
+                toast.error(data?.message)
+            }
+
+        } catch (error) {
+            console.log(error)
+            toast.error('Something went wrong while creating a product...')
+        }
+    };
+
     return (
         <Layout title={'Create a Product'}>
             <div className='container-fluid m-3 p-3'>
@@ -56,7 +92,7 @@ const CreateProduct = () => {
                         size='large'
                         showSearch
                         className='form-select mb-3' onChange={(value) => { setCategory(value) }}>{categories?.map(c =>
-                            <Option key={c._id} value={c.name}></Option>
+                            <Option key={c._id} value={c._id}>{c.name}</Option>
                         )}
                     </Select>
 
@@ -69,6 +105,7 @@ const CreateProduct = () => {
                             />
                         </label>
                     </div>
+
                     <div className='mb-3'>
                         {photo && (<div className='text-center'>
                             <img
@@ -78,6 +115,7 @@ const CreateProduct = () => {
                         </div>
                         )}
                     </div>
+
                     <div className='mb-3'>
                         <input type='text'
                             value={name}
@@ -87,50 +125,47 @@ const CreateProduct = () => {
 
                         />
                     </div>
+
                     <div className='mb-3'>
                         <input type='text'
-                            value={name}
-                            placeholder='Image Title'
+                            value={description}
+                            placeholder='Product Description'
                             className='form-control'
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => setDescription(e.target.value)}
+
+                        />
+                    </div>
+
+                    <div className='mb-3'>
+                        <input type='text'
+                            value={price}
+                            placeholder='Listed Price'
+                            className='form-control'
+                            onChange={(e) => setPrice(e.target.value)}
 
                         />
                     </div>
                     <div className='mb-3'>
-                        <input type='text'
-                            value={name}
-                            placeholder='Image Title'
+                        <input type='number'
+                            value={quantity}
+                            placeholder='In Stock Quantity'
                             className='form-control'
-                            onChange={(e) => setName(e.target.value)}
-
+                            onChange={(e) => setQuantity(e.target.value)}
                         />
                     </div>
-                    <div className='mb-3'>
-                        <input type='text'
-                            value={name}
-                            placeholder='Image Title'
-                            className='form-control'
-                            onChange={(e) => setName(e.target.value)}
 
-                        />
+                    <div className='mb-3'>
+                        <Select bordered={false} placeholder='Select Shipping Option'
+                            size='large'
+                            showSearch
+                            className='form-select mb-3' onChange={(value) => { setShipping(value) }}>
+                            <Option value='0'>No</Option>
+                            <Option value='1'>Yes</Option>
+                        </Select>
+
                     </div>
-                    <div className='mb-3'>
-                        <input type='text'
-                            value={name}
-                            placeholder='Image Title'
-                            className='form-control'
-                            onChange={(e) => setName(e.target.value)}
-
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <input type='text'
-                            value={name}
-                            placeholder='Image Title'
-                            className='form-control'
-                            onChange={(e) => setName(e.target.value)}
-
-                        />
+                    <div className='mb-3' >
+                        <button className='btn btn-primary' onClick={handleCreate}> Create a new Product</button>
                     </div>
                 </div>
             </div>
