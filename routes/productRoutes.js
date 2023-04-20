@@ -12,6 +12,8 @@ const router = express.Router();
 // product routes 
 
 router.post('/create-product', requireSignIn, isAdmin, formidable(), createProductController)
+// router.post('/create-category', requireSignIn, isAdmin, categoryController);
+
 
 // Update a product
 router.put('/update-product/:pid', requireSignIn, isAdmin, formidable(), updateProductController)
@@ -30,7 +32,7 @@ router.get('/product-photo/:pid', productPhotoController)
 
 
 //delete product
-router.get('/delete-product/:pid', deleteProductController)
+router.delete('/delete-product/:pid', deleteProductController)
 
 
 
