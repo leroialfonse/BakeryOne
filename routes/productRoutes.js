@@ -20,7 +20,7 @@ router.put('/update-product/:pid', requireSignIn, isAdmin, formidable(), updateP
 
 
 // get all the products
-router.get('/get-products', getProductsController,)
+router.get('/get-product', getProductsController)
 
 // get a single product 
 router.get('/get-one-product/:slug', getOneProductController)
