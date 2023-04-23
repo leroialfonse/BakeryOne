@@ -1,5 +1,3 @@
-
-
 // import React, use state, and useEffect. 
 import React, { useState, useEffect } from 'react'
 // Bring in the layout component for consisstent appearance..
@@ -43,7 +41,7 @@ const UpdateProduct = () => {
     // Get a single prodcut
     const getSingleProduct = async () => {
         try {
-            const { data } = await axios.get(`/api/v1/product/get-product/${params.slug}`);
+            const { data } = await axios.get(`/api/v1/product/get-one-product/${params.slug}`);
             setName(data.product.name);
             setId(data.product._id);
             setDescription(data.product.description);
@@ -98,13 +96,14 @@ const UpdateProduct = () => {
             photo && productData.append('photo', photo)
             productData.append('category', category)
 
-            const { data } = axios.put(`/api/v1/product/update-product/${id}`, productData)
+            const { data } = await axios.put(`/api/v1/product/update-product/${id}`, productData)
 
             if (data?.success) {
-                toast.error(data?.message)
-            } else {
                 toast.success('Product Updated!')
                 navigate('/dashboard/admin/products')
+            } else {
+                toast.error(data?.message)
+
             }
 
         } catch (error) {
@@ -112,6 +111,10 @@ const UpdateProduct = () => {
             toast.error('Something went wrong while creating a product...')
         }
     };
+
+
+
+
 
     return (
         <Layout title={'Update a Product'}>
@@ -161,7 +164,7 @@ const UpdateProduct = () => {
                             <div className='text-center'>
                                 <img
                                     src={`/api/v1/product/product-photo/${id}`}
-                                    // src={`/api/v1/product/get-product/${photo}`}
+
                                     alt="product"
                                     height={'200px'} className='img img-responsive' />
                             </div>
@@ -221,10 +224,13 @@ const UpdateProduct = () => {
                     <div className='mb-3' >
                         <button className='btn btn-primary' onClick={handleUpdate}>Update</button>
                     </div>
+                    <div className='mb-3' >
+                        <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
+                    </div>
                 </div>
             </div>
         </Layout>
     )
 }
 
-export default UpdateProduct
+export default UpdateProduct;
