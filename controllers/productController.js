@@ -5,7 +5,7 @@ import slugify from "slugify";
 
 export const createProductController = async (req, res) => {
     try {
-        const { name, slug, description, price, category, quantity, shipping } = req.fields
+        const { name, description, price, category, quantity, shipping } = req.fields
         const { photo } = req.files
 
         //validate the form submit:
@@ -37,7 +37,7 @@ export const createProductController = async (req, res) => {
             success: true,
             message: 'Product Created!',
             products
-        })
+        });
 
     } catch (error) {
         console.log(error)
@@ -45,7 +45,7 @@ export const createProductController = async (req, res) => {
             success: false,
             message: 'Error with creating product.',
             error,
-        })
+        });
     }
 };
 
