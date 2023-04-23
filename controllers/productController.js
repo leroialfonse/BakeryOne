@@ -32,7 +32,7 @@ export const createProductController = async (req, res) => {
             products.photo.contentType = photo.type;
         }
 
-        await products.save()
+        await products.save();
         res.status(201).send({
             success: true,
             message: 'Product Created!',
@@ -108,19 +108,18 @@ export const productPhotoController = async (req, res) => {
 
 export const deleteProductController = async (req, res) => {
     try {
-        await productModel.findByIdAndDelete(res.params.pid).select('-photo')
+        await productModel.findByIdAndDelete(req.params.pid).select('-photo')
         res.status(200).send({
             success: true,
             message: 'Product deleted!',
-
         });
     } catch (error) {
         console.log(error)
         res.status(500).send({
             success: false,
             message: 'Could not delete this product.',
-            error
-        })
+            error,
+        });
     }
 };
 

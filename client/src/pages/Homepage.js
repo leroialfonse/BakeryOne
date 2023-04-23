@@ -8,8 +8,16 @@ const Homepage = () => {
     const [auth, setAuth] = useAuth()
     return (
         <Layout title={'Frame your Story'}>
-            <h1>Homepage</h1>
-            <pre>{JSON.stringify(auth, null, 4)}</pre>
+            <div className='row'>
+                <div className='col-md-3'>
+                    <h1 className='text-center'>
+
+                    </h1>
+                    <div className='col-md-9'>
+                        <h1 className='text-center'>Everything!</h1>
+                    </div>
+                </div>
+            </div>
         </Layout>
     );
 };

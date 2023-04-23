@@ -112,7 +112,20 @@ const UpdateProduct = () => {
         }
     };
 
-
+    const handleDelete = async () => {
+        try {
+            // propmt to check if the user wants to delete 
+            let answer = window.prompt('Are you sure you want to delete this product?');
+            if (!answer) return;
+            const { data } = await axios.delete(`/api/v1/product/delete-product/${id}`);
+            toast.success('Product deleted!')
+            navigate('/dashboard/admin/products');
+        } catch (error) {
+            console.log(error.response.data);
+            console.log(error.response.headers);
+            toast.error('Could not delete the product.');
+        }
+    };
 
 
 
