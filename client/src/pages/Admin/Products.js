@@ -48,7 +48,7 @@ const Products = () => {
                                     />
                                     <div className="card-body">
                                         <h5 className="card-title">{p.name}</h5>
-                                        <p className="card-text">{p.description}</p>
+                                        {/* <p className="card-text">{p.description}</p> */}
 
                                     </div>
                                 </div>
