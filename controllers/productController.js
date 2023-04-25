@@ -192,4 +192,45 @@ export const productFilterController = async (req, res) => {
             error,
         })
     }
+};
+
+// Count products
+
+export const productCountController = async (req, res) => {
+    try {
+        const total = await productModel.find({}).estimatedDocumentCount()
+        res.status(200).send({
+            success: true,
+            total,
+        })
+
+    } catch (error) {
+        console.log(error),
+            res.status(400).send({
+                succsess: false,
+                message: 'Error counting the proudcts for display.',
+                error
+            })
+    };
+};
+
+// List a certain number of products on the page.
+export const productListContoller = async (req, res) => {
+    try {
+        const perPage = 8
+        const page = req.params.page ? req.params.page : 1
+        const products = await productModel.find({}).select('-photo').skip((page - 1) * perPage).limit(perPage).sort({ createdAt: - 1 });
+
+        res.status(200).send({
+            success: true,
+            products
+        })
+    } catch (error) {
+        console.log(error),
+            res.status(400).send({
+                success: false,
+                message: 'Error when counting products to display',
+                error
+            })
+    }
 }

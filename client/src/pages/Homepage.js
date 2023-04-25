@@ -15,6 +15,10 @@ const Homepage = () => {
     // State for the checkboxes for category filter
     const [checked, setChecked] = useState([]);
     const [radio, setRadio] = useState([]);
+    const [total, setTtoal] = useState(0);
+    const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(false)
+
 
 
     // Bring in all the categories so that we can sort items that way.
@@ -34,19 +38,40 @@ const Homepage = () => {
 
     useEffect(() => {
         getAllCategories();
+        getTotal();
     }, []);
 
 
     // Get all the products
     const getAllProuducts = async () => {
         try {
-            const { data } = await axios.get('/api/v1/product/get-product')
+            setLoading(true)
+            const { data } = await axios.get(`/api/v1/product/product-list/${page}`)
             // tells state where to get the {data} from.
             setProducts(data.products);
+
+        } catch (error) {
+            setLoading(false)
+
+            console.log(error)
+        }
+    };
+
+
+    //  Get a total count of all the items to display on the page.
+    const getTotal = async () => {
+        try {
+            const { data } = await axios.get('/api/v1/product/product-count')
+            setTtoal(data?.total)
         } catch (error) {
             console.log(error)
         }
     };
+
+
+
+
+
 
     // Filter by category
     const handleFilter = (value, id) => {
@@ -70,8 +95,6 @@ const Homepage = () => {
     }, [checked, radio]);
 
 
-
-
     // Show filtered products.
     const filterProducts = async () => {
         try {
@@ -84,12 +107,13 @@ const Homepage = () => {
     };
 
 
+
     return (
         <Layout title={'Frame your Story'}>
             <div className='row mt-3'>
 
-                <div className='col-md-2'>
-                    <h4 className='text-center'>Filter by Category</h4>
+                <div className='col-md-2 p-5 sidbar' style={{ backgroundColor: 'rgba(111,88,226,.2)', borderRadius: '5px' }} >
+                    <h4 className='text-center' >Filter by Category</h4>
                     <div className='d-flex flex-column'>
                         {categories?.map((c) => (
                             <Checkbox key={c._id} onChange={(e) => handleFilter(e.target.checked, c._id)}>{c.name}</Checkbox>
@@ -107,16 +131,22 @@ const Homepage = () => {
                             ))}
                         </Radio.Group>
                     </div>
+                    {/* Basic window reload to clear the filters */}
+                    <div className='d-flex flex-column mt-3' style={{ width: '10rem' }}>
+
+                        <button className='btn btn-danger' onClick={() => window.location.reload()}>Reset Filters</button>
+
+                    </div>
                 </div>
                 <div className='col-md-9'>
 
 
-                    {/* Turns the data in 'checked' into Json strigns, so that i can check the function of the check function. */}
+                    {/* Turns the data in 'checked' into Json strigns, so that i can check the function of the check function. I'm gonna keep this here for now- useful for showing me that it's responding to calls for that data.*/}
 
-                    {JSON.stringify(radio, null, 4)};
+                    {/* {JSON.stringify(radio, null, 4)}; */}
 
                     <h1 className='text-center'>Everything!</h1>
-                    <div className='d-flex flex-wrap'>
+                    <div className='d-flex flex-wrap m-3'>
                         {products?.map((p) => (
 
                             <div className="card m-2" style={{ width: '18rem' }}  >
@@ -137,7 +167,20 @@ const Homepage = () => {
 
                         ))}
                     </div>
+                    <div className='m-2 p-3'>
+                        {products && products.length < total && (
+                            <button className='btn btn-warning'
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setPage(page + 1);
+                                }}>
+                                {loading ? 'Loading....' : 'Load More...'}
+                            </button>
+                        )}
+
+                    </div>
                 </div>
+
             </div>
         </Layout>
     );
