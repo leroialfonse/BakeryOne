@@ -63,11 +63,10 @@ const Homepage = () => {
     useEffect(() => {
         // set a condition to show products based on selected filters.
         if (!checked.length || !radio.length) getAllProuducts();
-
     }, [checked.length, radio.length]);
 
     useEffect(() => {
-        if (checked.length || radio.length) filterProducts()
+        if (checked.length || radio.length) filterProducts();
     }, [checked, radio]);
 
 
@@ -82,7 +81,7 @@ const Homepage = () => {
         } catch (error) {
             console.log(error)
         }
-    }
+    };
 
 
     return (
@@ -93,13 +92,13 @@ const Homepage = () => {
                     <h4 className='text-center'>Filter by Category</h4>
                     <div className='d-flex flex-column'>
                         {categories?.map((c) => (
-                            <Checkbox key={c._id} onChange={(e) => handleFilter(e.target.checked, c._id)}>{c.name}</Checkbox>)
-                        )}
+                            <Checkbox key={c._id} onChange={(e) => handleFilter(e.target.checked, c._id)}>{c.name}</Checkbox>
+                        ))}
                     </div>
                     {/* FIlters items by price. */}
                     <h4 className='text-center mt-4'>Filter by Price</h4>
                     <div className='d-flex flex-column'>
-                        <Radio.Group>
+                        <Radio.Group onChange={e => setRadio(e.target.value)}>
                             {Prices?.map(p => (
                                 <div key={p._id}>
 

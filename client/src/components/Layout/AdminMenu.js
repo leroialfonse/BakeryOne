@@ -2,12 +2,15 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 // Imort the user model so I can change "Administrator to 'Adminstrator (Name) '"
 // import userModel from "../../."
+import Layout from '../../components/Layout/Layout'
+
+
 
 
 
 const AdminMenu = () => {
     return (
-        <>
+        <Layout>
             <div className='text-center'>
                 <div className="list-group">
                     <h4>Administrator Panel</h4>
@@ -21,7 +24,7 @@ const AdminMenu = () => {
                     <NavLink to="/dashboard/admin/users" className="list-group-item list-group-item-action">Users</NavLink>
                 </div>
             </div>
-        </>
+        </Layout>
     )
 }
 

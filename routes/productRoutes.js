@@ -25,7 +25,7 @@ router.get('/get-product', getProductsController)
 // get a single product 
 router.get('/get-one-product/:slug', getOneProductController)
 
-// Filter a product
+// Filter products by price and or category
 router.post('/product-filter', productFilterController)
 
 // Get product photo
