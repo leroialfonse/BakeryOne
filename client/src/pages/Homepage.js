@@ -45,14 +45,17 @@ const Homepage = () => {
     // Get all the products
     const getAllProuducts = async () => {
         try {
+            // Load more button
             setLoading(true)
             const { data } = await axios.get(`/api/v1/product/product-list/${page}`)
+            // Load more button 
+            setLoading(false)
+
             // tells state where to get the {data} from.
             setProducts(data.products);
 
         } catch (error) {
             setLoading(false)
-
             console.log(error)
         }
     };
@@ -70,6 +73,24 @@ const Homepage = () => {
 
 
 
+    useEffect(() => {
+        if (page === 1) return;
+        loadMore()
+    }, [page])
+    // Load more functions
+    const loadMore = async () => {
+        try {
+            setLoading(true)
+            const { data } = axios.get(`/api/v1/product/product-list/${page}`)
+            setLoading(false)
+            setProducts([...products, ...data?.products])
+
+        } catch (error) {
+
+            console.log(error)
+            setLoading(false)
+        }
+    }
 
 
 

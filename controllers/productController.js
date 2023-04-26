@@ -217,7 +217,7 @@ export const productCountController = async (req, res) => {
 // List a certain number of products on the page.
 export const productListContoller = async (req, res) => {
     try {
-        const perPage = 8
+        const perPage = 4;
         const page = req.params.page ? req.params.page : 1
         const products = await productModel.find({}).select('-photo').skip((page - 1) * perPage).limit(perPage).sort({ createdAt: - 1 });
 
