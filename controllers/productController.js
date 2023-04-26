@@ -262,7 +262,6 @@ export const searchProductController = async (req, res) => {
 };
 
 // Similar products controller
-
 export const similarProductController = async (req, res) => {
     try {
         const { pid, cid } = req.params
@@ -270,7 +269,7 @@ export const similarProductController = async (req, res) => {
             category: cid,
             _id: { $ne: pid }
 
-        }).select("-photo").limit(3).populate('category')
+        }).select("-photo").limit(3).populate("category")
         res.status(200).send({
             success: true,
             products

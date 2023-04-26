@@ -4,6 +4,8 @@ import { useAuth } from '../../context/auth'
 // import { FcOldTimeCamera } from 'react-icons/fc'
 import toast from "react-hot-toast"
 import SearchForm from '../Form/SearchForm'
+import useCategory from '../../hooks/useCategory'
+
 
 
 const Header = () => {

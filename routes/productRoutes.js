@@ -47,6 +47,7 @@ router.delete('/delete-product/:pid', requireSignIn, isAdmin, deleteProductContr
 router.get('/search/:keyword', searchProductController)
 
 // Similar Products route
+// Need to allow for query params for product and category ids.
 router.get('/similar-products/:pid/:cid', similarProductController
 )
 

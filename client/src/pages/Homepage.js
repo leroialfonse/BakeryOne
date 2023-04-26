@@ -183,7 +183,7 @@ const Homepage = () => {
                                     <h5 className="card-title">{p.name}</h5>
                                     <p className="card-text">{p.description.substring(0, 20)}...</p>
                                     <p className="card-text">${p.price}</p>
-                                    {/* This will take you to a page that features the product with all it's information available for viewing. */}
+                                    {/* This will take you to a page that features the product with all it's information available */}
                                     <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
                                     <button class="btn btn-outline-secondary ms-1">Add to Cart</button>
 
