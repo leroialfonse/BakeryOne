@@ -1,6 +1,6 @@
 import express from 'express';
 import { isAdmin, requireSignIn } from '../middleware/authMiddleware.js';
-import { createProductController, deleteProductController, getOneProductController, getProductsController, productCountController, productFilterController, productListContoller, productPhotoController, searchProductController, updateProductController } from '../controllers/productController.js';
+import { createProductController, deleteProductController, getOneProductController, getProductsController, productCountController, productFilterController, productListContoller, productPhotoController, searchProductController, similarProductController, updateProductController } from '../controllers/productController.js';
 // A middleware that mixes express and 'formidable', which is a node module that parses form data, like multipart/form-data uploads. 
 import formidable from 'express-formidable'
 
@@ -46,7 +46,9 @@ router.delete('/delete-product/:pid', requireSignIn, isAdmin, deleteProductContr
 // search for a product 
 router.get('/search/:keyword', searchProductController)
 
-
+// Similar Products route
+router.get('/similar-products/:pid/:cid', similarProductController
+)
 
 export default router;
 

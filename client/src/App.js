@@ -19,6 +19,7 @@ import Profile from './pages/user/Profile';
 import Products from './pages/Admin/Products';
 import UpdateProduct from './pages/Admin/UpdateProduct';
 import Search from './pages/Search';
+import ProductDetails from './pages/ProductDetails';
 
 
 
@@ -30,6 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/product/:slug" element={<ProductDetails />} />
+
 
 
         {/* Making the "dashboard"  protected routes for the regular user. */}
