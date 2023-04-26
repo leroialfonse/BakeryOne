@@ -233,4 +233,30 @@ export const productListContoller = async (req, res) => {
                 error
             })
     }
-}
+};
+
+// Search for a product
+
+export const searchProductController = async (req, res) => {
+    try {
+        const { keyword } = req.params
+        // use a regex to search for a thing based on keywords for names or descriptions
+        const results = await productModel.find({
+            $or: [
+                { name: { $regex: keyword, $options: 'i' } },
+                { description: { $regex: keyword, $options: 'i' } },
+
+
+            ]
+        }).select('-photo');
+        res.json(results);
+
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({
+            success: false,
+            message: 'Error in search controller; could not search for a product.',
+            error
+        })
+    }
+};

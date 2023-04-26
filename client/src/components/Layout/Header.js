@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../context/auth'
 // import { FcOldTimeCamera } from 'react-icons/fc'
 import toast from "react-hot-toast"
+import SearchForm from '../Form/SearchForm'
 
 
 const Header = () => {
@@ -30,6 +31,8 @@ const Header = () => {
                             {/* <FcOldTimeCamera size={30} /> */}
                             Light And Shadow</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                            <SearchForm />
                             <li className="nav-item">
                                 <NavLink to="/" className="nav-link" >Home</NavLink>
                             </li>

@@ -166,7 +166,7 @@ const Homepage = () => {
 
                     {/* {JSON.stringify(radio, null, 4)}; */}
 
-                    <h1 className='text-center'>Everything!</h1>
+                    <h1 className='text-center'>Todays Best Deals!</h1>
                     <div className='d-flex flex-wrap m-3'>
                         {products?.map((p) => (
 
