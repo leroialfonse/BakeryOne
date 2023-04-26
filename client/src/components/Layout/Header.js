@@ -11,6 +11,7 @@ import useCategory from '../../hooks/useCategory'
 const Header = () => {
     const [auth, setAuth] = useAuth();
 
+    const categories = useCategory();
     // When a user clicks on logout in the nav, local storage clears "auth", effectively logging the user out.
     const handleLogOut = () => {
         setAuth({
@@ -39,24 +40,24 @@ const Header = () => {
                                 <NavLink to="/" className="nav-link" >Home</NavLink>
                             </li>
                             <li className="nav-item dropdown">
-                                {/* <Link to={"/category"}
+                                <Link to={"/category"}
                                     data-bs-toggle="dropdown"
-                                >Category</Link>
+                                >Categories</Link>
                                 <ul className='dropdown-menu'>
                                     <li>
                                         <Link className='dropdown-item' to={'/category'}>All Categories</Link>
 
                                     </li>
                                     {categories?.map((c) => (<li>
-                                    <Link
-                                        className="dropdown-item"
-                                        to={`/category/${c.slug}`}
-                                    >
-                                        {c.name}
-                                    </Link>
-                            </li>
+                                        <Link
+                                            className="dropdown-item"
+                                            to={`/category/${c.slug}`}
+                                        >
+                                            {c.name}
+                                        </Link>
+                                    </li>
                                     ))}
-                        </ul> */}
+                                </ul>
                             </li>
                             {/* If there is no logged in user, show an option to login or register on nav, or a logout if they're in. */}
                             {
