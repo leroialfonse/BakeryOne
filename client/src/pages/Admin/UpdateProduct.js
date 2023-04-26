@@ -108,7 +108,7 @@ const UpdateProduct = () => {
 
         } catch (error) {
             console.log(error)
-            toast.error('Something went wrong while creating a product...')
+            toast.error('Something went wrong while updating the product...')
         }
     };
 
@@ -156,7 +156,7 @@ const UpdateProduct = () => {
 
                     <div className='mb-3'>
                         <label className='btn btn-outline-secondary'>
-                            {photo ? photo.name : "Upload product Image"}
+                            {photo ? photo.name : "Upload a new Product Image"}
                             <input
                                 type='file'
                                 name='product image' accept='image/*' onChange={(e) => setPhoto(e.target.files[0])}

@@ -208,7 +208,7 @@ export const productCountController = async (req, res) => {
         console.log(error),
             res.status(400).send({
                 succsess: false,
-                message: 'Error counting the proudcts for display.',
+                message: 'Error counting the products for display.',
                 error
             })
     };
@@ -229,7 +229,7 @@ export const productListContoller = async (req, res) => {
         console.log(error),
             res.status(400).send({
                 success: false,
-                message: 'Error when counting products to display',
+                message: 'Error with the perPage contoller.',
                 error
             })
     }

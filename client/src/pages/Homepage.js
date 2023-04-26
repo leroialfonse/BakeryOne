@@ -15,7 +15,7 @@ const Homepage = () => {
     // State for the checkboxes for category filter
     const [checked, setChecked] = useState([]);
     const [radio, setRadio] = useState([]);
-    const [total, setTtoal] = useState(0);
+    const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false)
 
@@ -43,7 +43,7 @@ const Homepage = () => {
 
 
     // Get all the products
-    const getAllProuducts = async () => {
+    const getAllProducts = async () => {
         try {
             // Load more button
             setLoading(true)
@@ -65,7 +65,7 @@ const Homepage = () => {
     const getTotal = async () => {
         try {
             const { data } = await axios.get('/api/v1/product/product-count')
-            setTtoal(data?.total)
+            setTotal(data?.total)
         } catch (error) {
             console.log(error)
         }
@@ -75,22 +75,22 @@ const Homepage = () => {
 
     useEffect(() => {
         if (page === 1) return;
-        loadMore()
-    }, [page])
+        loadMore();
+    }, [page]);
     // Load more functions
     const loadMore = async () => {
         try {
-            setLoading(true)
-            const { data } = axios.get(`/api/v1/product/product-list/${page}`)
-            setLoading(false)
-            setProducts([...products, ...data?.products])
+            setLoading(true);
+            const { data } = await axios.get(`/api/v1/product/product-list/${page}`)
+            setLoading(false);
+            setProducts([...products, ...data?.products]);
 
         } catch (error) {
 
-            console.log(error)
-            setLoading(false)
+            console.log(error);
+            setLoading(false);
         }
-    }
+    };
 
 
 
@@ -108,7 +108,7 @@ const Homepage = () => {
     // Show everything!
     useEffect(() => {
         // set a condition to show products based on selected filters.
-        if (!checked.length || !radio.length) getAllProuducts();
+        if (!checked.length || !radio.length) getAllProducts();
     }, [checked.length, radio.length]);
 
     useEffect(() => {

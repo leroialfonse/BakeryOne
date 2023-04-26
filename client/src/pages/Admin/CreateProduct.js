@@ -22,6 +22,8 @@ const { Option } = Select
 
 const CreateProduct = () => {
     const navigate = useNavigate();
+
+
     // set state to affect product listing. 
     const [categories, setCategories] = useState([]);
     const [name, setName] = useState('');
@@ -52,7 +54,7 @@ const CreateProduct = () => {
     // Create a new product
 
     const handleCreate = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         try {
             const productData = new FormData()
@@ -60,14 +62,14 @@ const CreateProduct = () => {
             productData.append('description', description)
             productData.append('price', price)
             productData.append('quantity', quantity)
-            productData.append('photo', photo)
+            photo && productData.append('photo', photo)
             productData.append('category', category)
 
             const { data } = axios.post('/api/v1/product/create-product', productData)
 
             if (data?.success) {
                 toast.success('New Product Created!')
-                navigate('./admin/products')
+                // navigate('/dashboard/admin/products')
             } else {
                 toast.error(data?.message)
             }
