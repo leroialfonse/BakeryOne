@@ -70,7 +70,7 @@ background: linear-gradient(to right, #434343, #000000);
 }
 
 .pnf-title{
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 700;
 }
 
@@ -95,10 +95,16 @@ background: linear-gradient(to right, #434343, #000000);
 
 .pnf-image{
   /* A broken camera! */
-margin: 20px auto;
+  background-image: url(
+    '../public/brokenCamera.jpg');
+    background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+/* margin: 20px auto; */
 border-radius: 80px;
   height: 400px;
   width: 400px;
+  /* background-size: 500px; */
 }
 
 /* Contact Page, About Page */

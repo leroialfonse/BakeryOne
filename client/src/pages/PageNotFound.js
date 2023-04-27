@@ -8,8 +8,8 @@ const PageNotFound = () => {
 
         <Layout title={'Go back - Page Not Found'}>
             <div className='pnf'>
-                <h1 className='pnf-title'>Oops...</h1>
-                <img className='pnf-image' src='brokenCamera.jpg' alt="a broken Camera!" />
+                <span className='pnf-title'>Oops...</span>
+                <img className='pnf-image m-2' alt='Sorry!' />
                 <h2>Page Not Found!</h2>
                 <p>Maybe that link is broken. Sorry about that.</p>
                 <Link to="/" className='pnf-btn'>Go Back Home</Link>
