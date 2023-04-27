@@ -1,6 +1,5 @@
 import productModel from "../models/productModel.js";
-import categoryModel from '../models/categoryModel.js'
-
+import categoryModel from '../models/categoryModel.js';
 import fs from 'fs'
 import slugify from "slugify";
 
