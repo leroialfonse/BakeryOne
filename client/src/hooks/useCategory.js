@@ -12,7 +12,7 @@ export default function useCategory() {
         } catch (error) {
             console.log(error)
         }
-    }
+    };
 
 
 

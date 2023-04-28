@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import toast from 'react-hot-toast'
 import Layout from '../components/Layout/Layout'
 import axios from 'axios';
 import { Checkbox, Radio } from 'antd';
-import { toast } from 'react-hot-toast';
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
-
+import { useCart } from '../context/cart';
 
 
 
@@ -21,6 +21,7 @@ const Homepage = () => {
     const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false)
+    const [cart, setCart] = useCart();
 
 
 
@@ -185,7 +186,10 @@ const Homepage = () => {
                                     <p className="card-text">${p.price}</p>
                                     {/* This will take you to a page that features the product with all it's information available */}
                                     <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
-                                    <button class="btn btn-outline-secondary ms-1">Add to Cart</button>
+                                    <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                                        setCart([...cart, p])
+                                        toast.success('Added to your cart!')
+                                    }}>Add to Cart</button>
 
                                 </div>
                             </div>

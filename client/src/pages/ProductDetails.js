@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../components/Layout/Layout'
 import axios from 'axios'
+import toast from 'react-hot-toast'
+import { useCart } from '../context/cart'
 
 
 const ProductDetails = () => {
@@ -11,7 +13,8 @@ const ProductDetails = () => {
 
     const [product, setProduct] = useState({});
 
-    const [related, setRelated] = useState([])
+    const [related, setRelated] = useState([]);
+    const [cart, setCart] = useCart();
 
 
     // Initial product details
@@ -69,7 +72,10 @@ const ProductDetails = () => {
                     <h6>Description: {product.description}</h6>
                     <h6>Price: ${product.price}</h6>
                     <h6>Category: {product?.category?.name}</h6>
-                    <button class="btn btn-outline-secondary ms-1">Add to Cart</button>
+                    <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                        setCart([...cart, product])
+                        toast.success('Added to your cart!')
+                    }}>Add to Cart</button>
 
                 </div>
 
@@ -80,7 +86,7 @@ const ProductDetails = () => {
                 <h6>More like this:</h6>
                 {/* Will create an array of  3 items similar to the featured item, based on similar categories. */}
                 {related.length < 1 && (<p className="text-center">No similar options found.</p>)}
-                <div className='d-flex flex-wrap'>
+                <div className='d-grid grid-wrap'>
                     {related?.map((p) => (
 
                         <div className="card m-2" style={{ width: '18rem' }}  >
@@ -95,7 +101,10 @@ const ProductDetails = () => {
                                 <p className="card-text">${p.price}</p>
                                 {/* This will take you to a page that features the product with all it's information available */}
 
-                                <button class="btn btn-outline-secondary ms-1">Add to Cart</button>
+                                <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                                    setCart([...cart, p])
+                                    toast.success('Added to your cart!')
+                                }}>Add to Cart</button>
 
                             </div>
                         </div>

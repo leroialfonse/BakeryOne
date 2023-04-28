@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout/Layout';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useCart } from '../context/cart';
+import toast from 'react-hot-toast'
+
 
 
 
@@ -15,6 +18,8 @@ const CategoryProducts = () => {
 
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState([]);
+    const [cart, setCart] = useCart();
+
 
 
     useEffect(() => {
@@ -29,7 +34,7 @@ const CategoryProducts = () => {
             setProducts(data?.products)
             setCategory(data?.category)
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
     return (
@@ -43,7 +48,7 @@ const CategoryProducts = () => {
                 <div className='d-flex flex-wrap m-3'>
                     {products?.map((p) => (
 
-                        <div className="card m-2" style={{ width: '18rem' }}  >
+                        <div className="card m-2" style={{ width: '18rem' }} key={p._id}  >
 
                             <img src={`/api/v1/product/product-photo/${p._id}`}
                                 className="card-img-top"
@@ -55,7 +60,10 @@ const CategoryProducts = () => {
                                 <p className="card-text">${p.price}</p>
                                 {/* This will take you to a page that features the product with all it's information available */}
                                 <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
-                                <button class="btn btn-outline-secondary ms-1">Add to Cart</button>
+                                <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                                    setCart([...cart, p])
+                                    toast.success('Added to your cart!')
+                                }}>Add to Cart</button>
 
                             </div>
                         </div>
