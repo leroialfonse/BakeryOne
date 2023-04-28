@@ -55,8 +55,9 @@ const ProductDetails = () => {
                     <img src={`/api/v1/product/product-photo/${product._id}`}
                         className="card-img-top"
                         alt={product.name}
-                        height="300"
-                        width={'350px'}
+                    // Need to figure out better dimensions for sizing on this page...
+                    // height="500px"
+                    // width="300px"
                     />
 
                 </div>
