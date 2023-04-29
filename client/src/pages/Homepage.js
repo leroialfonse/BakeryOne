@@ -188,6 +188,7 @@ const Homepage = () => {
                                     <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
                                     <button class="btn btn-outline-secondary ms-1" onClick={() => {
                                         setCart([...cart, p])
+                                        localStorage.setItem('cart', JSON.stringify([...cart, p]))
                                         toast.success('Added to your cart!')
                                     }}>Add to Cart</button>
 

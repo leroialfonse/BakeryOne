@@ -15,9 +15,34 @@ const CartPage = () => {
     const [cart, setCart] = useCart();
 
 
+    // Total price of cart
+    const total = () => {
+        try {
+            let total = 0;
+            cart?.map((item) => {
+                total = total + item.price;
+            });
+            return total.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     // Delete an item from the cart.
 
-    const deleteCartItem = async () => {
+    const deleteCartItem = async (pid) => {
+        try {
+            let myCart = [...cart]
+            let index = myCart.findIndex(item => item._id === pid)
+            myCart.splice(index, 1)
+            setCart(myCart);
+            localStorage.setItem('cart', JSON.stringify(myCart))
+        } catch (error) {
+            console.log(error)
+        }
 
 
 
@@ -32,7 +57,7 @@ const CartPage = () => {
                         <h1 className='text-center bg-light p-2'>
                             {`Hello ${auth?.token && auth?.user?.name}`}
                             <h4 className='text-center'>
-                                {cart?.length > 1
+                                {cart?.length
                                     ? `You have ${cart.length} items in your cart. ${auth?.token ? "" : `Please login to checkout...`} `
                                     : 'Your cart is Empty.'}
                             </h4>
@@ -54,8 +79,8 @@ const CartPage = () => {
                                 <div className='col-md-8'>
                                     <h5 style={{ fontWeight: 700 }} >{p.name}</h5>
                                     <p>{p.description.substring(0, 30)}...</p>
-                                    <p>{p.price}</p>
-                                    <button className='btn btn-danger' onClick={() => deleteCartItem(p._id)}>-</button>
+                                    <p>$ {p.price}</p>
+                                    <button className='btn btn-danger' onClick={() => deleteCartItem(p._id)}>Remove</button>
 
                                 </div>
                             </div>
@@ -64,7 +89,9 @@ const CartPage = () => {
 
                     </div>
                     <div className='col-md-4'>
-                        Checkout | Payment
+                        <p>Total | Checkout | Payment</p>
+                        <hr />
+                        <h4>Total: {total()} </h4>
                     </div>
                 </div>
             </div>
