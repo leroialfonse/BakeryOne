@@ -86,7 +86,11 @@ const ProductDetails = () => {
                 <h6>More like this:</h6>
                 {/* Will create an array of  3 items similar to the featured item, based on similar categories. */}
                 {related.length < 1 && (<p className="text-center">No similar options found.</p>)}
-                <div className='d-grid grid-wrap'>
+
+
+
+
+                <div className='d-flex flex-wrap'>
                     {related?.map((p) => (
 
                         <div className="card m-2" style={{ width: '18rem' }}  >
