@@ -65,7 +65,7 @@ const CreateProduct = () => {
             photo && productData.append('photo', photo)
             productData.append('category', category)
 
-            const { data } = axios.post('/api/v1/product/create-product', productData)
+            const { data } = await axios.post('/api/v1/product/create-product', productData)
 
             if (data?.success) {
                 toast.success('New Product Created!')
