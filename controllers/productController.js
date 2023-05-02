@@ -1,7 +1,23 @@
 import productModel from "../models/productModel.js";
 import categoryModel from '../models/categoryModel.js';
+import orderModel from "../models/orderModel.js";
 import fs from 'fs'
 import slugify from "slugify";
+// import braintree for payment sandbox.
+import braintree from "braintree";
+// import env for access to env vars
+import dotenv from 'dotenv'
+// and use the dotenv config method to expose the vars to intreperter access...
+dotenv.config();
+
+//payment gateway vars. Use the proc.env. so as not to expose my keys to public use.
+
+var gateway = new braintree.BraintreeGateway({
+    environment: braintree.Environment.Sandbox,
+    merchantId: process.env.BRAINTREE_MERCHANT_ID,
+    publicKey: process.env.BRAINTREE_PUBLIC_KEY,
+    privateKey: process.env.BRAINTREE_PRIVATE_KEY,
+});
 
 
 export const createProductController = async (req, res) => {
@@ -305,4 +321,55 @@ export const productCategoryController = async (req, res) => {
             error
         })
     }
-}
+};
+
+// Payment gateway API controller..
+// ...token 
+export const braintreeTokenController = async (req, res) => {
+    try {
+        gateway.clientToken.generate({}, function (error, response) {
+            if (err) {
+                res.status(500).send(error)
+            } else {
+                res.send(response)
+            }
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+
+};
+
+//...and payment
+export const braintreePaymentController = async (req, resp) => {
+    try {
+        const { cart, nonce } = req.body
+        let total = 0;
+        cart.map((i) => { total += i.price });
+        let newTransaction = gateway.transaction.sale({
+            amount: total,
+            paymentMethodNonce: nonce,
+            options: {
+                submitForSettlement: true
+            }
+        },
+            function (error, result) {
+                if (result) {
+                    const order = new orderModel({
+                        products: cart,
+                        payment: result,
+                        buyer: req.user._id
+
+                    }).save
+                    res.json({ ok: true })
+                } else {
+                    res.status(500).send(error)
+                }
+            }
+        )
+    } catch (error) {
+        console.log(error)
+    }
+
+};

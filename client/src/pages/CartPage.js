@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout/Layout'
 import { useCart } from '../context/cart'
 import { useAuth } from '../context/auth'
 import { useNavigate } from 'react-router-dom'
-
+// Connect to braintree payment gateway pagckage.
+import DropIn from "braintree-web-drop-in-react";
+import axios from 'axios'
 
 
 const CartPage = () => {
@@ -13,6 +15,11 @@ const CartPage = () => {
 
     const [auth, setAuth] = useAuth();
     const [cart, setCart] = useCart();
+    const [clientToken, setClientToken] = useState('');
+    const [instance, setInstance] = useState('');
+    const [loading, setLoading] = useState(false);
+
+
 
 
     // Total price of cart
@@ -46,7 +53,23 @@ const CartPage = () => {
 
 
 
-    }
+    };
+
+    // Get  the payment gateway toekn....
+    const getPaymentToken = async () => {
+        try {
+            const { data } = await axios.get('/api/v1/product/braintree/toekn')
+            setClientToken(data?.clientToken)
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+    useEffect(() => {
+        getPaymentToken();
+
+    }, [auth?.token]);
+
 
 
     return (
