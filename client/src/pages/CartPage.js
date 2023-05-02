@@ -26,7 +26,7 @@ const CartPage = () => {
     const total = () => {
         try {
             let total = 0;
-            cart?.map((item) => {
+            cart?.map(item => {
                 total = total + item.price;
             });
             return total.toLocaleString('en-US', {
@@ -143,15 +143,13 @@ const CartPage = () => {
                             <DropIn
                                 options={{
                                     authorization: clientToken,
-
                                     paypal: {
                                         flow: 'vault'
-                                    },
-
+                                    }
                                 }}
                                 onInstance={instance => setInstance(instance)}
                             />
-                            <button className='btn btn-primary' onClick={handleBuy}>Buy</button>
+                            <button className='btn btn-primary' onClick={handleBuy}>Buy Now!</button>
                         </div>
                     </div>
                 </div>

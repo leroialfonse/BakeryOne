@@ -72,7 +72,7 @@ const ProductDetails = () => {
                     <h6>Description: {product.description}</h6>
                     <h6>Price: ${product.price}</h6>
                     <h6>Category: {product?.category?.name}</h6>
-                    <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                    <button className="btn btn-outline-secondary ms-1" onClick={() => {
                         setCart([...cart, product])
                         toast.success('Added to your cart!')
                     }}>Add to Cart</button>
@@ -105,7 +105,7 @@ const ProductDetails = () => {
                                 <p className="card-text">${p.price}</p>
                                 {/* This will take you to a page that features the product with all it's information available */}
 
-                                <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                                <button className="btn btn-outline-secondary ms-1" onClick={() => {
                                     setCart([...cart, p])
                                     toast.success('Added to your cart!')
                                 }}>Add to Cart</button>

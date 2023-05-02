@@ -59,8 +59,8 @@ const CategoryProducts = () => {
                                 <p className="card-text">{p.description.substring(0, 20)}...</p>
                                 <p className="card-text">${p.price}</p>
                                 {/* This will take you to a page that features the product with all it's information available */}
-                                <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
-                                <button class="btn btn-outline-secondary ms-1" onClick={() => {
+                                <button className="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
+                                <button className="btn btn-outline-secondary ms-1" onClick={() => {
                                     setCart([...cart, p])
                                     toast.success('Added to your cart!')
                                 }}>Add to Cart</button>
