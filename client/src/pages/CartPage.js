@@ -55,10 +55,10 @@ const CartPage = () => {
 
     };
 
-    // Get  the payment gateway toekn....
+    // Get  the payment gateway token....
     const getPaymentToken = async () => {
         try {
-            const { data } = await axios.get('/api/v1/product/braintree/toekn')
+            const { data } = await axios.get('/api/v1/product/braintree/token')
             setClientToken(data?.clientToken)
         } catch (error) {
             console.log(error)
@@ -70,6 +70,8 @@ const CartPage = () => {
 
     }, [auth?.token]);
 
+    // Buy now button
+    const handleBuy = () => { }
 
 
     return (
@@ -137,6 +139,20 @@ const CartPage = () => {
                                 }
                             </div>
                         )}
+                        <div className='mt-2'>
+                            <DropIn
+                                options={{
+                                    authorization: clientToken,
+
+                                    paypal: {
+                                        flow: 'vault'
+                                    },
+
+                                }}
+                                onInstance={instance => setInstance(instance)}
+                            />
+                            <button className='btn btn-primary' onClick={handleBuy}>Buy</button>
+                        </div>
                     </div>
                 </div>
             </div>
