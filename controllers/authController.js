@@ -1,6 +1,8 @@
 import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 import userModel from "../models/userModel.js";
 import JWT from "jsonwebtoken"
+import orderModel from "../models/orderModel.js";
+
 
 export const registerController = async (req, res) => {
     try {
@@ -193,7 +195,21 @@ export const updateProfileController = async (req, res) => {
     }
 };
 
+// get Past orders
 
+export const getPastOrdersController = async () => {
+    try {
+        const orders = await orderModel.find({ buyer: req.user._id }).populate('products', '-photo').populate('buyer', "name");
+        res.json(orders)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            succes: false,
+            message: 'Could not get the past orders.',
+            error
+        })
+    }
+}
 
 
 

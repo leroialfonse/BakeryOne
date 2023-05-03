@@ -327,11 +327,11 @@ export const productCategoryController = async (req, res) => {
 // ...token 
 export const braintreeTokenController = async (req, res) => {
     try {
-        gateway.clientToken.generate({}, function (error, response) {
+        gateway.clientToken.generate({}, function (err, response) {
             if (err) {
-                res.status(500).send(error)
+                res.status(500).send(err)
             } else {
-                res.send(response)
+                res.send(response);
             }
         });
 
@@ -342,10 +342,10 @@ export const braintreeTokenController = async (req, res) => {
 };
 
 //...and payment
-export const braintreePaymentController = async (req, resp) => {
+export const braintreePaymentController = async (req, res) => {
     try {
         const { cart, nonce } = req.body
-        let total = 0;
+        let total = 0
         cart.map((i) => { total += i.price });
         let newTransaction = gateway.transaction.sale({
             amount: total,

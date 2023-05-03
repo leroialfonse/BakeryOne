@@ -48,7 +48,7 @@ const Header = () => {
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <Link className="dropdown-item" to={'/categories'}>
+                                        <Link className="dropdown-item" key={categories._id} to={'/categories'}>
                                             All Categories
                                         </Link>
                                     </li>
