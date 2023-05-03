@@ -34,7 +34,7 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <Link to="/" className="navbar-brand">
-                            {/* <FcOldTimeCamera size={30} /> */}
+
                             Light And Shadow</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
@@ -48,7 +48,7 @@ const Header = () => {
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <Link className="dropdown-item" key={categories._id} to={'/categories'}>
+                                        <Link className="dropdown-item" to={'/categories'}>
                                             All Categories
                                         </Link>
                                     </li>
@@ -65,27 +65,28 @@ const Header = () => {
                             </li>
                             {/* If there is no logged in user, show an option to login or register on nav, or a logout if they're in. */}
                             {
-                                !auth.user ? (<>
-                                    <li className="nav-item">
-                                        <NavLink to="/register" className="nav-link">Register </NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink to="/login" className="nav-link">Login </NavLink>
-                                    </li>
-                                </>) : (<>
-                                    <li className="nav-item dropdown">
-                                        <NavLink className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {auth?.user?.name}
-                                        </NavLink>
-                                        <ul className="dropdown-menu">
-                                            <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'admin' : 'user'}`} className="dropdown-item" >Dashboard</NavLink></li>
-                                            <li> <NavLink onClick={handleLogOut} to="/login" className="dropdown-item">Logout </NavLink></li>
+                                !auth.user ? (
+                                    <>
+                                        <li className="nav-item">
+                                            <NavLink to="/register" className="nav-link">Register </NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink to="/login" className="nav-link">Login </NavLink>
+                                        </li>
+                                    </>) : (<>
+                                        <li className="nav-item dropdown">
+                                            <NavLink className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {auth?.user?.name}
+                                            </NavLink>
+                                            <ul className="dropdown-menu">
+                                                <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'admin' : 'user'}`} className="dropdown-item" >Dashboard</NavLink></li>
+                                                <li> <NavLink onClick={handleLogOut} to="/login" className="dropdown-item">Logout </NavLink></li>
 
-                                        </ul>
-                                    </li>
+                                            </ul>
+                                        </li>
 
 
-                                </>)
+                                    </>)
                             }
                             <li className="nav-item">
                                 <Badge count={cart?.length} showZero>
@@ -106,8 +107,8 @@ const Header = () => {
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form> */}
                     </div>
-                </div>
-            </nav>
+                </div >
+            </nav >
 
         </>
     );
