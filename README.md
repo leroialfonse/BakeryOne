@@ -1,29 +1,29 @@
-# Sweetie Pie
+# Sweetie Pie Bakery
 
 <div align="center">
 
 <a href="https://github.com/leroialfonse/SweetiePie/issues">
-  <img height="28px" src="https://img.shields.io/github/issues/leroialfonse/LifeLine" alt="Issues"/>
+  <img height="28px" src="https://img.shields.io/github/issues/leroialfonse/SweetiePie" alt="Issues"/>
 </a>
 </div>
 
 <br>
 
- <p align="center" ><img src="https://github.com/leroialfonse/LifeLine/blob/1b70ef65f9e4f43740b962b6633dc34a73a2c8cd/LifeLineDemo.gif" width="600"/></p>
+ <!-- <p align="center" ><img src="https://github.com/leroialfonse/SweetiePie/blob/1b70ef65f9e4f43740b962b6633dc34a73a2c8cd/SweetiePieDemo.gif" width="600"/></p> -->
 
-<h1 align="center">
-  <a href="https://lifeline.cyclic.app/">
-    <img src="./public/imgs/LifeLineGitHub.png" alt="LifeLine logo" width="300">
+<!-- <h1 align="center">
+  <a href="https://SweetiePie.cyclic.app/">
+    <img src="./public/imgs/SweetiePieGitHub.png" alt="SweetiePie logo" width="300">
   </a>
-</h1>
+</h1> -->
 
 <div align="center">
 
   <br/>
   
   
-  <a href="https://lifeline.cyclic.app/"><strong>See it Live</strong></a>
-  · <a href="https://github.com/leroialfonse/LifeLine/issues">Notice something that could be fixed? Request an  issue!</a>
+  <!-- <a href="https://SweetiePie.cyclic.app/"><strong>See it Live</strong></a> -->
+  · <a href="https://github.com/leroialfonse/SweetiePie/issues">Notice something that could be fixed? Request an  issue!</a>
 
 </div>
 
@@ -51,11 +51,9 @@
 
 # 📢 About
 
-This is LifeLine, a rather personal project I built for myself, and anyone else who happens to live with chronic medical conditions.
+I have two great loves: coding and dessert. Here's my shot at mixing the two!
 
-When you have a health issue, you very quickly learn that there are huge demands on your mental real estate. Suddenly, there are a wealth of new terms, new people, events and locations to learn and commit to memory. This new information is vital, and being well apprised and clear on it is paramount to maintaining your best health.
-
-But, when you have all of these new moving parts to keep in mind, on top of your already hectic life, things can fall through the cracks, and that is can spell trouble for your healthcare. That's why I built LifeLine. With LifeLine, you can more easily keep track of your doctors, appointments, medicines, and concerns. It's a way to organize and contain the deluge of new information that you are now responsible for, in a convienient and minimalist app that you can aceess anywhere.
+Sweetie Pie is an ecommerce app that I tried to build, because I wanted some practice with building that kind of an application, managing and controlling state, and payment gateways.
 
 <br/>
 
@@ -68,6 +66,8 @@ But, when you have all of these new moving parts to keep in mind, on top of your
       <img width="100%" title="Express" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js"/>
       </td>
       <td valign="center">
+      <img width="100%" title="React" src="	https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+      <img width="100%" title="React" src="	https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white" alt="React">
        <img width="100%" title="Bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap CSS"/>
        <img width="100%" title="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" alt="JavaScript"/>
       </td>
@@ -99,9 +99,7 @@ But, when you have all of these new moving parts to keep in mind, on top of your
 
 # Optimizations
 
-<p>This is a passion project, so I don't know if I'll ever be truly *finished* with it. That said, I do want to make improvements to the UI, and so I intend to redesign the app with React at some point. I would also like to add functionality that would enable users to communicate with their providers, whether that's through email or a chat application, but that's a little further out.</p>
-
-<p>Additionally, because of the subject matter of the app concerning sensitive medical information, I need to explore how to give the app greater security, commensurate with HIPAA practices. These are just a few things that I forsee most pressingly right now.</p>
+<p>There is so much I still want to tackle if I get the time! Various sizing and position changes, re-scaling images, general styling, etc. I think I need to get away from bootsrap for components and ui elements; I'm seeing it in alot of my work, and it doesn't really do this project justice. I think I want to redesign with Material UI.</p>
 
 <br>
 
@@ -110,11 +108,11 @@ But, when you have all of these new moving parts to keep in mind, on top of your
 <!-- //////////////////////////////////////////// -->
 
 <div align="center">
-<p>Deploy to Cyclic:</p>
+<!-- <p>Deploy to Cyclic:</p>
 <a href="https://deploy.cyclic.sh/GH_LOGIN/GH_REPO">
     <img height="28px" src="https://deploy.cyclic.sh/button.svg" />
-</a>
+</a> -->
 
-<a href="https://github.com/leroialfonse/LifeLine/network/members">
-  <img height="28px" src="https://img.shields.io/github/forks/leroialfonse/LifeLine?color=6ca4cc" alt="Forks"/>
+<a href="https://github.com/leroialfonse/SweetiePie/network/members">
+  <img height="28px" src="https://img.shields.io/github/forks/leroialfonse/SweetiePie?color=6ca4cc" alt="Forks"/>
 </a>
