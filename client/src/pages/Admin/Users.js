@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout/Layout'
 import AdminMenu from '../../components/Layout/AdminMenu'
 
+
 const Users = () => {
     return (
         <Layout title={'All Users'}>
@@ -12,7 +13,8 @@ const Users = () => {
                     <div className='col-md-9'></div>
                 </div>
                 <h1>
-                    Users
+                    Users: (Will add the users list to this page later...)
+                    {/* {Users?.map(u => <p>{userModel}</p>)} */}
                 </h1>
             </div>
         </Layout>

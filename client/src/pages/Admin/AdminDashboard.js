@@ -17,9 +17,9 @@ const AdminDashboard = () => {
                 <div className='row'>
                     <div className='col-md-3'>
                         <AdminMenu />
-                        <div className='col-md-9'>
+                        <div className='col-lg'>
                             <div className='card w-75 p-3'>
-                                <h2>Administrator</h2>
+                                <h2>Administrator Profile: </h2>
                                 <h5>Name: {auth?.user?.name}</h5>
                                 <h5>Email: {auth?.user?.email}</h5>
                                 <h5>Phone: {auth?.user?.phone}</h5>

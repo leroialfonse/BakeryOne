@@ -97,8 +97,8 @@ const CartPage = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-12'>
-                        <h1 className='text-center bg-light p-2'>
-                            {`Hello ${auth?.token && auth?.user?.name}`}
+                        <h1 className='text-center bg-light p-2 mt-2'>
+                            {`Hello, ${auth?.token && auth?.user?.name} !`}
                             <h4 className='text-center'>
                                 {cart?.length
                                     ? `You have ${cart.length} items in your cart. ${auth?.token ? "" : `Please login to checkout...`} `
@@ -132,13 +132,13 @@ const CartPage = () => {
 
                     </div>
                     <div className='col-md-4'>
-                        <p>Total | Checkout | Payment</p>
+                        <p> Checkout </p>
                         <hr />
-                        <h4>Total: {total()} </h4>
+                        <h4>Your Total: {total()} </h4>
                         {auth?.user?.address ? (
                             <>
                                 <div className='mb-3'>
-                                    <h4>Your Location: </h4>
+                                    <h4>Ship to: </h4>
                                     <h5>{auth?.user?.address}</h5>
                                     <button className='btn btn-outline-warning' onClick={() => navigate('/dashboard/user/profile')}>Update your Address</button>
                                 </div>
@@ -161,7 +161,7 @@ const CartPage = () => {
 
                         )}
 
-                        <div className='mt-2'>
+                        <div className='mt-4'>
                             {
                                 !clientToken || !cart?.length ? ("") : (
                                     <>

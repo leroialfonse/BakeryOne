@@ -14,10 +14,9 @@ const Search = () => {
     return (
         <Layout title={'Search Results'}>
             <div className='container'>
-                <div className='text-center'>
-                    <h1>Search Results</h1>
+                <div className='text-center mt-5'>
 
-                    <h6>{values?.results.length < 1 ? 'Nothing found...' : `Found ${values?.results.length}`}</h6>
+                    <h6>{values?.results.length < 1 ? 'Couldn\'t find that...' : `Found ${values?.results.length}`}</h6>
 
                     <div className='d-flex flex-wrap mt-5'>
                         {values?.results.map((p) => (

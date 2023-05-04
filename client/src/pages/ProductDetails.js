@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout/Layout'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -7,6 +7,9 @@ import { useCart } from '../context/cart'
 
 
 const ProductDetails = () => {
+
+
+    const navigate = useNavigate();
 
     // Define parameters to return for a product
     const params = useParams();
@@ -50,13 +53,13 @@ const ProductDetails = () => {
 
         <Layout>
 
-            <div className='row container mt-4'>
+            <div className='row container mt-4 '>
 
                 <div className='col-md-6'>
 
 
                     <img src={`/api/v1/product/product-photo/${product._id}`}
-                        className="card-img-top"
+                        className="card-img-top detail-image"
                         alt={product.name}
                     // Need to figure out better dimensions for sizing on this page...
                     // height="500px"
@@ -109,6 +112,8 @@ const ProductDetails = () => {
                                     setCart([...cart, p])
                                     toast.success('Added to your cart!')
                                 }}>Add to Cart</button>
+                                <button className="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
+
 
                             </div>
                         </div>

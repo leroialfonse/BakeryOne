@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@300;400&family=Roboto:wght@300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Inter:wght@100;300;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@300;400&family=Roboto:wght@300;400&family=Style+Script&display=swap');
+
+
 
 *{
   margin: 0;
@@ -8,12 +10,11 @@
 }
 
 /* Navbar Styles */
-
 .navbar{
 font-family: 'Poppins', sans-serif;
 font-size: 17px;
 line-height: 26px;
-text-transform: uppercase;
+/* text-transform: uppercase; */
 box-shadow: 0 8px 6px -6px gray;
 --webkit-box-shadow: 0 8px 6px -6px gray;
 border-bottom: solid gray !important;
@@ -23,15 +24,23 @@ border-bottom: solid gray !important;
   font-weight: 300 !important;
 }
 
+.search {
+  padding-right: 20px;
+  margin-top: 10px;
+  height: 20px;
+}
 /* or .nav-link.active  Still unsure. lol.*/
 .active{
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid rgb(134, 45, 167);
 }
 
 .navbar-brand{
   font-weight: 700;
-  font-family: 'Roboto',sans-serif;
-  letter-spacing: 3px;
+  font-size: 40px;
+  font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
+  text-transform: none;
+  letter-spacing: 1px;
+  color:#a812a6;
 }
 
 /* Footer Styles */
@@ -41,11 +50,11 @@ border-bottom: solid gray !important;
   background: #000000; /* a fallback in case of older browsers */
   background: -webkit-linear-gradient(
     to-right,
-    #434343,
-    #000000
+    #a812a6,
+    #fc54bc
   ); 
   /* And for chrome 10-25, Safari 5.1 - 6..... */
-background: linear-gradient(to right, #434343, #000000);
+background: linear-gradient(to right, #a812a6, #fc54bc);
 }
 
 .footer a{
@@ -96,15 +105,16 @@ background: linear-gradient(to right, #434343, #000000);
 .pnf-image{
   /* A broken camera! */
   background-image: url(
-    '../public/brokenCamera.jpg');
+    '../public/bakingMess.jpg');
+    background-origin: border-box;
     background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  /* background-attachment: local; */
   background-position: center;
 /* margin: 20px auto; */
 border-radius: 80px;
   height: 400px;
   width: 400px;
-  /* background-size: 500px; */
+  background-size: 400px;
 }
 
 /* Contact Page, About Page */
@@ -155,4 +165,12 @@ border-radius: 80px;
   text-decoration: none;
   color: black ;
 
+}
+
+.detail-image{
+  border: 2px solid #a812a6;
+  border-radius: 20px;
+  box-shadow: 0 8px 6px -6px #a812a6;
+--webkit-box-shadow: 0 8px 6px 6px #a812a6;
+  
 }

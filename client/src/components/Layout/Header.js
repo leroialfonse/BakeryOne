@@ -34,11 +34,10 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <Link to="/" className="navbar-brand">
-
-                            Light And Shadow</Link>
+                            🧁
+                            Sweetie Pie</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                            <SearchForm />
                             <li className="nav-item">
                                 <NavLink to="/" className="nav-link" >Home</NavLink>
                             </li>
@@ -79,7 +78,7 @@ const Header = () => {
                                                 {auth?.user?.name}
                                             </NavLink>
                                             <ul className="dropdown-menu">
-                                                <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'admin' : 'user'}`} className="dropdown-item" >Dashboard</NavLink></li>
+                                                <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'Admin' : 'user'}`} className="dropdown-item" >Dashboard</NavLink></li>
                                                 <li> <NavLink onClick={handleLogOut} to="/login" className="dropdown-item">Logout </NavLink></li>
 
                                             </ul>
@@ -88,13 +87,15 @@ const Header = () => {
 
                                     </>)
                             }
-                            <li className="nav-item">
+                            <li className="nav-item search">
                                 <Badge count={cart?.length} showZero>
-                                    <NavLink to="/cart" className="nav-link">Cart </NavLink>
+                                    <NavLink to="/cart" className="nav-link ">Cart </NavLink>
                                 </Badge>
+
 
                             </li>
 
+                            <SearchForm />
 
                             {/* A link that I'm not sure what to do with yet. */}
                             {/* <li className="nav-item">
@@ -106,6 +107,8 @@ const Header = () => {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form> */}
+
+
                     </div>
                 </div >
             </nav >
