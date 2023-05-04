@@ -9,7 +9,7 @@
 
 <br>
 
- <!-- <p align="center" ><img src="https://github.com/leroialfonse/SweetiePie/blob/1b70ef65f9e4f43740b962b6633dc34a73a2c8cd/SweetiePieDemo.gif" width="600"/></p> -->
+ <p align="center" ><img src="https://github.com/leroialfonse/SweetiePie/blob/main/SweetiePie%20(2).gif" width="600"/></p>
 
 <!-- <h1 align="center">
   <a href="https://SweetiePie.cyclic.app/">
@@ -76,6 +76,15 @@ Sweetie Pie is an ecommerce app that I tried to build, because I wanted some pra
       </td>
     </tr>
   </table>
+
+# Lessons Learned
+
+  <p>There's a lot more to cover about the process, because it was a bit involved. I got some experience with ant design for different ui elements, and react toast for toast status messages. There was also an opportunity to learn a little about payment gateways with paypal and braintree.</p>
+
+  <p>I'm going to look a little bit deeper in the payment gateways, to give myself more familiarity there.</p>
+
+  <p>Additionally, I got more experience working deeper into react, undestanding more about context, useState and useEffect. I'm really becoming a bigger and bigger fan of React, for sure!</p>
+
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -99,6 +108,12 @@ Sweetie Pie is an ecommerce app that I tried to build, because I wanted some pra
 # Optimizations
 
 <p>There is so much I still want to tackle if I get the time! Various sizing and position changes, re-scaling images, general styling, etc. I think I need to get away from bootsrap for components and ui elements; I'm seeing it in alot of my work, and it doesn't really do this project justice. I think I want to redesign with Material UI.</p>
+
+  <p>I also want to take some time to refactor and make more things into components if I can. I'll tackle that around the same time I get back into redesigning the UI with Material UI. I'm sure there's plenty to be done there.</p>
+
+  <p>There are also a couple pages and elements of pages that I want to flesh out a little more fully; things like the about page is a little bare. There's a section of the administrator's contorls for the app in which I want to display information about the app's user base, but I'm on the fenc with that one. I would like to give the site more personality, by fleshing out a home-made goods feel, like with photos of the family that owns the bakery, and including elements of their story in more places. Maybe include a few recipes and such.</p>
+
+  <p>The more I think about it, more things come to mind to pour some work into as I get the time.</p>
 
 <br>
 

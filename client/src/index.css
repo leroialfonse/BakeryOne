@@ -34,7 +34,7 @@ border-bottom: solid gray !important;
   border-bottom: 3px solid rgb(134, 45, 167);
 }
 
-.navbar-brand{
+.navbar-brand, .splash{
   font-weight: 700;
   font-size: 40px;
   font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
