@@ -63,17 +63,17 @@ Sweetie Pie is an ecommerce app that I tried to build, because I wanted some pra
   <table>
     <tr>
       <td valign="center">
-      <img width="25%" title="Express" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js"/>
+      <img width="40%" title="Express" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js"/>
       </td>
       <td valign="center">
-      <img width="25%" title="React" src="	https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-      <img width="25%" title="React" src="	https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white" alt="React">
-       <img width="25%" title="Bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap CSS"/>
-       <img width="25%" title="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" alt="JavaScript"/>
+      <img width="40%" title="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+      <img width="40%" title="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white" alt="React">
+       <img width="40%" title="Bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap CSS"/>
+       <img width="40%" title="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" alt="JavaScript"/>
       </td>
       <td valign="center">
-       <img width="25%" title="Node.js" src="https://img.shields.io/badge/Node.js-90c53f?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
-       <img width="25%" title="MongoDB" src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
+       <img width="40%" title="Node.js" src="https://img.shields.io/badge/Node.js-90c53f?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+       <img width="40%" title="MongoDB" src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
       </td>
     </tr>
   </table>
