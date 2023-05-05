@@ -53,7 +53,9 @@
 
 I have two great loves: coding and dessert. Here's my shot at mixing the two!
 
-Sweetie Pie is an ecommerce app that I tried to build, because I wanted some practice with building that kind of an application, managing and controlling state, and payment gateways.
+Sweetie Pie is an ecommerce app that I built because I wanted some practice with building that kind of an application, managing and controlling state, and payment gateways.
+
+I also wanted to google desserts without feeling (as) guilty.
 
 <br/>
 
