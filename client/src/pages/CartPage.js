@@ -167,6 +167,7 @@ const CartPage = () => {
                                     <>
 
                                         <DropIn
+
                                             options={{
                                                 authorization: clientToken,
                                                 paypal: {
@@ -174,7 +175,10 @@ const CartPage = () => {
                                                 },
                                             }}
                                             onInstance={(instance) => setInstance(instance)}
+
                                         />
+                                        <small style={{ color: 'red', fontWeight: 'bolder' }}>* Please Note: No actual products for sale; This payment gateway is for testing purposes only!*</small>
+                                        <hr />
                                         <button className='btn btn-danger' onClick={handlePayment} disabled={!loading || !instance || !auth?.user?.address}>{loading ? "Processing" : "Pay Now"}</button>
 
                                     </>
@@ -185,7 +189,7 @@ const CartPage = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </Layout >
     );
 };
 
