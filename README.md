@@ -40,7 +40,7 @@
 - [Built With](#-built-with)
 - [Getting Started](#-getting-started)
 - [Install](#-install)
-- [Contributions](#%EF%B8%8F-contributions)
+<!-- - [Contributions](#%EF%B8%8F-contributions) -->
 
   </details>
 
