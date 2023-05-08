@@ -115,7 +115,7 @@ I also wanted to google desserts without feeling (as) guilty.
 
   <p>There are also a couple pages and elements of pages that I want to flesh out a little more fully; things like the about page is a little bare. There's a section of the administrator's contorls for the app in which I want to display information about the app's user base, but I'm on the fenc with that one. I would like to give the site more personality, by fleshing out a home-made goods feel, like with photos of the family that owns the bakery, and including elements of their story in more places. Maybe include a few recipes and such.</p>
 
-  <p>The more I think about it, more things come to mind to pour some work into as I get the time.</p>
+  <p>The more I think about it, more things come to mind to pour some work into as I get the time. For one: I need to make adjustments to page titles for SEO; I originally was building this to be a camera and photography related  type-deal, but got inspired to focus on desserts when I got hungry about 2/3rds through production.</p>
 
 <br>
 
