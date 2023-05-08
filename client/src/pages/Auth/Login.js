@@ -48,7 +48,7 @@ const Login = () => {
 
     return (
 
-        <Layout title={'Login - Back in Focus...'}>
+        <Layout title={'Login - Sweet Treats Ahead...'}>
             <div className='register'>
                 <div className='form-container'>
 

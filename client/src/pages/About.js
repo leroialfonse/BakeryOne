@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
     return (
-        <Layout title={"About Us - Light and Shadow Photography"}>
+        <Layout title={"About Us - Sweetie Pie Bakery"}>
             <div className="row aboutUs ">
                 <div className='col-4'>
 

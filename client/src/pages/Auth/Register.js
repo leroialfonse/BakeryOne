@@ -32,7 +32,7 @@ const Register = () => {
     };
 
     return (
-        <Layout title={'SignUp - Light and Shadow'}>
+        <Layout title={'SignUp - Sweetie Pie'}>
             <div className='register'>
                 <h1>Sign up today!</h1>
                 <p>Get started by signing up.</p>

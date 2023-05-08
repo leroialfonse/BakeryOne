@@ -134,7 +134,7 @@ const Homepage = () => {
 
 
     return (
-        <Layout title={'Frame your Story'}>
+        <Layout title={'Fresh From the Oven - Sweetie Pie Bakery'}>
             <div className='row mt-3'>
 
                 <div className='col-md-2 p-5 sidbar' style={{ backgroundColor: 'rgba(111,88,226,.2)', borderRadius: '5px' }} >
