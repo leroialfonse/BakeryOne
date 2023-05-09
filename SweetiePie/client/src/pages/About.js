@@ -17,10 +17,10 @@ const About = () => {
                     />
                 </div>
                 <div className="col-5">
+                    {/* Before I changed over to a bakery app! Figure out a new page!  */}
                     <p className="text-justify mt-2">
-                        Whether you need professinal headshots for your acting debut, the best gear to take your photography to the next level, or classes with professionals in the field to help you follow your passion, you can find it all at Light and Shadow!
-
-                        If you're ready to get started, then
+                        Sweetie Pie has the treats you need!
+                        If you're hungry, then
                         <Link to="/contact" className='inText-link' > contact us </Link>today!
                     </p>
 

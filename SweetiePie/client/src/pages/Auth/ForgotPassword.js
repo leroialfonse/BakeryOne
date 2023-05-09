@@ -34,7 +34,7 @@ const ForgotPassword = () => {
     };
 
     return (
-        <Layout title={'Forgot Password - Light And Shadow'}>
+        <Layout title={'Forgot Password - Sweetie Pie'}>
             <div className='register'>
                 <div className='form-container'>
 

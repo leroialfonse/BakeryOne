@@ -33,7 +33,7 @@ app.use('/api/v1/product', productRoutes)
 
 // Getting into the API at the main route.
 app.get('/', (req, res) => {
-    res.send("<h1>Welcome to Light and Shadow! (Ecomm 2023)</h1>")
+    res.send("<h1>Welcome to Sweetie Pie! (Ecomm 2023)</h1>")
 })
 
 
