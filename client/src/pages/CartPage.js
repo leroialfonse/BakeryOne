@@ -77,7 +77,7 @@ const CartPage = () => {
         try {
             setLoading(true)
             const { nonce } = await instance.requestPaymentMethod();
-            const { data } = await axios.post('/api/v1/product/braintree/payment', {
+            const { data } = await axios.post('api/v1/product/braintree/payment', {
                 nonce, cart,
             })
             setLoading(false)
@@ -97,7 +97,7 @@ const CartPage = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-12'>
-                        <h1 className='text-center bg-light p-2 mt-2'>
+                        <h1 className='text-center bg-light p-2 mt-2 splash'>
                             {`Hello ${auth?.token && auth?.user?.name}!`}
                             <h4 className='text-center'>
                                 {cart?.length
@@ -112,7 +112,7 @@ const CartPage = () => {
                         {cart?.map((p) => (
                             <div className='row mb-2 card flex-row p-3'>
                                 <div className='col-md-4'>
-                                    <img src={`/api/v1/product/product-photo/${p._id}`}
+                                    <img src={`api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
                                         width='100px'
@@ -132,7 +132,7 @@ const CartPage = () => {
 
                     </div>
                     <div className='col-md-4'>
-                        <p> Checkout </p>
+                        <p className='splash'> Checkout </p>
                         <hr />
                         <h4>Your Total: {totalCost()}</h4>
                         {auth?.user?.address ? (
