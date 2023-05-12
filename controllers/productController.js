@@ -346,7 +346,7 @@ export const braintreePaymentController = async (req, res) => {
     try {
         const { cart, nonce } = req.body
         let total = 0
-        cart.map((i) => { total += i.price });
+        cart.map((item) => { total += item.price; });
         let newTransaction = gateway.transaction.sale({
             amount: total,
             paymentMethodNonce: nonce,
@@ -361,7 +361,7 @@ export const braintreePaymentController = async (req, res) => {
                         payment: result,
                         buyer: req.user._id
 
-                    }).save
+                    }).save()
                     res.json({ ok: true })
                 } else {
                     res.status(500).send(error)
