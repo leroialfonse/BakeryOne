@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 // Connect to braintree payment gateway pagckage.
 import DropIn from "braintree-web-drop-in-react";
 import axios from 'axios';
-import toast from 'react-hot-toast'
+import toast from 'react-hot-toast';
 
 
 const CartPage = () => {
@@ -58,7 +58,7 @@ const CartPage = () => {
     };
 
     // Get  the payment gateway token....
-    const getPaymentToken = async () => {
+    const getBtToken = async () => {
         try {
             const { data } = await axios.get('/api/v1/product/braintree/token')
             setClientToken(data?.clientToken)
@@ -68,7 +68,7 @@ const CartPage = () => {
     };
 
     useEffect(() => {
-        getPaymentToken();
+        getBtToken();
 
     }, [auth?.token]);
 
@@ -134,7 +134,7 @@ const CartPage = () => {
                     <div className='col-md-4'>
                         <p> Checkout </p>
                         <hr />
-                        <h4>Your Total: {total()} </h4>
+                        <h4>Your Total: {total()}</h4>
                         {auth?.user?.address ? (
                             <>
                                 <div className='mb-3'>
@@ -163,7 +163,7 @@ const CartPage = () => {
 
                         <div className='mt-4'>
                             {
-                                !clientToken || !cart?.length ? ("") : (
+                                !clientToken || !cart?.length ? (" ") : (
                                     <>
 
                                         <DropIn
@@ -177,9 +177,10 @@ const CartPage = () => {
                                             onInstance={(instance) => setInstance(instance)}
 
                                         />
-                                        <small style={{ color: 'red', fontWeight: 'bolder' }}>* Please Note: No actual products for sale; This payment gateway is for testing purposes only!*</small>
-                                        <hr />
                                         <button className='btn btn-danger' onClick={handlePayment} disabled={!loading || !instance || !auth?.user?.address}>{loading ? "Processing" : "Pay Now"}</button>
+                                        {/* <small style={{ color: 'red', fontWeight: 'bolder' }}>* Please Note: No actual products for sale; This payment gateway is for testing purposes only!*</small>
+                                        <hr /> */}
+
 
                                     </>
                                 )
@@ -189,7 +190,7 @@ const CartPage = () => {
                     </div>
                 </div>
             </div>
-        </Layout >
+        </Layout>
     );
 };
 
