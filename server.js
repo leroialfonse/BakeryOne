@@ -10,6 +10,10 @@ import cors from 'cors'
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 
+import bodyParser from 'body-parser'
+// var express = require("express");
+// const bodyParser = require("body-parser");
+// var app = express();
 
 
 // ENV config
@@ -25,6 +29,9 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
+// bodyparser use
+app.use(bodyParser.json({ limit: '100kb' }));
+
 
 //routes
 app.use('/api/v1/auth', authRoutes);

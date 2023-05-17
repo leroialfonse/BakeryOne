@@ -13,7 +13,7 @@ const Orders = () => {
 
     const getOrders = async () => {
         try {
-            const { data } = await axios.get('/apiv1/auth/orders')
+            const { data } = await axios.get('api/v1/auth/orders')
             setOrders(data)
 
         } catch (error) {
@@ -35,7 +35,7 @@ const Orders = () => {
                     </div>
                     <div className='col-md-9'>
                         <h1>All Orders</h1>
-                        <p>{JSON.stringify(orders, null, 4)}</p>
+                        {/* <p>{JSON.stringify(orders, null, 4)}</p> */}
                     </div>
                 </div>
             </div>
@@ -43,4 +43,4 @@ const Orders = () => {
     )
 }
 
-export default Orders
+export default Orders;
