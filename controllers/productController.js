@@ -336,7 +336,7 @@ export const braintreeTokenController = async (req, res) => {
         });
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 
 };
@@ -357,7 +357,7 @@ export const braintreePaymentController = async (req, res) => {
             function (error, result) {
                 if (result) {
                     const order = new orderModel({
-                        products: cart,
+                        product: cart,
                         payment: result,
                         buyer: req.user._id
 

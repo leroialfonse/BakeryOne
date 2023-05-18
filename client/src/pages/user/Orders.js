@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/Layout/Layout'
 import UserMenu from '../../components/Layout/UserMenu'
-import axios from 'axios';
+import axios from 'axios'
 import { useAuth } from '../../context/auth';
 
 
@@ -13,7 +13,7 @@ const Orders = () => {
 
     const getOrders = async () => {
         try {
-            const { data } = await axios.get('/apiv1/auth/orders')
+            const { data } = await axios.get("/api/v1/auth/orders");
             setOrders(data)
 
         } catch (error) {
@@ -43,4 +43,4 @@ const Orders = () => {
     )
 }
 
-export default Orders
+export default Orders;

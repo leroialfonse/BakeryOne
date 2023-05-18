@@ -109,11 +109,11 @@ const Header = () => {
 
 
                     </div>
-                </div >
-            </nav >
+                </div>
+            </nav>
 
         </>
-    );
+    )
 };
 
 export default Header;
