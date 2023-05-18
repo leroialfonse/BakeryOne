@@ -197,7 +197,7 @@ export const updateProfileController = async (req, res) => {
 
 // get Past orders
 
-export const getPastOrdersController = async () => {
+export const getPastOrdersController = async (req, res) => {
     try {
         const orders = await orderModel.find({ buyer: req.user._id }).populate('products', '-photo').populate('buyer', "name");
         res.json(orders)
