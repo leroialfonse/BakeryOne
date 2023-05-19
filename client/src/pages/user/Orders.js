@@ -34,8 +34,35 @@ const Orders = () => {
                         <UserMenu />
                     </div>
                     <div className='col-md-9'>
-                        <h1>All Orders</h1>
-                        <p>{JSON.stringify(orders, null, 4)}</p>
+                        <h1 className='text-center'>All Orders</h1>
+                        {
+                            orders?.map((order, i) => {
+                                return (
+                                    <div className='border shadow'>
+                                        <table className='table'>
+                                            <thead>
+                                                <tr>
+                                                    <td scope="col">#</td>
+                                                    <td scope="col">Status</td>
+                                                    <td scope="col">Buyer</td>
+                                                    <td scope="col">Orders</td>
+                                                    <td scope="col">Payment</td>
+                                                    <td scope="col">Quantity</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <th>{i + 1}</th>
+                                                    <th>{order?.status}</th>
+                                                    <th>{order?.buyer.name}</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
