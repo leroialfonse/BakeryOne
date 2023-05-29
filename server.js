@@ -24,19 +24,15 @@ connectDB();
 
 // REST Obj 
 const app = express();
-// const bodyParser = require('body-parser')
 
 // middlewares 
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
-// bodyparser use
-// app.use(bodyParser.json({ limit: '100kb' }));
 
 // fixing "413 Request Entity Too Large" errors
 
 // Express 4.0
-// app.use(bodyParser.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Express 3.0
