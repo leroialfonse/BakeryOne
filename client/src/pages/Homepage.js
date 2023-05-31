@@ -168,7 +168,7 @@ const Homepage = () => {
 
                     {/* Turns the data in 'checked' into Json strigns, so that i can check the function of the check function. I'm gonna keep this here for now- useful for showing me that it's responding to calls for that data.*/}
 
-                    {/* {JSON.stringify(radio, null, 4)}; */}
+                    {/* {(radio, null, 4)}; */}
 
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
                     <div className='d-flex flex-wrap m-3'>

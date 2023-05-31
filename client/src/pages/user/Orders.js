@@ -8,14 +8,15 @@ import moment from 'moment'
 
 const Orders = () => {
 
-    const [auth, setAuth] = useAuth();
     const [orders, setOrders] = useState([]);
+
+    const [auth, setAuth] = useAuth();
 
 
     const getOrders = async () => {
         try {
             const { data } = await axios.get("/api/v1/auth/orders");
-            setOrders(data)
+            setOrders(data);
 
         } catch (error) {
             console.log(error)
@@ -24,8 +25,8 @@ const Orders = () => {
 
 
     useEffect(() => {
-        if (auth?.token) getOrders()
-    }, [auth?.token])
+        if (auth?.token) getOrders();
+    }, [auth?.token]);
 
     return (
         <Layout title={'Your Order History'}>
@@ -36,59 +37,62 @@ const Orders = () => {
                     </div>
                     <div className='col-md-9'>
                         <h1 className='text-center'>All Orders</h1>
-                        {
-                            orders?.map((order, i) => {
-                                return (
-                                    <div className='border shadow'>
-                                        <table className='table'>
-                                            <thead>
-                                                <tr>
-                                                    <td scope="col">#</td>
-                                                    <td scope="col">Status</td>
-                                                    <td scope="col">Buyer</td>
-                                                    <td scope="col">Ordered</td>
-                                                    <td scope="col">Payment</td>
-                                                    <td scope="col">Quantity</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th>{i + 1}</th>
-                                                    <th>{order?.status}</th>
-                                                    <th>{order?.buyer.name}</th>
-                                                    <th>{moment(order?.createdAt).fromNow()}</th>
-                                                    <th>{order?.payment.success ? "Successful" : "Failed"}</th>
-                                                    <th>{order?.products?.length}</th>
-                                                </tr>
-                                                <div className='container'>
-                                                    {order?.products?.map((p) => (
-                                                        <div className='row mb-2 card flex-row p-3'>
-                                                            <div className='col-md-4'>
-                                                                <img src={`api/v1/product/product-photo/${p._id}`}
-                                                                    className="card-img-top"
-                                                                    alt={p.name}
-                                                                    width='100px'
-                                                                    height={'200px'}
-                                                                />
-                                                            </div>
-                                                            <div className='col-md-8'>
-                                                                <h5 style={{ fontWeight: 700 }} >{p.name}</h5>
-                                                                <p>{p.description.substring(0, 30)}...</p>
-                                                                <p>$ {p.price}</p>
-                                                                {/* <button className='btn btn-danger' onClick={() => deleteCartItem(p._id)}>Remove</button> */}
 
-                                                            </div>
-                                                        </div>
+                        {JSON.stringify(orders, null, 4)}
+                        {orders?.map((o, i) => {
+                            return (
+                                <div className='border shadow'>
+                                    <table className='table'>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Buyer</th>
+                                                <th scope="col">Ordered</th>
+                                                <th scope="col">Payment</th>
+                                                <th scope="col">Quantity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>{i + 1}</td>
+                                                <td>{o?.status}</td>
+                                                <td>{o?.buyer.name}</td>
+                                                <td>{moment(o?.createdAt).fromNow()}</td>
+                                                <td>{o?.payment.success ? "Successful" : "Failed"}</td>
+                                                <td>{o?.products?.length}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div className='container' >
+                                        {o?.products?.map((p, i) => (
+                                            <div className='row mb-2 card flex-row p-3' key={p._id}>
+                                                <div className='col-md-4'>
+                                                    <img src={`/api/v1/product/product-photo/${p._id}`}
+                                                        className="card-img-top"
+                                                        alt={p.name}
+                                                        width='100px'
+                                                        height={'100px'}
+                                                    />
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{p.name}</p>
 
-                                                    ))}
+                                                    {/* <h5 style={{ fontWeight: 700 }} >{p.name}</h5> */}
+                                                    <p>{p.description.substring(0, 30)}...</p>
+                                                    <p>$ {p.price}</p>
 
                                                 </div>
-                                            </tbody>
-                                        </table>
+                                            </div>
+
+                                        ))}
 
                                     </div>
-                                )
-                            })
+
+
+                                </div>
+                            )
+                        })
                         }
                     </div>
                 </div>

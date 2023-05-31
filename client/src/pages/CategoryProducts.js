@@ -28,7 +28,6 @@ const CategoryProducts = () => {
 
     const getProductsByCategory = async () => {
 
-
         try {
             const { data } = await axios.get(`/api/v1/product/product-category/${params.slug}`)
             setProducts(data?.products)

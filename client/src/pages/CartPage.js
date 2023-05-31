@@ -77,12 +77,12 @@ const CartPage = () => {
         try {
             setLoading(true)
             const { nonce } = await instance.requestPaymentMethod();
-            const { data } = await axios.post('api/v1/product/braintree/payment', {
+            const { data } = await axios.post('/api/v1/product/braintree/payment', {
                 nonce, cart,
             })
             setLoading(false)
             localStorage.removeItem('cart')
-            setCart();
+            setCart([]);
             navigate('/dashboard/user/orders')
             toast.success('Payment Successful!')
         } catch (error) {
@@ -110,9 +110,9 @@ const CartPage = () => {
                 <div className='row '>
                     <div className='col-md-8'>
                         {cart?.map((p) => (
-                            <div className='row mb-2 card flex-row p-3'>
+                            <div className='row mb-2 card flex-row p-3' key={p._id}>
                                 <div className='col-md-4'>
-                                    <img src={`api/v1/product/product-photo/${p._id}`}
+                                    <img src={`/api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
                                         width='100px'
@@ -163,7 +163,7 @@ const CartPage = () => {
 
                         <div className='mt-4'>
                             {
-                                !clientToken || !cart?.length ? ("") : (
+                                !clientToken || !auth?.token || !cart?.length ? ("") : (
                                     <>
                                         <DropIn
                                             options={{
