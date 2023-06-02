@@ -37,7 +37,7 @@ const Header = () => {
                             🧁 Sweetie Pie</Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                            <li className="nav-item" key={'nav-item'}>
+                            <li className="nav-item" >
                                 <NavLink to="/" className="nav-link" >Home</NavLink>
                             </li>
                             <li className="nav-item dropdown">

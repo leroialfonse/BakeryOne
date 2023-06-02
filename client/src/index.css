@@ -13,21 +13,19 @@
 .navbar{
 font-family: 'Poppins', sans-serif;
 font-size: 17px;
-line-height: 26px;
+line-height: 2rem;
 /* text-transform: uppercase; */
-box-shadow: 0 8px 6px -6px gray;
---webkit-box-shadow: 0 8px 6px -6px gray;
-border-bottom: solid gray !important;
+box-shadow: 0 8px 6px -6px #a812a6;
+--webkit-box-shadow: 0 8px 6px -6px #a812a6;
+border-bottom: solid #a812a6 !important;
 }
 
 .nav-link{
   font-weight: 300 !important;
 }
 
-.search {
-  padding-right: 20px;
-  margin-top: 10px;
-  height: 20px;
+.navbar-brand, .nav-item {
+  color: green;
 }
 /* or .nav-link.active  Still unsure. lol.*/
 .active{
@@ -40,6 +38,7 @@ border-bottom: solid gray !important;
   font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
   text-transform: none;
   letter-spacing: 1px;
+  padding: 1rem;
   color:#a812a6;
 }
 

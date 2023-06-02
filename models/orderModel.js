@@ -3,13 +3,14 @@ import productModel from './productModel.js';
 
 
 const orderSchema = new mongoose.Schema({
-    products: [
+    product: [
         {
             type: mongoose.ObjectId,
-            ref: 'products',
+            ref: "products",
 
-        },
-    ],
+        }
+    ]
+    ,
     payment: {},
     buyer: {
         type: mongoose.ObjectId,
@@ -23,6 +24,8 @@ const orderSchema = new mongoose.Schema({
     },
 },
     { timestamps: true }
+
+
 );
 
 export default mongoose.model("orders", orderSchema)

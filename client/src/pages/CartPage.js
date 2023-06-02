@@ -75,7 +75,7 @@ const CartPage = () => {
     // Buy now button
     const handlePayment = async () => {
         try {
-            setLoading(true)
+            setLoading(true);
             const { nonce } = await instance.requestPaymentMethod();
             const { data } = await axios.post('/api/v1/product/braintree/payment', {
                 nonce, cart,
