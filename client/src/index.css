@@ -1,24 +1,222 @@
   @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Inter:wght@100;300;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@300;400&family=Roboto:wght@300;400&family=Style+Script&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Yellowtail&display=swap');
 
-
-
+:root{
+  --overlay-color: #f2c90f;
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif, 'Playfair-Display', sans-serif, 'Roboto', sans-serif, 'Inter', sans-serif, Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif, 'Playfair-Display', sans-serif, 'Roboto', sans-serif, 'Inter', sans-serif, Arial, "Yellotail", sans-serif, Helvetica, sans-serif;
 }
 
-.main{
+
+/* Vid Main */
+/* .main{
   height: 100vh;
   width: 100%;
+} */
+
+
+.showcase {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  right: 0;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: whitesmoke;
+  /* color: rgba(218, 107, 17, 0.671); */
+  z-index: 2;
 }
 
-video{
+.showcase.active{
+  /* sets the showcase (vid page) to move over the left by 300px, to accomodate the menu, when the menu is active. */
+  right: 300px;
+}
+
+.showcase header{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding: 40px 100px;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+
+
+header .logo{
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toggle{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url('https://i.ibb.co/HrfVRcx/menu.png');
+  /* background: url('../src/assets/bakeryVid.mp4'); */
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.toggle.active{
+  background: url('https://i.ibb.co/rt3HybH/close.png');
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+}
+
+.showcase video{
+  position: absolute;
+  top:0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: .7;
+  }
+  
+  /* I kinda like it without the colored overlay.... */
+  /*.overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background:rgba(234, 146, 45, 0.3)  
+    background:  var(--overlay-color );
+    mix-blend-mode: overlay;
+    /* could also use rgba values instead of the mix-blend-mode... Works the same.  
+
+  } */
+  .text{
+    position: relative;
+    z-index: 10;
+  }
+
+  .text h2{
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+
+  .text h3{
+    font-size: 4em;
+    font-weight: 700;
+  font-family: 'Yellowtail', sans-serif, 'Poppins', sans-serif;
+    line-height: 1em;
+    /* text-transform: uppercase; */
+  }
+
+  .text p{
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+  }
+
+  .text a{
+    display: inline-block;
+    font-size: 1em;
+    background: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #111;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.2s;
+
+  }
+
+  .text a:hover{
+    letter-spacing: 6px;
+  }
+
+  .social{
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .social li{
+    list-style: none;
+  }
+
+  .social li a{
+    display: inline-block;
+    /* Switches the native color from black to white */
+    filter: invert(1);
+    margin-right: 20px;
+    transform: scale(.5);
+    transition: 0.5s;
+
+  }
+
+  .social li a:hover{
+    transform: scale(.5) translateY(-20);
+  }
+
+.menu{
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.menu ul{
+  position: relative;
+  list-style: none;
+
+}
+.menu ul li a{
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+
+}
+
+menu ul li a:hover{
+  color: var(--overlay-color ); 
+}
+@media(max-width: 798px){
+  .showcase,
+  .showcase header{
+    padding: 40px;
+  }
+
+  .text h2{
+    font-size: 3em;
+
+  }
+
+  .text h3{
+    font-size: 2em;
+  }
+}
+
+
 /* Navbar Styles */
 .navbar{
 font-family: 'Poppins', sans-serif;
