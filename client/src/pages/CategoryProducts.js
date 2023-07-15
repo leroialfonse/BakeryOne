@@ -40,8 +40,8 @@ const CategoryProducts = () => {
         <Layout>
             <div className='container mt-3'>
 
-                <h3 className='text-center'>Category: {category?.name}</h3>
-                <h3 className='text-center'>{products?.length} items found!</h3>
+                <h3 className='text-center splash2'>Category: {category?.name}</h3>
+                <h3 className='text-center splash2'>{products?.length} items found!</h3>
             </div>
             <div className='row'>
                 <div className='d-flex flex-wrap m-3'>

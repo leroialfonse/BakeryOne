@@ -3,6 +3,7 @@
 
 :root{
   --overlay-color: #f2c90f;
+  --overlay-color2:#f2970f;
 }
 *{
   margin: 0;
@@ -39,7 +40,11 @@
 .showcase.active{
   /* sets the showcase (vid page) to move over the left by 300px, to accomodate the menu, when the menu is active. */
   right: 300px;
+  /* transform: scaleY(.95); */
+  transition: 1.1s;
+  filter:blur(2px);
 }
+
 
 .showcase header{
 position: absolute;
@@ -185,6 +190,7 @@ header .logo{
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--overlay-color);
 }
 
 .menu ul{
@@ -196,11 +202,14 @@ header .logo{
   text-decoration: none;
   font-size: 24px;
   color: #111;
+  
 
 }
 
 menu ul li a:hover{
-  color: var(--overlay-color ); 
+  color: var(--overlay-color );
+  letter-spacing: 2px;
+    transition: 0.2s; 
 }
 @media(max-width: 798px){
   .showcase,
@@ -223,15 +232,29 @@ menu ul li a:hover{
 .navbar{
 font-family: 'Poppins', sans-serif;
 font-size: 17px;
-line-height: 2rem;
+line-height: 1.5rem;
 /* text-transform: uppercase; */
-box-shadow: 0 8px 6px -6px #a812a6;
+/* box-shadow: 0 8px 6px -6px #a812a6;
 --webkit-box-shadow: 0 8px 6px -6px #a812a6;
-border-bottom: solid #a812a6 !important;
+border-bottom: solid #a812a6 !important; */
+box-shadow: 0 8px 6px -6px var(--overlay-color);
+--webkit-box-shadow: 0 8px 6px -6px var(--overlay-color);
+border-bottom: solid var(--overlay-color) !important;
 }
 
+.navbar-toggler{
+  /* color: #a812a6;
+  fill:#a812a6; */
+  color:  var(--overlay-color);
+  fill: var(--overlay-color);
+  position: relative;
+}
 .nav-link{
   font-weight: 300 !important;
+}
+
+.ant-badge{
+  margin: .8rem
 }
 
 .navbar-brand, .nav-item {
@@ -239,7 +262,8 @@ border-bottom: solid #a812a6 !important;
 }
 /* or .nav-link.active  Still unsure. lol.*/
 .active:not(.toggle.active){
-  border-bottom: 3px solid rgb(134, 45, 167);
+  border-bottom: 3px solid var(--overlay-color);
+  /* border-bottom: 3px solid rgb(134, 45, 167); */
 }
 
 .navbar-brand, .splash{
@@ -249,21 +273,31 @@ border-bottom: solid #a812a6 !important;
   text-transform: none;
   letter-spacing: 1px;
   padding: 1rem;
-  color:#a812a6;
+  color:var(--overlay-color);
+  /* color:#a812a6; */
 }
 
+.splash2{
+  font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
+  font-size: 50px;
+  color: #f2c90f;
+}
+
+/* More section */
+.moreLike{
+  background:#f2c90f;
+}
 /* Footer Styles */
 .footer{
   color: white;
   padding: 25px 25px 25px 0;
   background: #000000; /* a fallback in case of older browsers */
   background: -webkit-linear-gradient(
-    to-right,
-    #a812a6,
-    #fc54bc
+    to right,
+    #f2c90f,#f2970f
   ); 
   /* And for chrome 10-25, Safari 5.1 - 6..... */
-background: linear-gradient(to right, #a812a6, #fc54bc);
+background: linear-gradient(to right, #f2c90f,#f2970f);
 }
 
 .footer a{
@@ -274,7 +308,8 @@ background: linear-gradient(to right, #a812a6, #fc54bc);
 
 .footer a:hover{
   color: #ffefba;
-  border-bottom: 1px solid #ffefba ;
+  border-bottom: 1px solid #ba910c ;
+  /* border-bottom: 1px solid #ffefba ; */
 
 }
 
@@ -298,7 +333,7 @@ background: linear-gradient(to right, #a812a6, #fc54bc);
 
 .pnf-btn{
   color: black;
-  border: 3px solid green;
+  border: 3px solid #f2970f;
   text-decoration: none;
   padding: 10px;
   margin: 10px;
@@ -307,8 +342,10 @@ background: linear-gradient(to right, #a812a6, #fc54bc);
 
 
 .pnf-btn:hover {
-  background-color: black;
+  letter-spacing: 2px;
+  background-color: #f2c90f;
   color: white;
+  transition: .6s;
 }
 
 .pnf-image{
@@ -377,9 +414,9 @@ border-radius: 80px;
 }
 
 .detail-image{
-  border: 2px solid #a812a6;
+  border: 2px solid #f2970f;
   border-radius: 20px;
-  box-shadow: 0 8px 6px -6px #a812a6;
---webkit-box-shadow: 0 8px 6px 6px #a812a6;
+  box-shadow: 0 8px 6px -6px #f2970f;
+--webkit-box-shadow: 0 8px 6px 6px #f2970f ;
   
 }

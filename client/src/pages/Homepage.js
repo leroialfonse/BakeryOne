@@ -137,7 +137,7 @@ const Homepage = () => {
         <Layout title={'Fresh From the Oven - Sweetie Pie Bakery'}>
             <div className='row mt-3'>
 
-                <div className='col-md-2 p-5 sidebar mb-3' style={{ backgroundColor: 'rgba(111,88,226,.2)', borderRadius: '5px', width: '20rem' }} >
+                <div className='col-md-2 p-5 sidebar mb-3' style={{ backgroundColor: '#f3d758', borderRadius: '5px', width: '20rem', marginLeft: '1.3rem' }} >
                     <h4 className='text-center' >Filter by Category</h4>
                     <div className='d-flex flex-column'>
                         {categories?.map((c) => (
@@ -171,7 +171,7 @@ const Homepage = () => {
                     {/* {(radio, null, 4)}; */}
 
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
-                    <div className='d-flex flex-wrap m-3 text-center'>
+                    <div className='d-flex flex-wrap m-3 text-center' style={{ justifySelf: 'center', alignSelf: 'center' }}>
                         {products?.map((p) => (
 
                             <div className="card m-2" style={{ width: '18rem' }}  >
@@ -212,7 +212,7 @@ const Homepage = () => {
                 </div>
 
             </div>
-        </Layout>
+        </Layout >
     );
 };
 
