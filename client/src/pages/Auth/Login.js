@@ -24,12 +24,14 @@ const Login = () => {
         // console.log(name, email, password, address, phone)
         // toast.success('Registration Successful!')
         try {
-            const res = await axios.post('/api/v1/auth/login', { email, password });
+            // const res = await axios.get('/api/v1/dashboard/user', { email, password });
+            // const res = await axios.post('/api/v1/auth/login', { email, password });
+            const res = await axios.get('/api/v1/auth/login');
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
                 // saves the auth object in local storage so you can stay logged in.
                 localStorage.setItem('auth', JSON.stringify(res.data));
-                navigate(location.state || "/");
+                navigate(location.state || "/Home");
                 setAuth({
                     ...auth,
                     user: res.data.user,
