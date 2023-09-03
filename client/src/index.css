@@ -233,13 +233,10 @@ menu ul li a:hover{
 font-family: 'Poppins', sans-serif;
 font-size: 17px;
 line-height: 1.5rem;
-/* text-transform: uppercase; */
-/* box-shadow: 0 8px 6px -6px #a812a6;
---webkit-box-shadow: 0 8px 6px -6px #a812a6;
-border-bottom: solid #a812a6 !important; */
 box-shadow: 0 8px 6px -6px var(--overlay-color);
 --webkit-box-shadow: 0 8px 6px -6px var(--overlay-color);
 border-bottom: solid var(--overlay-color) !important;
+display: flex;
 }
 
 .navbar-toggler{
@@ -248,18 +245,19 @@ border-bottom: solid var(--overlay-color) !important;
   color:  var(--overlay-color);
   fill: var(--overlay-color);
   position: relative;
+  margin-bottom: 1rem;
 }
 .nav-link{
   font-weight: 300 !important;
 }
 
 .ant-badge{
-  margin: .8rem
+  font-size:medium ;
+  margin-top: .3rem;
+  margin-right: .8rem;
+  /* padding-bottom: .2rem */
 }
 
-.navbar-brand, .nav-item {
-  color: green;
-}
 /* or .nav-link.active  Still unsure. lol.*/
 .active:not(.toggle.active){
   border-bottom: 3px solid var(--overlay-color);
@@ -274,13 +272,31 @@ border-bottom: solid var(--overlay-color) !important;
   letter-spacing: 1px;
   padding: 1rem;
   color:var(--overlay-color);
-  /* color:#a812a6; */
+}
+
+.navbar-brand-name{
+  font-weight: 700;
+  font-size: 40px;
+  font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
+  text-transform: none;
+  letter-spacing: 1px;
+  padding-right: auto;
+  color:var(--overlay-color);
+  text-decoration: none;
+  justify-self:center;
+  align-self: flex-start;
 }
 
 .splash2{
   font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
   font-size: 50px;
-  color: #f2c90f;
+  color: var(--overlay-color);
+}
+
+.splash3{
+  font-family: 'Cookie', sans-serif, 'Poppins', sans-serif;
+  font-size: 40px;
+  color: var(--overlay-color2);
 }
 
 /* More section */

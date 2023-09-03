@@ -1,28 +1,15 @@
-// import axios from "axios";
 import React, { useState } from 'react';
-// import { Player } from 'video-react';
 import video from '../../assets/bakeryVid.mp4'
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-// import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../context/auth'
-// import toast from "react-hot-toast"
-// import SearchForm from '../Form/SearchForm'
-// import useCategory from '../../hooks/useCategory'
-// import { useCart } from '../../context/cart'
-// import { Badge } from 'antd'
 
-
-// const menuToggle = document.
-
-// const [cart] = useCart();
-// const categories = useCategory();
 
 
 const VidHome = () => {
 
-    const [auth, setAuth] = useAuth([]);
-    const user = useAuth();
+    // const [auth, setAuth] = useAuth([]);
+    // const user = useAuth();
 
     const [isActive, setIsActive] = useState(false);
 
@@ -46,7 +33,7 @@ const VidHome = () => {
                 <div className='overlay'></div>
                 <div className='text'>
                     <h2>Sweetie Pie!</h2>
-                    <h3>welcome to the kitchen!!</h3>
+                    <h3>Welcome to the Kitchen!!</h3>
                     <p>
                         All of your favorite sweet treats, baked fresh every day! Run, don't walk to Sweetie Pie's bakery!
 
@@ -54,9 +41,9 @@ const VidHome = () => {
                     <Link to='/Home'>Hungry??</Link>
                 </div>
 
-                <ul className='social'>
+                {/* <ul className='social'>
                     <li><img src='facebook.png' alt='' /></li> <li><img src='twitter.png' alt='' /></li> <li><img src='instagram.png' alt='' /></li>
-                </ul>
+                </ul> */}
             </section>
             <div className='menu'>
 

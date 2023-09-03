@@ -219,6 +219,7 @@ export const updateProfileController = async (req, res) => {
 // };
 
 // //////////////////////////
+
 export const getPastOrdersController = async (req, res) => {
     try {
         const orders = await orderModel
@@ -238,19 +239,19 @@ export const getPastOrdersController = async (req, res) => {
 }
 
 // // Show all orders....
-// export const getAllOrdersController = async (req, res) => {
-//     try {
-//         const orders = await orderModel.find({}).populate('products', '-photo').populate('buyer', "name").sort({ createdAt: '-1' });
-//         res.json(orders)
-//     } catch (error) {
-//         console.log(error)
-//         res.status(500).send({
-//             succes: false,
-//             message: 'Could not get the past orders.',
-//             error
-//         })
-//     }
-// }
+export const getAllOrdersController = async (req, res) => {
+    try {
+        const orders = await orderModel.find({}).populate('products', '-photo').populate('buyer', "name").sort({ createdAt: '-1' });
+        res.json(orders)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            succes: false,
+            message: 'Could not get the past orders.',
+            error
+        })
+    }
+}
 
 // update Order Status
 export const orderStatusController = async (req, res) => {

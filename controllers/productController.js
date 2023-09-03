@@ -3,7 +3,7 @@ import categoryModel from '../models/categoryModel.js';
 import orderModel from "../models/orderModel.js";
 import fs from 'fs'
 import slugify from "slugify";
-// import braintree for payment sandbox.
+// import braintree for payment(sandbox).
 import braintree from "braintree";
 // import env for access to env vars
 import dotenv from 'dotenv'

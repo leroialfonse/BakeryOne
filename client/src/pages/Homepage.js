@@ -171,13 +171,16 @@ const Homepage = () => {
                     {/* {(radio, null, 4)}; */}
 
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
-                    <div className='d-flex flex-wrap m-3 text-center' style={{ justifySelf: 'center', alignSelf: 'center' }}>
+                    <div className='d-flex  flex-wrap m-3 text-center' >
                         {products?.map((p) => (
 
-                            <div className="card m-2" style={{ width: '18rem' }}  >
+                            <div className="card m-2"
+                                style={{ width: '18rem', justifySelf: 'center', alignSelf: 'center', minHeight: '24rem' }}
+                            >
 
                                 <img src={`/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
+                                    // style={{ minHeight: '20rem' }}
                                     alt={p.name}
                                 />
                                 <div className="card-body">

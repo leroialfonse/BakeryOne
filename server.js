@@ -1,5 +1,5 @@
 import express from 'express';
-const PORT = process.env.PORT || 8500;
+const PORT = 4000;
 // Colors error and response messages in my terminal! unneccessary, but cool.
 import colors from 'colors';
 import dotenv from 'dotenv';
@@ -44,7 +44,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true, parameterLimit: 1000
 
 //routes
 app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/category', categoryRoutes);
+app.use('/api/v1/category/', categoryRoutes);
 app.use('/api/v1/product', productRoutes)
 
 // Getting into the API at the main route.
@@ -54,5 +54,5 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running in ${process.env.DEV_MODE} mode on port ${PORT}`.bgBlue.white);
+    console.log(`Server is running on port ${PORT}`.bgBlue.white);
 })
