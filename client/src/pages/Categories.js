@@ -10,12 +10,17 @@ const Categories = () => {
     return (
         <Layout title={'All Categories'}>
             <div className='container'>
-                <div className='row d-flex flex-wrap column p-3'>
+                <div className='row d-flex flex-wrap column p-3' >
                     {categories.map(c => (
-                        <div className='col-md-6 mt-5 mb-3 gx-3 gy-3' key={c._id}>
+                        <div className='col-md-6 mt-5 mb-3 gx-3 gy-3' style={{ width: '20rem' }} key={c._id}>
                             <Link to={`/category/${c.slug}`} className='btn btn-warning'>{c.name}</Link>
                         </div>
                     ))}
+
+                    {/*  */}
+
+
+                    {/*  */}
 
                 </div>
             </div>
