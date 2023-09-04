@@ -69,7 +69,7 @@ const CreateProduct = () => {
 
             if (data?.success) {
                 toast.success('New Product Created!')
-                // navigate('/dashboard/admin/products')
+                navigate('/dashboard/admin/products')
             } else {
                 toast.error(data?.message)
             }

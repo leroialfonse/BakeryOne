@@ -33,12 +33,13 @@ const Header = () => {
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <Link to="/" className="navbar-brand">
-                            🧁 Sweetie Pie</Link>
+                        <div><Link to="/Home" className="navbar-brand-name">Sweetie Pie</Link></div>
+
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                            <li className="nav-item">
-                                <NavLink to="/" className="nav-link" >Home</NavLink>
+
+                            <li className="nav-item" >
+                                <NavLink to="/Home" className="nav-link" >Home</NavLink>
                             </li>
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" to={'/categories'} data-bs-toggle="dropdown" >
@@ -86,12 +87,10 @@ const Header = () => {
 
                                     </>)
                             }
-                            <li className="nav-item search">
-                                <Badge count={cart?.length} showZero>
-                                    <NavLink to="/cart" className="nav-link ">Cart </NavLink>
+                            <li className="nav-item">
+                                <Badge count={cart?.length} size='middle' showZero>
+                                    <NavLink to="/cart" className="nav-link ">Cart</NavLink>
                                 </Badge>
-
-
                             </li>
 
                             <SearchForm />

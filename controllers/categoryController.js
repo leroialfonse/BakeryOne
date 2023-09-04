@@ -3,7 +3,6 @@ import slugify from 'slugify';
 
 
 // TODO: 
-// Check function with postman.
 
 export const categoryController = async (req, res) => {
     try {

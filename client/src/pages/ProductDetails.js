@@ -70,7 +70,7 @@ const ProductDetails = () => {
 
 
                 <div className='col-md-6 '>
-                    <h1 className='text-center'>The Details</h1>
+                    <h1 className='text-center splash'>The Details</h1>
                     <h6>Name: {product.name}</h6>
                     <h6>Description: {product.description}</h6>
                     <h6>Price: ${product.price}</h6>
@@ -85,8 +85,8 @@ const ProductDetails = () => {
             </div>
 
             <hr />
-            <div className='row m-5'>
-                <h6>More like this:</h6>
+            <div className='row m-2'>
+                <h5 className='splash'>More like this:</h5>
                 {/* Will create an array of  3 items similar to the featured item, based on similar categories. */}
                 {related.length < 1 && (<p className="text-center">No similar options found.</p>)}
 

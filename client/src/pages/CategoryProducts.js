@@ -28,7 +28,6 @@ const CategoryProducts = () => {
 
     const getProductsByCategory = async () => {
 
-
         try {
             const { data } = await axios.get(`/api/v1/product/product-category/${params.slug}`)
             setProducts(data?.products)
@@ -41,11 +40,11 @@ const CategoryProducts = () => {
         <Layout>
             <div className='container mt-3'>
 
-                <h3 className='text-center'>Category: {category?.name}</h3>
-                <h3 className='text-center'>{products?.length} items found!</h3>
+                <h3 className='text-center splash2'>Looking for: {category?.name}</h3>
+                <h3 className='text-center splash3'>{products?.length} {category?.name} found!</h3>
             </div>
             <div className='row'>
-                <div className='d-flex flex-wrap m-3'>
+                <div className='d-flex flex-wrap m-3' style={{ alignContent: 'center' }}>
                     {products?.map((p) => (
 
                         <div className="card m-2" style={{ width: '18rem' }} key={p._id}  >

@@ -38,7 +38,7 @@ const UpdateProduct = () => {
 
 
 
-    // Get a single prodcut
+    // Get a single product
     const getSingleProduct = async () => {
         try {
             const { data } = await axios.get(`/api/v1/product/get-one-product/${params.slug}`);

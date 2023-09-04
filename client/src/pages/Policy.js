@@ -1,14 +1,14 @@
-import React from 'react'
-import Layout from '../components/Layout/Layout'
+// import React from 'react'
+// import Layout from '../components/Layout/Layout'
 
-const Policy = () => {
-    return (
-        <Layout title={'Privacy Policy'}>
-            <h1>Privacy Policy</h1>
+// const Policy = () => {
+//     return (
+//         <Layout title={'Privacy Policy'}>
+//             <h1>Privacy Policy</h1>
 
-        </Layout>
+//         </Layout>
 
-    )
-}
+//     )
+// }
 
-export default Policy
+// export default Policy

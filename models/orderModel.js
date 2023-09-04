@@ -1,17 +1,20 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
+import productModel from './productModel.js';
 
 
 const orderSchema = new mongoose.Schema({
-    products: [{
-        type: mongoose.ObjectId,
-        ref: 'products',
+    product: [
+        {
+            type: mongoose.ObjectId,
+            ref: "products",
 
-    },
-    ],
+        }
+    ]
+    ,
     payment: {},
     buyer: {
         type: mongoose.ObjectId,
-        ref: 'users'
+        ref: 'users',
     },
     status: {
         type: String,
@@ -21,6 +24,8 @@ const orderSchema = new mongoose.Schema({
     },
 },
     { timestamps: true }
+
+
 );
 
 export default mongoose.model("orders", orderSchema)

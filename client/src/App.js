@@ -23,8 +23,8 @@ import ProductDetails from './pages/ProductDetails';
 import Categories from './pages/Categories';
 import CategoryProducts from './pages/CategoryProducts';
 import CartPage from './pages/CartPage';
-
-
+import AdminOrders from './pages/Admin/AdminOrders';
+import VidHome from './pages/user/VidHome';
 
 
 
@@ -32,7 +32,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<VidHome />} />
+
+        <Route path="/Home" element={<Homepage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/categories" element={<Categories />} />
@@ -59,6 +61,7 @@ function App() {
 
           <Route path='admin/products' element={<Products />} />
           <Route path='admin/users' element={<Users />} />
+          <Route path='admin/orders' element={<AdminOrders />} />
 
 
         </Route>

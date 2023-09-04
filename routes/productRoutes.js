@@ -9,9 +9,11 @@ import formidable from 'express-formidable'
 
 const router = express.Router();
 
+
 // product routes 
 
 router.post('/create-product', requireSignIn, isAdmin, formidable(), createProductController)
+// router.post('/create-product', isAdmin, formidable(), createProductController)
 // router.post('/create-category', requireSignIn, isAdmin, categoryController);
 
 
@@ -62,7 +64,7 @@ router.get('/product-category/:slug', productCategoryController);
 router.get('/braintree/token', braintreeTokenController);
 
 /// payment
-router.post('/braintree/payment', requireSignIn, braintreePaymentController);
+router.post('/braintree/payment', braintreePaymentController);
 
 
 export default router;

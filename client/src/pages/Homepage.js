@@ -137,7 +137,7 @@ const Homepage = () => {
         <Layout title={'Fresh From the Oven - Sweetie Pie Bakery'}>
             <div className='row mt-3'>
 
-                <div className='col-md-2 p-5 sidbar' style={{ backgroundColor: 'rgba(111,88,226,.2)', borderRadius: '5px' }} >
+                <div className='col-md-2 p-5 sidebar mb-3' style={{ backgroundColor: '#f3d758', borderRadius: '5px', width: '20rem', marginLeft: '1.3rem' }} >
                     <h4 className='text-center' >Filter by Category</h4>
                     <div className='d-flex flex-column'>
                         {categories?.map((c) => (
@@ -168,16 +168,19 @@ const Homepage = () => {
 
                     {/* Turns the data in 'checked' into Json strigns, so that i can check the function of the check function. I'm gonna keep this here for now- useful for showing me that it's responding to calls for that data.*/}
 
-                    {/* {JSON.stringify(radio, null, 4)}; */}
+                    {/* {(radio, null, 4)}; */}
 
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
-                    <div className='d-flex flex-wrap m-3'>
+                    <div className='d-flex  flex-wrap m-3 text-center' >
                         {products?.map((p) => (
 
-                            <div className="card m-2" style={{ width: '18rem' }}  >
+                            <div className="card m-2"
+                                style={{ width: '18rem', justifySelf: 'center', alignSelf: 'center', minHeight: '24rem' }}
+                            >
 
                                 <img src={`/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
+                                    // style={{ minHeight: '20rem' }}
                                     alt={p.name}
                                 />
                                 <div className="card-body">
@@ -212,7 +215,7 @@ const Homepage = () => {
                 </div>
 
             </div>
-        </Layout>
+        </Layout >
     );
 };
 
