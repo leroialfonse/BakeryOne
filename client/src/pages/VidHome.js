@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import video from '../assets/bakeryVid.mp4';
+// import video from '../assets/bakeryVid.mp4';
+import video from './bakeryVid.mp4';
+
 import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
 
 
@@ -25,8 +27,8 @@ const VidHome = () => {
                     {/* <Link to="/Home" className=" logo">🧁</Link> */}
                     <div className={`toggle ${isActive ? 'active' : ''}`}></div>
                 </header>
-                {/*  */}
-                <div className='player-wrapper'>
+                {/* */}
+                {/* <div className='player-wrapper'>
                     <ReactPlayer
                         className='react-player'
                         url='bakeryVid.mp4'
@@ -35,11 +37,11 @@ const VidHome = () => {
 
                     />
 
-                </div>
+                </div> */}
                 {/*  */}
 
                 <video
-                    className="vidBg" src={video} autoPlay muted loop></video>
+                    className="vidBg" src={video} type="video/mp4" autoPlay muted loop></video>
 
                 <div className='overlay'></div>
                 <div className='text'>
