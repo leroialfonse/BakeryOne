@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import video from '../../assets/bakeryVid.mp4';
+import video from '../assets/bakeryVid.mp4';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player'
 
