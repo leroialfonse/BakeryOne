@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 // import video from '../../assets/bakeryVid.mp4';
-import video from 'C:\Users\brand\OneDrive\Desktop\Code Bootcamp\EComm2023 - SweetiePie\client\build\bakeryVid.mp4'
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player'
 
@@ -39,8 +38,8 @@ const VidHome = () => {
                 </div>
                 {/*  */}
 
-                {/* <video
-                    className="vidBg" src={video} autoPlay muted loop></video> */}
+                <video
+                    className="vidBg" src={`${process.env.PUBLIC_URL}/'../../assets/bakeryVid.mp4`} autoPlay muted loop></video>
 
                 <div className='overlay'></div>
                 <div className='text'>
