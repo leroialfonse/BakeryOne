@@ -10,7 +10,10 @@ import cors from 'cors'
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 // import bodyParser from 'body-parser'
 // var express = require("express");
 // const bodyParser = require("body-parser");
@@ -44,7 +47,10 @@ app.use('/api/v1/product', productRoutes)
 // })
 
 app.use('*', function (req, res) {
-    res.sendFile(path.join__dirname, './client/build/index.html')
+    res.sendFile(path.join__dirname, './client/build/index.html'),
+        function (err) {
+            res.status(500).send(err)
+        }
 })
 
 
