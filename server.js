@@ -11,6 +11,7 @@ import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 // import path from 'path';
 import { fileURLToPath } from 'url';
+const path = requires('path');
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -28,7 +29,6 @@ connectDB();
 
 // REST Obj 
 const app = express();
-const path = requires('path');
 
 // middlewares 
 app.use(express.json());
