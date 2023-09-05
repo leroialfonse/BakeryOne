@@ -9,7 +9,7 @@ import authRoutes from './routes/authRoutes.js'
 import cors from 'cors'
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
-import path from 'path';
+// import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url)
@@ -28,6 +28,7 @@ connectDB();
 
 // REST Obj 
 const app = express();
+const path = requires('path');
 
 // middlewares 
 app.use(express.json());
