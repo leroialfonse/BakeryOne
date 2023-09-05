@@ -10,6 +10,7 @@ import cors from 'cors'
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import path from 'path';
+const __dirname = path.resolve()
 
 // import bodyParser from 'body-parser'
 // var express = require("express");
