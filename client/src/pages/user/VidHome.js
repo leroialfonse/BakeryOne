@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import video from '../assets/bakeryVid.mp4';
-import video from './client/public/bakeryVid.H264';
+import video from '../user/bakeryVid.H264';
 
 
 import { Link } from 'react-router-dom';
