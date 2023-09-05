@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import video from '../../assets/bakeryVid.mp4'
+// import video from '../../assets/bakeryVid.mp4';
+import video from 'C:\Users\brand\OneDrive\Desktop\Code Bootcamp\EComm2023 - SweetiePie\client\build\bakeryVid.mp4'
 import { Link } from 'react-router-dom';
-
-import { useAuth } from '../../context/auth'
+import ReactPlayer from 'react-player'
 
 
 
@@ -26,9 +26,21 @@ const VidHome = () => {
                     {/* <Link to="/Home" className=" logo">🧁</Link> */}
                     <div className={`toggle ${isActive ? 'active' : ''}`}></div>
                 </header>
+                {/*  */}
+                <div className='player-wrapper'>
+                    <ReactPlayer
+                        className='react-player'
+                        url='bakeryVid.mp4'
+                        width='100%'
+                        height='100%'
 
-                <video
-                    className="vidBg" src={video} autoPlay muted loop></video>
+                    />
+
+                </div>
+                {/*  */}
+
+                {/* <video
+                    className="vidBg" src={video} autoPlay muted loop></video> */}
 
                 <div className='overlay'></div>
                 <div className='text'>

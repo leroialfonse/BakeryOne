@@ -264,6 +264,17 @@ display: flex;
   /* border-bottom: 3px solid rgb(134, 45, 167); */
 }
 
+.player-wrapper {
+  position: relative;
+  /* padding-top: 56.25%; Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .navbar-brand, .splash{
   font-weight: 700;
   font-size: 40px;
