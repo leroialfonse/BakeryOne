@@ -28,7 +28,6 @@ connectDB();
 
 // REST Obj 
 const app = express();
-const path = requires('path');
 
 // middlewares 
 app.use(express.json());
