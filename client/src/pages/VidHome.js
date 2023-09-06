@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import video from '../assets/bakeryVid.mp4';
-import video from '../user/bakeryVid.H264';
+import video from '../assets/bakeryVid.mp4';
+// import video from '../user/bakeryVid.H264';
 
 
 import { Link } from 'react-router-dom';
@@ -25,7 +25,6 @@ const VidHome = () => {
             <section onClick={handleToggle} className={`showcase ${isActive ? 'active' : ''}`}>
                 <header>
                     <h2 className='logo'>Always Fresh</h2>
-                    {/* <Link to="/Home" className=" logo">🧁</Link> */}
                     <div className={`toggle ${isActive ? 'active' : ''}`}></div>
                 </header>
                 {/* */}
@@ -42,7 +41,7 @@ const VidHome = () => {
                 {/*  */}
 
                 <video
-                    className="vidBg" src={video} autoPlay muted loop></video>
+                    src={video} autoPlay muted loop></video>
 
                 <div className='overlay'></div>
                 <div className='text'>

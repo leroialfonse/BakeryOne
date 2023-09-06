@@ -24,7 +24,7 @@ import Categories from './pages/Categories';
 import CategoryProducts from './pages/CategoryProducts';
 import CartPage from './pages/CartPage';
 import AdminOrders from './pages/Admin/AdminOrders';
-import VidHome from './pages/user/VidHome';
+import VidHome from './pages/VidHome';
 
 
 
@@ -73,7 +73,6 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/policy" element={<Policy />} />
         <Route path="*" element={<PageNotFound />} />
 
 
