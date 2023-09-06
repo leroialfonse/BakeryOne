@@ -42,7 +42,7 @@ const VidHome = () => {
                 {/*  */}
 
                 <video
-                    className="vidBg" src={video} type="video/mp4" autoPlay muted loop></video>
+                    className="vidBg" src={video} autoPlay muted loop></video>
 
                 <div className='overlay'></div>
                 <div className='text'>
