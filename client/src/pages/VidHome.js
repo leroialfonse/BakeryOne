@@ -4,7 +4,6 @@ import video from '../assets/bakeryVid.mp4';
 
 
 import { Link } from 'react-router-dom';
-// import ReactPlayer from 'react-player'
 
 
 
@@ -28,21 +27,13 @@ const VidHome = () => {
                     <div className={`toggle ${isActive ? 'active' : ''}`}></div>
                 </header>
                 {/* */}
-                {/* <div className='player-wrapper'>
-                    <ReactPlayer
-                        className='react-player'
-                        url='bakeryVid.mp4'
-                        width='100%'
-                        height='100%'
 
-                    />
-
-                </div> */}
                 {/*  */}
 
-                <video
-                    src={video} autoPlay muted loop></video>
-
+                <div>
+                    <video
+                        src={video} autoPlay muted loop></video>
+                </div>
                 <div className='overlay'></div>
                 <div className='text'>
                     <h2>Sweetie Pie!</h2>
