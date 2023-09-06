@@ -6,7 +6,7 @@ import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart';
-
+import { ReactPlayer } from 'react-player'
 
 
 const Homepage = () => {
@@ -171,6 +171,11 @@ const Homepage = () => {
                     {/* {(radio, null, 4)}; */}
 
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
+
+                    {/* 
+                    <div>
+                                <ReactPlayer 
+                    </div> */}
                     <div className='d-flex  flex-wrap m-3 text-center' >
                         {products?.map((p) => (
 

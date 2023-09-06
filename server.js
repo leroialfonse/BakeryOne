@@ -9,9 +9,9 @@ import authRoutes from './routes/authRoutes.js'
 import cors from 'cors'
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
-// import path from 'path';
+import path from 'path';
 import { fileURLToPath } from 'url';
-const path = requires('path');
+// const path = requires('path');
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -34,7 +34,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, './client/build')))
 
 // app.use(express.static(path.join(__dirname, './client/build')))
 
@@ -49,8 +49,8 @@ app.use('/api/v1/product', productRoutes)
 //     res.send("<h1>Welcome to Sweetie Pie! (Ecomm 2023)</h1>")
 // })
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join__dirname, 'build', 'index.html'),
+app.use('/*', function (req, res) {
+    res.sendFile(path.join__dirname, './client/build/index.html'),
         function (err) {
             res.status(500).send(err)
         }

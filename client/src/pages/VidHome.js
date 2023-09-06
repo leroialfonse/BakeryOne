@@ -32,7 +32,9 @@ const VidHome = () => {
 
                 <div>
                     <video
-                        src={video} autoPlay muted loop></video>
+                        // src={video}  autoPlay muted loop></video>
+                        src={video} width="800" height='400' autoPlay muted loop></video>
+
                 </div>
                 <div className='overlay'></div>
                 <div className='text'>
@@ -45,15 +47,12 @@ const VidHome = () => {
                     <Link to='/Home'>Hungry??</Link>
                 </div>
 
-                {/* <ul className='social'>
-                    <li><img src='facebook.png' alt='' /></li> <li><img src='twitter.png' alt='' /></li> <li><img src='instagram.png' alt='' /></li>
-                </ul> */}
+
             </section>
             <div className='menu'>
 
                 <ul>
-                    {/* <li>                                <NavLink to="/Home" className="nav-link" >Home</NavLink>
-                    </li> */}
+
 
                     <li><Link to='/categories'>All Treats</Link></li>
                     <li><Link to='/Home'>Choose a Snack!</Link></li>
