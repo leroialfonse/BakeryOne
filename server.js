@@ -49,8 +49,9 @@ app.use('/api/v1/product', productRoutes)
 //     res.send("<h1>Welcome to Sweetie Pie! (Ecomm 2023)</h1>")
 // })
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join__dirname, 'build', 'index.html'),
+app.get('*', function (req, res) {
+
+    res.sendFile(path.join(__dirname, 'build', 'index.html')),
         function (err) {
             res.status(500).send(err)
         }
