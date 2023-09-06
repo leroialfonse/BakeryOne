@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import video from '../assets/bakeryVid.mp4';
+import video from '../assets/mixItUp.mp4';
 // import video from '../user/bakeryVid.H264';
 
 
