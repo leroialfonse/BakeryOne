@@ -34,7 +34,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
-app.use(express.static(path.join(__dirname, './client/build')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 // app.use(express.static(path.join(__dirname, './client/build')))
 
@@ -50,7 +50,7 @@ app.use('/api/v1/product', productRoutes)
 // })
 
 app.get('/*', function (req, res) {
-    res.sendFile(path.join__dirname, './client/build/index.html'),
+    res.sendFile(path.join__dirname, 'build', 'index.html'),
         function (err) {
             res.status(500).send(err)
         }
