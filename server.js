@@ -44,14 +44,10 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category/', categoryRoutes);
 app.use('/api/v1/product', productRoutes)
 
-// Getting into the API at the main route.
-// app.get('/', (req, res) => {
-//     res.send("<h1>Welcome to Sweetie Pie! (Ecomm 2023)</h1>")
-// })
 
-app.get('*', function (req, res) {
+app.use('*', function (req, res) {
 
-    res.sendFile(path.join(__dirname, 'build', 'index.html')),
+    res.sendFile(path.join(__dirname, './client/build/index.html')),
         function (err) {
             res.status(500).send(err)
         }
