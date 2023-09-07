@@ -19,7 +19,7 @@ const Search = () => {
 
                     <h6>{values?.results.length < 1 ? <div className='pnf'>
                         <span className='pnf-title'>Oops...</span>
-                        <img className='pnf-image m-2' alt="Couldn't find that!" />
+                        <img className='pnf-image m-2' alt="" />
                         <h2>We can't find that!</h2>
                         <p>Sorry about that. Why not look for something else?</p>
                         <Link to="/" className='pnf-btn'>Go Back Home</Link>
