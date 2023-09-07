@@ -21,7 +21,6 @@ const Login = () => {
     // form submit 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(name, email, password, address, phone)
         // toast.success('Registration Successful!')
         try {
             // const res = await axios.get('/api/v1/dashboard/user', { email, password });

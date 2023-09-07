@@ -11,7 +11,7 @@ const VidHome = () => {
 
 
     const [isActive, setIsActive] = useState(false);
-
+    const [index, setIndex] = useState(0)
 
     const handleToggle = () => {
         setIsActive(!isActive);
@@ -26,11 +26,11 @@ const VidHome = () => {
                 </header>
 
 
-                <div>
-                    <video
-                        src={video} autoPlay muted loop></video>
+                <video
+                    src={video} autoPlay muted loop onEnded={() => { setIndex((idx) => idx + 1); }}>
 
-                </div>
+                </video>
+
                 <div className='overlay'></div>
                 <div className='text'>
                     <h2>Sweetie Pie!</h2>
@@ -43,7 +43,7 @@ const VidHome = () => {
                 </div>
 
 
-            </section>
+            </section >
             <div className='menu'>
 
                 <ul>

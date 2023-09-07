@@ -16,7 +16,7 @@ const Search = () => {
             <div className='container'>
                 <div className='text-center mt-5'>
 
-                    <h6>{values?.results.length < 1 ? 'Couldn\'t find that...' : `Found ${values?.results.length}`}</h6>
+                    <h6>{values?.results.length < 1 ? <div className='card-image-top'><div className='card-body'><span> Add an image to this scard.'Couldn't find that...'</span></div></div> : `Found ${values?.results.length}`}</h6>
 
                     <div className='d-flex flex-wrap mt-5'>
                         {values?.results.map((p) => (
@@ -39,9 +39,6 @@ const Search = () => {
 
                         ))}
                     </div>
-
-                    {/* THis will return either nothing, and an accompanying message, or the total number of matches found. Keeping here so I can understand this function a little bettter later. */}
-                    {/* <h6>{values?.results.length < 1 ? 'Nothing found...' : `Found ${values?.results.length}`}</h6> */}
                 </div>
             </div>
 

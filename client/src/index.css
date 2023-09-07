@@ -13,13 +13,6 @@
 }
 
 
-/* Vid Main */
-/* .main{
-  height: 100vh;
-  width: 100%;
-} */
-
-
 .showcase {
   position: absolute;
   width: 100%;
@@ -134,7 +127,7 @@ header .logo{
     max-width: 700px;
   }
 
-  .text a{
+  .text a, .buttons{
     display: inline-block;
     font-size: 1em;
     background: white;
@@ -400,8 +393,9 @@ border-radius: 80px;
   justify-content: center;
 }
 
-.contact-img{
-  border-radius: 10px;
+
+.aboutImg{
+width: 95%;
 }
 
 .inText-link{
@@ -440,10 +434,9 @@ border-radius: 80px;
 
 }
 
-.detail-image{
-  border: 2px solid #f2970f;
+.detail-image, .aboutImg, .contact-img{
+  border: 2px solid var(--overlay-color2);
   border-radius: 20px;
-  box-shadow: 0 8px 6px -6px #f2970f;
---webkit-box-shadow: 0 8px 6px 6px #f2970f ;
-  
+  box-shadow: 0 8px 6px -6px var(--overlay-color2);
+--webkit-box-shadow: 0 8px 6px 6px var(--overlay-color2) ; 
 }

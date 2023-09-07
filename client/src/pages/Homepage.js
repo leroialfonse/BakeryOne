@@ -173,18 +173,16 @@ const Homepage = () => {
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
 
 
-                    <video src='../assets/mixItUp.mp4'>
-                    </video>
-                    <div className='d-flex  flex-wrap m-3 text-center' >
+                    <div className='d-flex  flex-wrap m-3 text-center'  >
                         {products?.map((p) => (
 
                             <div className="card m-2"
-                                style={{ width: '18rem', justifySelf: 'center', alignSelf: 'center', minHeight: '24rem' }}
+                                style={{ width: '18rem' }}
                             >
 
                                 <img src={`/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
-                                    // style={{ minHeight: '20rem' }}
+                                    style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
                                     alt={p.name}
                                 />
                                 <div className="card-body">
