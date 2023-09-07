@@ -26,7 +26,7 @@ const Login = () => {
         try {
             // const res = await axios.get('/api/v1/dashboard/user', { email, password });
             // const res = await axios.post('/api/v1/auth/login', { email, password });
-            const res = await axios.get('/api/v1/auth/login');
+            const res = await axios.post('/api/v1/auth/login', { email, password });
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
                 // saves the auth object in local storage so you can stay logged in.
@@ -43,7 +43,6 @@ const Login = () => {
             }
         } catch (error) {
             console.log(error)
-            // toast.error('Something didn\'t develop...')
             toast.error('That password or email doesn\'t match our records.')
         }
     };
