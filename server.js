@@ -15,11 +15,6 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-// import bodyParser from 'body-parser'
-// var express = require("express");
-// const bodyParser = require("body-parser");
-// var app = express();
-
 
 // ENV config
 dotenv.config();
@@ -36,7 +31,6 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.static(path.join(__dirname, './client/build')))
 
-// app.use(express.static(path.join(__dirname, './client/build')))
 
 
 //routes
@@ -47,7 +41,7 @@ app.use('/api/v1/product', productRoutes)
 
 app.get('*', function (req, res) {
 
-    res.sendFile(path.join(__dirname, '/*')),
+    res.sendFile(path.join(__dirname, '/')),
         function (err) {
             console.log(err)
             res.status(500).send(err)
