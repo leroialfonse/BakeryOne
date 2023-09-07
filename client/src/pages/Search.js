@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 import { useSearch } from '../context/search'
+import { Link } from 'react-router-dom'
 
 
 
@@ -16,7 +17,15 @@ const Search = () => {
             <div className='container'>
                 <div className='text-center mt-5'>
 
-                    <h6>{values?.results.length < 1 ? <div className='card-image-top'><div className='card-body'><span> Add an image to this scard.'Couldn't find that...'</span></div></div> : `Found ${values?.results.length}`}</h6>
+                    <h6>{values?.results.length < 1 ? <div className='pnf'>
+                        <span className='pnf-title'>Oops...</span>
+                        <img className='pnf-image m-2' alt="Couldn't find that!" />
+                        <h2>We can't find that!</h2>
+                        <p>Sorry about that. Why not look for something else?</p>
+                        <Link to="/" className='pnf-btn'>Go Back Home</Link>
+                    </div>
+
+                        : `Found ${values?.results.length}`}</h6>
 
                     <div className='d-flex flex-wrap mt-5'>
                         {values?.results.map((p) => (
