@@ -18,17 +18,17 @@ const Contact = () => {
                 <div className="col-md-4">
                     <h1 className="bg-dark p-2 text-white text-center">Contact Us</h1>
                     <p className="text-justify mt-2">
-                        Are you ready to schedule a shoot? Did you have problems with your order?
+                        Are you ready to order some treats? Did you have problems with your order or require Nutrition or Allergy Information?
                         Don't hesitate to Contact Us!
                     </p>
                     <p className="mt-3">
-                        <BiMailSend /> : help@lightShadow.com
+                        <BiMailSend /> : help@Sweetie.com
                     </p>
                     <p className="mt-3">
-                        <BiPhoneCall /> : 810-1SHADOW
+                        <BiPhoneCall /> : 810-SWEETIE
                     </p>
                     <p className="mt-3">
-                        <BiSupport /> : 1800-548-7423 (Toll Free)
+                        <BiSupport /> : 1-810-793-3843 (Toll Free)
                     </p>
                 </div>
             </div>

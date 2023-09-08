@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Policy from './pages/Policy';
 import PageNotFound from './pages/PageNotFound';
 import Register from './pages/Auth/Register';
 import Login from './pages/Auth/Login';
@@ -24,7 +23,7 @@ import Categories from './pages/Categories';
 import CategoryProducts from './pages/CategoryProducts';
 import CartPage from './pages/CartPage';
 import AdminOrders from './pages/Admin/AdminOrders';
-import VidHome from './pages/user/VidHome';
+import VidHome from './pages/VidHome';
 
 
 
@@ -32,14 +31,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<VidHome />} />
+        {/* <Route path="/" element={<VidHome />} /> */}
 
-        <Route path="/Home" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
+        {/* <Route path="/Home" element={<Homepage />} /> */}
         <Route path="/search" element={<Search />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<CartPage />} />
-
         <Route path="/category/:slug" element={<CategoryProducts />} />
 
 
@@ -73,7 +72,6 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/policy" element={<Policy />} />
         <Route path="*" element={<PageNotFound />} />
 
 

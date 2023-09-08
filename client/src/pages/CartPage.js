@@ -9,6 +9,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 
+
 const CartPage = () => {
 
     const navigate = useNavigate();
@@ -16,8 +17,8 @@ const CartPage = () => {
 
     const [auth, setAuth] = useAuth();
     const [cart, setCart] = useCart();
-    const [clientToken, setClientToken] = useState('');
     // Braintree
+    const [clientToken, setClientToken] = useState('');
     const [instance, setInstance] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -29,7 +30,7 @@ const CartPage = () => {
         try {
             let total = 0;
             cart?.map((item) => {
-                total = total + item.price;
+                return total = total + item.price;
             });
             return total.toLocaleString('en-US', {
                 style: 'currency',
@@ -70,7 +71,8 @@ const CartPage = () => {
     useEffect(() => {
         getBtToken();
 
-    }, [auth?.token]);
+    }, [auth?.token])
+        ;
 
     // Buy now button
     const handlePayment = async () => {
@@ -80,6 +82,7 @@ const CartPage = () => {
             const { data } = await axios.post('/api/v1/product/braintree/payment', {
                 nonce, cart,
             })
+            console.log(data)
             setLoading(false)
             localStorage.removeItem('cart')
             setCart([]);
@@ -115,8 +118,10 @@ const CartPage = () => {
                                     <img src={`/api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
-                                        width='100px'
-                                        height={'200px'}
+                                        // height='200rem'
+                                        width='20rem'
+                                    // width='200px'
+                                    // height={'200px'}
                                     />
                                 </div>
                                 <div className='col-md-8'>
@@ -138,7 +143,7 @@ const CartPage = () => {
                         {auth?.user?.address ? (
                             <>
                                 <div className='mb-3'>
-                                    <h4>Ship to: </h4>
+                                    <h4>Ship to: {auth?.user.name}</h4>
                                     <h5>{auth?.user?.address}</h5>
                                     <button className='btn btn-outline-warning' onClick={() => navigate('/dashboard/user/profile')}>Update your Address</button>
                                 </div>

@@ -69,7 +69,7 @@ const Register = () => {
 
                     <div className="mb-3">
 
-                        <input type="text"
+                        <input type="tel"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)} className="form-control" id="exampleInputPhone"
                             placeholder='Phone'

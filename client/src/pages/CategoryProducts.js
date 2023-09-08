@@ -44,13 +44,14 @@ const CategoryProducts = () => {
                 <h3 className='text-center splash3'>{products?.length} {category?.name} found!</h3>
             </div>
             <div className='row'>
-                <div className='d-flex flex-wrap m-3' style={{ alignContent: 'center' }}>
+                <div className='d-flex flex-wrap m-3' style={{ justifyContent: 'center' }}>
                     {products?.map((p) => (
 
                         <div className="card m-2" style={{ width: '18rem' }} key={p._id}  >
 
                             <img src={`/api/v1/product/product-photo/${p._id}`}
                                 className="card-img-top"
+                                style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
                                 alt={p.name}
                             />
                             <div className="card-body">
@@ -63,7 +64,6 @@ const CategoryProducts = () => {
                                     setCart([...cart, p])
                                     toast.success('Added to your cart!')
                                 }}>Add to Cart</button>
-
                             </div>
                         </div>
 

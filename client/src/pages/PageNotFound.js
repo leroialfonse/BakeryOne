@@ -9,7 +9,7 @@ const PageNotFound = () => {
         <Layout title={'Go back - Page Not Found'}>
             <div className='pnf'>
                 <span className='pnf-title'>Oops...</span>
-                <img className='pnf-image m-2' />
+                <img className='pnf-image m-2' alt='' />
                 <h2>Page Not Found!</h2>
                 <p>Maybe that link is broken. Sorry about that.</p>
                 <Link to="/" className='pnf-btn'>Go Back Home</Link>

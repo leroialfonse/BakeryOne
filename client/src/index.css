@@ -12,14 +12,10 @@
   font-family: 'Poppins', sans-serif, 'Playfair-Display', sans-serif, 'Roboto', sans-serif, 'Inter', sans-serif, Arial, "Yellotail", sans-serif, Helvetica, sans-serif;
 }
 
-
-/* Vid Main */
-/* .main{
-  height: 100vh;
-  width: 100%;
-} */
-
-
+.card{
+  display: flex;
+  justify-content: space-evenly;
+}
 .showcase {
   position: absolute;
   width: 100%;
@@ -70,7 +66,6 @@ header .logo{
   width: 60px;
   height: 60px;
    background: url('https://i.ibb.co/HrfVRcx/menu.png');
-  /* background: url('../src/assets/bakeryVid.mp4'); */
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
@@ -134,7 +129,7 @@ header .logo{
     max-width: 700px;
   }
 
-  .text a{
+  .text a, .buttons{
     display: inline-block;
     font-size: 1em;
     background: white;
@@ -264,6 +259,17 @@ display: flex;
   /* border-bottom: 3px solid rgb(134, 45, 167); */
 }
 
+.player-wrapper {
+  position: relative;
+  /* padding-top: 56.25%; Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .navbar-brand, .splash{
   font-weight: 700;
   font-size: 40px;
@@ -389,8 +395,9 @@ border-radius: 80px;
   justify-content: center;
 }
 
-.contact-img{
-  border-radius: 10px;
+
+.aboutImg{
+width: 95%;
 }
 
 .inText-link{
@@ -429,10 +436,9 @@ border-radius: 80px;
 
 }
 
-.detail-image{
-  border: 2px solid #f2970f;
+.detail-image, .aboutImg, .contact-img{
+  border: 2px solid var(--overlay-color2);
   border-radius: 20px;
-  box-shadow: 0 8px 6px -6px #f2970f;
---webkit-box-shadow: 0 8px 6px 6px #f2970f ;
-  
+  box-shadow: 0 8px 6px -6px var(--overlay-color2);
+--webkit-box-shadow: 0 8px 6px 6px var(--overlay-color2) ; 
 }

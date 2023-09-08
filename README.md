@@ -40,9 +40,9 @@
 - [Built With](#-built-with)
 - [Getting Started](#-getting-started)
 - [Install](#-install)
-<!-- - [Contributions](#%EF%B8%8F-contributions) -->
+  <!-- - [Contributions](#%EF%B8%8F-contributions) -->
 
-  </details>
+    </details>
 
 </table>
 </div>
@@ -124,10 +124,6 @@ I also wanted to google desserts without feeling (as) guilty.
 <!-- //////////////////////////////////////////// -->
 
 <div align="center">
-<!-- <p>Deploy to Cyclic:</p>
-<a href="https://deploy.cyclic.sh/GH_LOGIN/GH_REPO">
-    <img height="28px" src="https://deploy.cyclic.sh/button.svg" />
-</a> -->
 
 <a href="https://github.com/leroialfonse/SweetiePie/network/members">
   <img height="28px" src="https://img.shields.io/github/forks/leroialfonse/SweetiePie?color=6ca4cc" alt="Forks"/>
