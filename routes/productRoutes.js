@@ -14,6 +14,7 @@ const router = express.Router();
 
 router.post('/create-product', requireSignIn, isAdmin, formidable(), createProductController)
 // router.post('/create-product', isAdmin, formidable(), createProductController)
+router.post('/create-category', requireSignIn, isAdmin, categoryController);
 
 
 // Update a product
@@ -63,7 +64,7 @@ router.get('/product-category/:slug', productCategoryController);
 router.get('/braintree/token', braintreeTokenController);
 
 /// payment
-router.post('/braintree/payment', requireSignIn, braintreePaymentController);
+router.post('/braintree/payment', braintreePaymentController);
 
 
 export default router;

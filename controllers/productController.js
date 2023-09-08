@@ -341,7 +341,7 @@ export const braintreeTokenController = async (req, res) => {
 
 };
 
-// ...and payment
+//...and payment
 export const braintreePaymentController = async (req, res) => {
     try {
         const { cart, nonce } = req.body
@@ -352,30 +352,24 @@ export const braintreePaymentController = async (req, res) => {
             paymentMethodNonce: nonce,
             options: {
                 submitForSettlement: true
-            },
+            }
         },
             function (error, result) {
                 if (result) {
-                    // Ensure req.user is defined and has _id property
-                    if (req.user && req.user._id) {
-                        console.log('req.user')
-                        const order = new orderModel({
-                            products: cart,
-                            payment: result,
-                            buyer: req.user._id
-                        }).save()
-                        res.json({ ok: true })
-                    } else {
-                        // Handle the case where req.user or req.user._id is undefined
-                        res.status(500).send("Some or all of the User information is missing.")
-                    }
+                    const order = new orderModel({
+                        product: cart,
+                        payment: result,
+                        buyer: req.user._id
+
+                    }).save()
+                    res.json({ ok: true })
                 } else {
                     res.status(500).send(error)
                 }
-            });
+            }
+        )
     } catch (error) {
         console.log(error)
     }
 
 };
-
