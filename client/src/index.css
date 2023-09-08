@@ -12,10 +12,7 @@
   font-family: 'Poppins', sans-serif, 'Playfair-Display', sans-serif, 'Roboto', sans-serif, 'Inter', sans-serif, Arial, "Yellotail", sans-serif, Helvetica, sans-serif;
 }
 
-.card{
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .showcase {
   position: absolute;
   width: 100%;
@@ -36,7 +33,6 @@
 .showcase.active{
   /* sets the showcase (vid page) to move over the left by 300px, to accomodate the menu, when the menu is active. */
   right: 300px;
-  /* transform: scaleY(.95); */
   transition: 1.1s;
   filter:blur(2px);
 }

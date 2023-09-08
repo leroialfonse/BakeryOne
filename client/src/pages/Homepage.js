@@ -6,6 +6,7 @@ import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart';
+import ReactPlayer from 'react-player'
 
 
 const Homepage = () => {
@@ -14,6 +15,7 @@ const Homepage = () => {
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+    // State for the checkboxes for category filter
     const [checked, setChecked] = useState([]);
     const [radio, setRadio] = useState([]);
     const [total, setTotal] = useState(0);
@@ -171,10 +173,10 @@ const Homepage = () => {
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
 
 
-                    <div className='d-flex  flex-wrap m-3 text-center' style={{ justifyContent: 'center' }} >
+                    <div className='d-flex  flex-wrap m-3 text-center'  >
                         {products?.map((p) => (
 
-                            <div className="card m-2 d-flex"
+                            <div className="card m-2"
                                 style={{ width: '18rem' }}
                             >
 
