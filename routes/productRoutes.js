@@ -10,8 +10,7 @@ import formidable from 'express-formidable'
 const router = express.Router();
 
 
-// product routes 
-
+// product route
 router.post('/create-product', requireSignIn, isAdmin, formidable(), createProductController)
 
 
