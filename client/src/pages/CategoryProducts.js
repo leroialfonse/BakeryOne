@@ -51,8 +51,9 @@ const CategoryProducts = () => {
 
                             <img src={`/api/v1/product/product-photo/${p._id}`}
                                 className="card-img-top"
-                                style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
                                 alt={p.name}
+                                style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
+
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{p.name}</h5>
@@ -64,6 +65,7 @@ const CategoryProducts = () => {
                                     setCart([...cart, p])
                                     toast.success('Added to your cart!')
                                 }}>Add to Cart</button>
+
                             </div>
                         </div>
 

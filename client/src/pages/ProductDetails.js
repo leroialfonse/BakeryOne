@@ -62,21 +62,18 @@ const ProductDetails = () => {
                         className="card-img-top detail-image"
                         alt={product.name}
                         height='75%'
-                    // Need to figure out better dimensions for sizing on this page...
-                    // height="500px"
-                    // width="300px"
                     />
 
                 </div>
 
                 <div className='col-md-6'>
-                    <h1 className='text-center splash'>The Details</h1>
-                    <h3 className='splash2'>{product.name}</h3>
+                    <h1 className='text-center splash2'>The Details</h1>
+                    <h3 className='splash'>{product.name}</h3>
                     <h5 className='text-center'>What to know: {product.description}</h5>
                     <div className='d-flex' style={{ justifyContent: 'space-evenly' }}>
 
                         <h4>Category: {product?.category?.name}</h4>
-                        <h4 style={{ color: 'brightGreen' }}>Price: ${product.price}</h4>
+                        <h4 style={{ color: 'Green', fontWeight: 700 }}>Price: ${product.price}</h4>
 
                     </div>
                     <button className="btn btn-outline-secondary ms-1" onClick={() => {
