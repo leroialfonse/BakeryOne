@@ -331,12 +331,12 @@ export const braintreeTokenController = async (req, res) => {
             if (err) {
                 res.status(500).send(err)
             } else {
-                res.send(err.response.data);
+                res.send(err);
             }
         });
 
     } catch (error) {
-        console.log(error.response.data);
+        console.log(error);
     }
 
 };
@@ -356,25 +356,36 @@ export const braintreePaymentController = async (req, res) => {
         },
             function (error, result) {
                 if (result) {
-                    // Ensure req.user is defined and has _id property
-                    if (req.user && req.user._id) {
-                        console.log('req.user')
-                        const order = new orderModel({
-                            products: cart,
-                            payment: result,
-                            buyer: req.user._id
-                        }).save()
-                        res.json({ ok: true })
-                    } else {
-                        // Handle the case where req.user or req.user._id is undefined
-                        res.status(500).send("Some or all of the User information is missing.")
-                    }
+                    const order = new orderModel({
+                        products: cart,
+                        payment: result,
+                        buyer: req.user._id,
+                    }).save();
+                    res.json({ ok: true });
                 } else {
-                    res.status(500).send(error.response.data)
+                    res.status(500).send(error);
                 }
-            });
+            }
+        );
+        //         // Ensure req.user is defined and has _id property
+        //         if (req.user && req.user._id) {
+        //             console.log('req.user')
+        //             const order = new orderModel({
+        //                 products: cart,
+        //                 payment: result,
+        //                 buyer: req.user._id
+        //             }).save()
+        //             res.json({ ok: true })
+        //         } else {
+        //             // Handle the case where req.user or req.user._id is undefined
+        //             res.status(500).send("Some or all of the User information is missing.")
+        //         }
+        //     } else {
+        //         res.status(500).send(error)
+        //     }
+        // });
     } catch (error) {
-        console.log(error.response.data)
+        console.log(error)
     }
 
 };
