@@ -332,6 +332,7 @@ export const braintreeTokenController = async (req, res) => {
                 res.status(500).send(err)
             } else {
                 res.send(response);
+
             }
         });
 

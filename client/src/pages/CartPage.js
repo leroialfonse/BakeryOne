@@ -64,7 +64,7 @@ const CartPage = () => {
             const { data } = await axios.get('/api/v1/product/braintree/token')
             setClientToken(data?.clientToken)
         } catch (error) {
-            console.log(error.response.data)
+            console.log(error)
         }
     };
 
@@ -89,7 +89,7 @@ const CartPage = () => {
             navigate('/dashboard/user/orders')
             toast.success('Payment Successful!')
         } catch (error) {
-            console.log(error.response.data)
+            console.log(error)
             setLoading(false);
         }
     };
