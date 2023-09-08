@@ -57,7 +57,7 @@ app.use('/api/v1/product', productRoutes)
 
 app.use('*', function (req, res) {
 
-    res.sendFile(path.join(__dirname, 'build', 'index.html')),
+    res.sendFile(path.join(__dirname, '/client/build/index.html')),
         function (err) {
             console.log(err)
             res.status(500).send(err)
