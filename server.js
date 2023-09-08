@@ -29,9 +29,9 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
-// app.use(express.static(path.join(__dirname, './client/build')))
+app.use(express.static(path.join(__dirname, 'build')))
 
-app.use(express.static(path.join(__dirname, './client/build')))
+// app.use(express.static(path.join(__dirname, './client/build')))
 
 //routes
 app.use('/api/v1/auth', authRoutes);
@@ -39,9 +39,19 @@ app.use('/api/v1/category/', categoryRoutes);
 app.use('/api/v1/product', productRoutes);
 
 
-app.get('/*', function (req, res) {
+// app.use('/*', function (req, res) {
 
-    res.sendFile(path.join(__dirname, './client/build/index.html')),
+//     res.sendFile(path.join(__dirname, './client/build/index.html')),
+//         function (err) {
+//             console.log(err)
+//             res.status(500).send(err)
+//         }
+// })
+
+
+app.use('*', function (req, res) {
+
+    res.sendFile(path.join(__dirname, 'build', 'index.html')),
         function (err) {
             console.log(err)
             res.status(500).send(err)

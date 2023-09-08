@@ -121,7 +121,7 @@ const UpdateProduct = () => {
             toast.success('Product deleted!')
             navigate('/dashboard/admin/products');
         } catch (error) {
-            console.log(error.response.data);
+            console.log(error);
             console.log(error.response.headers);
             toast.error('Could not delete the product.');
         }
