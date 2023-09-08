@@ -1,6 +1,6 @@
 import express from 'express';
 import { isAdmin, requireSignIn } from '../middleware/authMiddleware.js';
-import { braintreePaymentController, braintreeTokenController, createProductController, deleteProductController, getOneProductController, getProductsController, productCategoryController, productCountController, productFilterController, productListContoller, productPhotoController, searchProductController, similarProductController, updateProductController, createCateogoryController } from '../controllers/productController.js';
+import { braintreePaymentController, braintreeTokenController, createProductController, deleteProductController, getOneProductController, getProductsController, productCategoryController, productCountController, productFilterController, productListContoller, productPhotoController, searchProductController, similarProductController, updateProductController } from '../controllers/productController.js';
 // A middleware that mixes express and 'formidable', which is a node module that parses form data, like multipart/form-data uploads. 
 import formidable from 'express-formidable'
 import { getCategoryController } from '../controllers/categoryController.js';
@@ -14,8 +14,7 @@ const router = express.Router();
 // product routes 
 
 router.post('/create-product', requireSignIn, isAdmin, formidable(), createProductController)
-// router.post('/create-product', isAdmin, formidable(), createProductController)
-router.post('/create-category', requireSignIn, isAdmin, formidable(), getCategoryController);
+
 
 
 // Update a product
@@ -65,7 +64,7 @@ router.get('/product-category/:slug', productCategoryController);
 router.get('/braintree/token', braintreeTokenController);
 
 /// payment
-router.post('/braintree/payment', requireSignIn, braintreePaymentController);
+router.post('/braintree/payment', braintreePaymentController);
 
 
 export default router;
