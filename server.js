@@ -1,5 +1,5 @@
 import express from 'express';
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 // Colors error and response messages in my terminal! unneccessary, but cool.
 import colors from 'colors';
 import dotenv from 'dotenv';
@@ -33,30 +33,36 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, './client/build')))
 
+
+
 //routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category/', categoryRoutes);
-app.use('/api/v1/product', productRoutes);
+app.use('/api/v1/product', productRoutes)
 
 
-app.use('/*', function (req, res) {
+// app.use('/*', function (req, res) {
 
-    res.sendFile(path.join(__dirname, './client/build/index.html')),
-        function (err) {
-            console.log(err)
-            res.status(500).send(err)
-        }
-})
+//     res.sendFile(path.join(__dirname, './client/build/index.html'))
 
+// app.get('/', function (req, res) {
 
-// app.use('*', function (req, res) {
-
-//     res.sendFile(path.join(__dirname, 'build', 'index.html')),
+//     res.sendFile(path.join(__dirname, '*')),
 //         function (err) {
 //             console.log(err)
 //             res.status(500).send(err)
 //         }
 // })
+
+
+app.use('*', function (req, res) {
+
+    res.sendFile(path.join(__dirname, 'build', 'index.html')),
+        function (err) {
+            console.log(err)
+            res.status(500).send(err)
+        }
+})
 
 // rest api
 // app.get("/", (req, res) => {

@@ -61,20 +61,21 @@ const ProductDetails = () => {
                     <img src={`/api/v1/product/product-photo/${product._id}`}
                         className="card-img-top detail-image"
                         alt={product.name}
-                    // Need to figure out better dimensions for sizing on this page...
-                    // height="500px"
-                    // width="300px"
+                        height='75%'
                     />
 
                 </div>
 
+                <div className='col-md-6'>
+                    <h1 className='text-center splash2'>The Details</h1>
+                    <h3 className='splash'>{product.name}</h3>
+                    <h5 className='text-center'>What to know: {product.description}</h5>
+                    <div className='d-flex' style={{ justifyContent: 'space-evenly' }}>
 
-                <div className='col-md-6 '>
-                    <h1 className='text-center splash'>The Details</h1>
-                    <h6>Name: {product.name}</h6>
-                    <h6>Description: {product.description}</h6>
-                    <h6>Price: ${product.price}</h6>
-                    <h6>Category: {product?.category?.name}</h6>
+                        <h4>Category: {product?.category?.name}</h4>
+                        <h4 style={{ color: 'Green', fontWeight: 700 }}>Price: ${product.price}</h4>
+
+                    </div>
                     <button className="btn btn-outline-secondary ms-1" onClick={() => {
                         setCart([...cart, product])
                         toast.success('Added to your cart!')
@@ -85,7 +86,7 @@ const ProductDetails = () => {
             </div>
 
             <hr />
-            <div className='row m-2'>
+            <div className='row m-6'>
                 <h5 className='splash'>More like this:</h5>
                 {/* Will create an array of  3 items similar to the featured item, based on similar categories. */}
                 {related.length < 1 && (<p className="text-center">No similar options found.</p>)}
@@ -100,11 +101,13 @@ const ProductDetails = () => {
 
                             <img src={`/api/v1/product/product-photo/${p._id}`}
                                 className="card-img-top"
+                                style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
+
                                 alt={p.name}
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{p.name}</h5>
-                                <p className="card-text">{p.description.substring(0, 20)}...</p>
+                                <p className="card-text" >{p.description.substring(0, 20)}...</p>
                                 <p className="card-text">${p.price}</p>
                                 {/* This will take you to a page that features the product with all it's information available */}
 
@@ -122,9 +125,7 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-            {/* <h1>More Details</h1>
-            {/* Will return an array on the page of the data about a product selected from the homepage as an object, with the data stringified for use. */}
-            {/* {JSON.stringify(product, null, 4)} */}
+
 
 
         </Layout>

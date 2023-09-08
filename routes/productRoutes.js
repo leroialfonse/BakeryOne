@@ -13,8 +13,6 @@ const router = express.Router();
 // product routes 
 
 router.post('/create-product', requireSignIn, isAdmin, formidable(), createProductController)
-// router.post('/create-product', isAdmin, formidable(), createProductController)
-router.post('/create-category', requireSignIn, isAdmin, categoryController);
 
 
 // Update a product

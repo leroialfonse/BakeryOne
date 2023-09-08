@@ -113,21 +113,18 @@ const CartPage = () => {
                 <div className='row '>
                     <div className='col-md-8'>
                         {cart?.map((p) => (
-                            <div className='row mb-2 card flex-row p-3' key={p._id}>
+                            <div className='row mb-2 card flex-row p-3' height='60%' key={p._id}>
                                 <div className='col-md-4'>
                                     <img src={`/api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
-                                        // height='200rem'
                                         width='20rem'
-                                    // width='200px'
-                                    // height={'200px'}
                                     />
                                 </div>
-                                <div className='col-md-8'>
+                                <div className='col-md-8 mt-5'>
                                     <h5 style={{ fontWeight: 700 }} >{p.name}</h5>
-                                    <p>{p.description.substring(0, 30)}...</p>
-                                    <p>$ {p.price}</p>
+                                    <p>{p.description.substring(0, p.description.length)}</p>
+                                    <p style={{ color: 'green', fontWeight: 700 }}>$ {p.price}</p>
                                     <button className='btn btn-danger' onClick={() => deleteCartItem(p._id)}>Remove</button>
 
                                 </div>
@@ -139,7 +136,7 @@ const CartPage = () => {
                     <div className='col-md-4'>
                         <p className='splash'> Checkout </p>
                         <hr />
-                        <h4>Your Total: {totalCost()}</h4>
+                        <h4 style={{ color: 'green', fontWeight: 700 }}>Your Total: {totalCost()}</h4>
                         {auth?.user?.address ? (
                             <>
                                 <div className='mb-3'>
