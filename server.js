@@ -39,19 +39,19 @@ app.use('/api/v1/category/', categoryRoutes);
 app.use('/api/v1/product', productRoutes);
 
 
-// app.get('/*', function (req, res) {
+app.get('/*', function (req, res) {
 
-//     res.sendFile(path.join(__dirname, './client/build/index.html')),
-//         function (err) {
-//             console.log(err)
-//             res.status(500).send(err)
-//         }
-// })
+    res.sendFile(path.join(__dirname, './client/build/index.html')),
+        function (err) {
+            console.log(err)
+            res.status(500).send(err)
+        }
+})
 
 // rest api
-app.get("/", (req, res) => {
-    res.send("<h1>It's Sweetie Pie!</h1>");
-});
+// app.get("/", (req, res) => {
+//     res.send("<h1>It's Sweetie Pie!</h1>");
+// });
 
 
 app.listen(PORT, () => {
