@@ -12,7 +12,10 @@
   font-family: 'Poppins', sans-serif, 'Playfair-Display', sans-serif, 'Roboto', sans-serif, 'Inter', sans-serif, Arial, "Yellotail", sans-serif, Helvetica, sans-serif;
 }
 
-
+.card{
+  display: flex;
+  justify-content: space-evenly;
+}
 .showcase {
   position: absolute;
   width: 100%;

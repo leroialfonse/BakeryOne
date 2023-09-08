@@ -234,7 +234,7 @@ export const productCountController = async (req, res) => {
 // List a certain number of products on the page.
 export const productListContoller = async (req, res) => {
     try {
-        const perPage = 4;
+        const perPage = 3;
         const page = req.params.page ? req.params.page : 1
         const products = await productModel.find({}).select('-photo').skip((page - 1) * perPage).limit(perPage).sort({ createdAt: - 1 });
 
@@ -331,17 +331,17 @@ export const braintreeTokenController = async (req, res) => {
             if (err) {
                 res.status(500).send(err)
             } else {
-                res.send(response);
+                res.send(err.response.data);
             }
         });
 
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
     }
 
 };
 
-//...and payment
+// ...and payment
 export const braintreePaymentController = async (req, res) => {
     try {
         const { cart, nonce } = req.body
@@ -352,24 +352,30 @@ export const braintreePaymentController = async (req, res) => {
             paymentMethodNonce: nonce,
             options: {
                 submitForSettlement: true
-            }
+            },
         },
             function (error, result) {
                 if (result) {
-                    const order = new orderModel({
-                        product: cart,
-                        payment: result,
-                        buyer: req.user._id
-
-                    }).save()
-                    res.json({ ok: true })
+                    // Ensure req.user is defined and has _id property
+                    if (req.user && req.user._id) {
+                        console.log('req.user')
+                        const order = new orderModel({
+                            products: cart,
+                            payment: result,
+                            buyer: req.user._id
+                        }).save()
+                        res.json({ ok: true })
+                    } else {
+                        // Handle the case where req.user or req.user._id is undefined
+                        res.status(500).send("Some or all of the User information is missing.")
+                    }
                 } else {
-                    res.status(500).send(error)
+                    res.status(500).send(error.response.data)
                 }
-            }
-        )
+            });
     } catch (error) {
-        console.log(error)
+        console.log(error.response.data)
     }
 
 };
+
