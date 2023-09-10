@@ -173,7 +173,7 @@ const Homepage = () => {
                     <h1 className='text-center splash'>Fresh from the Oven!</h1>
 
 
-                    <div className='d-flex  flex-wrap m-3 text-center'  >
+                    <div className='d-flex  flex-wrap m-3' style={{ justifyContent: 'center' }} >
                         {products?.map((p) => (
 
                             <div className="card m-2"
