@@ -182,7 +182,7 @@ const Homepage = () => {
 
                                 <img src={`/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
-                                    style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
+                                    style={{ height: '16rem', padding: '.3rem', borderRadius: '12px', marginBottom: '2rem' }}
                                     alt={p.name}
                                 />
                                 <div className="card-body">

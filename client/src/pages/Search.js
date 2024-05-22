@@ -30,7 +30,7 @@ const Search = () => {
                         <img className='pnf-image m-2' alt="" />
                         <h2>We can't find that!</h2>
                         <p>Sorry about that. Why not look for something else?</p>
-                        <Link to="/" className='pnf-btn'>Go Back Home</Link>
+                        {/* <Link to="/" className='pnf-btn'>Go Back Home</Link> */}
                     </div>
 
                         : `Found ${values?.results.length}`}</h3>
