@@ -5,8 +5,8 @@ import {
     testController,
     forgotPasswordController,
     updateProfileController,
-    getPastOrdersController,
-    getAllOrdersController,
+    // getPastOrdersController,
+    // getAllOrdersController,
     orderStatusController,
     getOrdersController,
 } from '../controllers/authController.js';
