@@ -6,7 +6,7 @@ import {
     forgotPasswordController,
     updateProfileController,
     // getPastOrdersController,
-    // getAllOrdersController,
+    getAllOrdersController,
     orderStatusController,
     getOrdersController,
 } from '../controllers/authController.js';
@@ -48,11 +48,11 @@ router.get('/admin-auth', requireSignIn, isAdmin, (req, res) => {
 router.put('/profile', requireSignIn, updateProfileController)
 
 
-// Past orders page
+// Past orders page for users
 router.get('/orders', requireSignIn, getOrdersController);
 
 // Admin's view of all orders.
-// router.get('/orders', requireSignIn, isAdmin, getAllOrdersController);
+router.get('/all-orders', requireSignIn, isAdmin, getAllOrdersController);
 
 // Update Order Status.
 router.put('/order-status/:orderId', requireSignIn, isAdmin, orderStatusController)
