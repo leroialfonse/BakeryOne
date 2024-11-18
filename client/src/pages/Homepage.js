@@ -6,7 +6,7 @@ import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart';
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
 
 const Homepage = () => {
@@ -170,10 +170,10 @@ const Homepage = () => {
 
                     {/* {(radio, null, 4)}; */}
 
-                    <h1 className='text-center splash'>Fresh from the Oven!</h1>
+                    <h1 className='text-center splash'>Fresh from the Oven!!!</h1>
 
 
-                    <div className='d-flex  flex-wrap m-3 text-center'  >
+                    <div className='d-flex  flex-wrap m-3' style={{ justifyContent: 'center' }} >
                         {products?.map((p) => (
 
                             <div className="card m-2"
@@ -182,7 +182,7 @@ const Homepage = () => {
 
                                 <img src={`/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
-                                    style={{ maxHeight: '18rem', padding: '.3rem', borderRadius: '12px' }}
+                                    style={{ height: '16rem', padding: '.3rem', borderRadius: '12px', marginBottom: '2rem' }}
                                     alt={p.name}
                                 />
                                 <div className="card-body">

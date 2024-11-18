@@ -1,15 +1,16 @@
 {
   "name": "ecomm2023",
   "version": "1.0.0",
+  "proxy": "http://localhost:3000/",
   "description": "ecommerce rest API with React",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
+    "server": "nodemon server.js ",
     "dev": "concurrently \"npm run start \" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm start --prefix ./client"
+    "client": "npm start --prefix client"
   },
   "keywords": [],
   "author": "Brandon White",

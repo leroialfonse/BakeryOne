@@ -12,10 +12,10 @@ const Contact = () => {
                         className="contact-img"
                         src="/callCenterPoint.jpg"
                         alt="contactUs"
-                        style={{ width: "100%" }}
+                        style={{ width: "100%", marginTop: '2rem' }}
                     />
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4     ">
                     <h1 className="bg-dark p-2 text-white text-center">Contact Us</h1>
                     <p className="text-justify mt-2">
                         Are you ready to order some treats? Did you have problems with your order or require Nutrition or Allergy Information?

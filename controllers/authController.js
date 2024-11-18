@@ -152,7 +152,7 @@ export const forgotPasswordController = async (req, res) => {
         console.log(error)
         res.status(500).send({
             success: false,
-            message: 'Bad exposure, please try again.',
+            message: 'Bad bake, please try again.',
             error
         })
     }
@@ -198,50 +198,31 @@ export const updateProfileController = async (req, res) => {
 
 
 // get Past orders
-// ///////////////////////////
+// // ///////////////////////////
 
-// export const getOrdersController = async (req, res) => {
-//     try {
-//         const orders = await orderModel
-//             .find({ buyer: req.user._id })
-//             .populate("product", "-photo")
-//             .populate("buyer", "name")
-//             .exec();
-//         res.json(orders);
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send({
-//             success: false,
-//             message: "Error WHile Geting Orders",
-//             error,
-//         });
-//     }
-// };
-
-// //////////////////////////
-
-export const getPastOrdersController = async (req, res) => {
+export const getOrdersController = async (req, res) => {
     try {
         const orders = await orderModel
             .find({ buyer: req.user._id })
             .populate("product", "-photo")
             .populate("buyer", "name")
             .exec();
-        res.json(orders)
+        res.json(orders);
     } catch (error) {
-        console.log(error)
+        console.log(error);
         res.status(500).send({
             success: false,
-            message: 'Could not get the past orders.',
-            error
-        })
+            message: "Error While Geting Orders",
+            error,
+        });
     }
-}
+};
 
-// // Show all orders....
+
+// // Show all orders overview....
 export const getAllOrdersController = async (req, res) => {
     try {
-        const orders = await orderModel.find({}).populate('products', '-photo').populate('buyer', "name").sort({ createdAt: '-1' });
+        const orders = await orderModel.find({}).populate('product', '-photo').populate('buyer', "name").sort({ createdAt: '-1' });
         res.json(orders)
     } catch (error) {
         console.log(error)

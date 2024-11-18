@@ -35,10 +35,10 @@ const Orders = () => {
                     <div className='col-md-3'>
                         <UserMenu />
                     </div>
-                    <div className='col-md-9'>
+                    <div className='col-md-6'>
                         <h1 className='text-center'>All Orders</h1>
 
-                        {/* <p> {JSON.stringify(orders, null, 4)}</p> */}
+                        {/* <p> {JSON.stringify(orders, null, 1)}</p> */}
 
                         {orders?.map((o, i) => {
                             return (
@@ -51,7 +51,7 @@ const Orders = () => {
                                                 <th scope="col">Buyer</th>
                                                 <th scope="col">Ordered</th>
                                                 <th scope="col">Payment</th>
-                                                <th scope="col">Quantity</th>
+                                                <th scope="col">Items Ordered</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -65,7 +65,7 @@ const Orders = () => {
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div className="container">
+                                    <div className="container prdInfo">
                                         {o?.product?.map((p, i) => (
                                             <div className="row mb-2 p-3 card flex-row" key={p._id}>
                                                 <div className="col-md-4">

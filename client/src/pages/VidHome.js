@@ -36,7 +36,8 @@ const VidHome = () => {
                     <h2>Sweetie Pie!</h2>
                     <h3>Welcome to the Kitchen!!</h3>
                     <p>
-                        All of your favorite sweet treats, baked fresh every day! Run, don't walk to Sweetie Pie's bakery!
+                        All of your BLUE
+                        sweet treats, baked fresh every day! Run, don't walk to Sweetie Pie's bakery!
 
                     </p>
                     <Link to='/Home'>Hungry??</Link>

@@ -37,13 +37,14 @@ app.use(express.static(path.join(__dirname, './client/build')))
 
 //routes
 app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/category/', categoryRoutes);
+app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/product', productRoutes)
 
 
-// app.use('/*', function (req, res) {
+app.use('/*', function (req, res) {
 
-//     res.sendFile(path.join(__dirname, './client/build/index.html'))
+    res.sendFile(path.join(__dirname, './client/build/index.html'))
+})
 
 // app.get('/', function (req, res) {
 
@@ -65,9 +66,9 @@ app.use('/*', function (req, res) {
 })
 
 // rest api
-// app.get("/", (req, res) => {
-//     res.send("<h1>It's Sweetie Pie!</h1>");
-// });
+app.get("/", (req, res) => {
+    res.send("<h1>It's Sweetie Pie!</h1>");
+});
 
 
 app.listen(PORT, () => {

@@ -39,7 +39,7 @@ const Products = () => {
 
                     <div className='col-md-9'>
                         <h1 className='text-center'>All Products</h1>
-                        <div className='d-flex flex-wrap m-3 m-s'>
+                        <div className='d-flex flex-wrap m-3 m-s' style={{ justifyContent: 'center' }}>
                             {products?.map((p) => (
                                 <Link key={p._id} to={`/dashboard/admin/product/${p.slug}`} className="product-link">
                                     <div className="card m-2" style={{ width: '16rem' }}  >

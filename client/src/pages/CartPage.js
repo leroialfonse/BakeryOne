@@ -66,7 +66,7 @@ const CartPage = () => {
         } catch (error) {
             console.log(error)
         }
-    };
+    }   
 
     useEffect(() => {
         getBtToken();
@@ -82,7 +82,6 @@ const CartPage = () => {
             const { data } = await axios.post('/api/v1/product/braintree/payment', {
                 nonce, cart,
             })
-            console.log(data)
             setLoading(false)
             localStorage.removeItem('cart')
             setCart([]);
