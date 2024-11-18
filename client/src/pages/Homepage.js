@@ -6,7 +6,7 @@ import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart';
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
 
 const Homepage = () => {

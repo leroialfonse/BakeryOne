@@ -230,6 +230,8 @@ border-bottom: solid var(--overlay-color) !important;
 display: flex;
 }
 
+/* .cart-item{
+} */
 .navbar-toggler{
   /* color: #a812a6;
   fill:#a812a6; */
@@ -243,14 +245,13 @@ display: flex;
 }
 
 .ant-badge{
-  font-size:medium ;
-  margin-top: .3rem;
+  font-size: 1.1rem ;
+  margin-top: .39rem;
   margin-right: .8rem;
-  /* padding-bottom: .2rem */
 }
 
 /* or .nav-link.active  Still unsure. lol.*/
-.active:not(.toggle.active){
+.active:not(.toggle.active) {
   border-bottom: 3px solid var(--overlay-color);
   /* border-bottom: 3px solid rgb(134, 45, 167); */
 }

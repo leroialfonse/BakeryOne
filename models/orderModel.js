@@ -3,18 +3,17 @@ import productModel from './productModel.js';
 
 
 const orderSchema = new mongoose.Schema({
-    product: [
+    products: [
         {
             type: mongoose.ObjectId,
-            ref: "products",
-
+            ref: "product",
         }
     ]
     ,
     payment: {},
     buyer: {
         type: mongoose.ObjectId,
-        ref: 'user',
+        ref: 'users',
     },
     status: {
         type: String,
@@ -28,4 +27,4 @@ const orderSchema = new mongoose.Schema({
 
 );
 
-export default mongoose.model("orders", orderSchema)
+export default mongoose.model('orders', orderSchema)

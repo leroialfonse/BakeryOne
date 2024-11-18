@@ -129,7 +129,8 @@ const CreateProduct = () => {
                     </div>
 
                     <div className='mb-3'>
-                        <input type='text'
+                        <input textarea
+                            type='text'
                             value={description}
                             placeholder='Product Description'
                             className='form-control'

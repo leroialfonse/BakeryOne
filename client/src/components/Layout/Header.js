@@ -78,7 +78,7 @@ const Header = () => {
                                                 {auth?.user?.name}
                                             </NavLink>
                                             <ul className="dropdown-menu">
-                                                <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'Admin' : 'user'}`} className="dropdown-item" >Dashboard</NavLink></li>
+                                                <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'admin' : 'user'}/`} className="dropdown-item" >Dashboard</NavLink></li>
                                                 <li> <NavLink onClick={handleLogOut} to="/login" className="dropdown-item">Logout </NavLink></li>
 
                                             </ul>
@@ -87,8 +87,8 @@ const Header = () => {
 
                                     </>)
                             }
-                            <li className="nav-item">
-                                <Badge count={cart?.length} size='middle' showZero>
+                            <li className="nav-item cart-item">
+                                <Badge count={cart?.length} size='middle' >
                                     <NavLink to="/cart" className="nav-link ">Cart</NavLink>
                                 </Badge>
                             </li>

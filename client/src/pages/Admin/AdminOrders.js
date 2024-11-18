@@ -24,9 +24,9 @@ const AdminOrders = () => {
 
     const getOrders = async () => {
         try {
-            const { data } = await axios.get("/api/v1/auth/all-orders");
+            const { data } = await axios.get("/api/v1/auth/orders");
             setOrders(data)
-
+            // alert(...orders)
         } catch (error) {
             console.log(error)
         }
@@ -40,7 +40,7 @@ const AdminOrders = () => {
 
     const handleStatusUpdate = async (orderId, value) => {
         try {
-            const { data } = await axios.put(`/api/v1/auth/order-status/${orderId}`, { status: value })
+            const { value } = await axios.put(`/api/v1/auth/order-status/${orderId}`, { status: value })
             getOrders();
         } catch (error) {
             console.log(error)
@@ -54,10 +54,14 @@ const AdminOrders = () => {
                     <AdminMenu />
                 </div>
             </div>
-            <div className='col-md-9'>
+            <div className='col-md-9'></div>
+            <div>
                 <h1 className='text-center'>All Orders</h1>
                 {
-                    orders?.products?.map((order, i) => {
+                    orders?.map((order, i) => {
+
+                        {/* orders?.products?.map((order, i) => { */ }
+
                         return (
                             <div className='border shadow'>
                                 <table className='table'>
